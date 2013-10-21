@@ -3,6 +3,7 @@
 # Package Files #
 *.jar
 *.war
+*.swp
 *.ear
 */target/*
 /.metadata
