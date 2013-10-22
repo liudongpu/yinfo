@@ -26,7 +26,10 @@ public class HomeController extends RootControl {
 	public String yinfo(@PathVariable("url") String sUrl, Model model,
 			HttpServletRequest request) {
 		//model.addAttribute("b_method", web_method);
-		return "yinfo/" + sUrl;
+		
+		String[] sSplit=sUrl.split("-");
+		
+		return "yinfo/page_" + sSplit[1];
 	}
 	
 }
