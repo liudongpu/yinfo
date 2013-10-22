@@ -1,3 +1,10 @@
+
+body,html
+{
+	
+	margin:0px;
+}
+
 /*通用定义样式*/
 .w_display {
 	display: none;
@@ -60,6 +67,13 @@
 }
 
 
+.w_w_number
+{
+	width:100px;
+}
+
+
+
 .w_opacity_90
 {
 	filter: alpha(opacity=90);
@@ -95,5 +109,9 @@
 	border:solid 1px #b94a48 !important;
 }
 
+.w_position
+{
+	position: absolute;
+}
 
 

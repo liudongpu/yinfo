@@ -1,15 +1,22 @@
 body {
 	font-family: "Microsoft Yahei", Verdana, Simsun, "Segoe UI Light", "Segoe UI Web Light", "Segoe UI Web Regular", "Segoe UI", "Segoe UI Symbol", "HelveticaNeue-Light", "Helvetica Neue", Arial;
 	font-size: 13px;
-	height: 100%;
+	
 	word-wrap: break-word;
+	margin:0px;
+	padding:0px;
 }
 
 html {
-	height: 100%;
+
+	
+}
+a
+{
+	text-decoration: none;
 }
 
-img
+.cke_dialog_contents_body .ImagePreviewBox img
 {
 	max-width:none;
 }
@@ -45,19 +52,25 @@ img
 	float: left;
 	list-style-type: none;
 	text-align: center;
+	width:112px;
 }
 
 .control-upload-image {
 	border: solid 1px #008A17;
 	padding: 5px;
 }
+.control-upload_fix
+{
+	height:40px;
+}
+
 
 .control-upload-delete {
 	margin-top: 5px;
 }
 
 .control-upload img {
-	max-width: 100px;
+	width: 100px;
 }
 
 .fileinput-button {
@@ -123,6 +136,7 @@ img
 	height: 100%;
 	margin: 0px;
 	padding: 0px;
+	position: absolute;
 }
 
 .zab_home_home_box {
@@ -141,6 +155,8 @@ img
 	height: 40px;
 	font-size: 14px;
 	overflow: hidden;
+	width:100%;
+	position: absolute;
 }
 
 .zab_home_home_top .c_site {
@@ -171,10 +187,33 @@ img
 	font-size: 12px;
 }
 
+
+.zab_home_home_center
+{
+	height:100%;
+	position: absolute;
+	top:40px;
+	left:0px;
+	right:0px;
+	bottom:0px;
+	z-index:1;
+	
+	
+}
+
+
+
 .zab_home_home_left {
 	background-color: #F0F0F0;
 	width: 180px;
-	float: left;
+	
+	bottom:0px;
+	top:0px;
+	left:0px;
+	z-index: 3;
+	position: absolute;
+	
+	
 }
 
 .zab_home_home_left .c_title {
@@ -228,22 +267,43 @@ img
 	background-color: #e7e7e7;
 }
 
+.zab_home_home_split
+{
+	left:180px;
+	top:0px;
+	right:0px;
+	bottom:0px;
+	z-index: 5;
+	width:20px;
+	position: absolute;
+}
+
 .zab_home_home_right {
-	overflow: hidden;
-	min-width: 600px;
+	
+	
+	left:200px;
+	top:0px;
+	right:0px;
+	bottom:0px;
+	z-index: 2;
+	position: absolute;
+	
 }
 
 .zab_home_home_main {
 	position: absolute;
-	top: 40px;
+	top: 0px;
 	right: 0px;
 	left: 0px;
 	bottom: 0px;
+	z-index:1;
+	min-width:768px;
 }
 
 .zab_page_default_body {
-	width: 97%;
-	margin-left: 2%;
+	
+	width:98%;
+	
 }
 
 .zab_page_windowtree_buttons {
