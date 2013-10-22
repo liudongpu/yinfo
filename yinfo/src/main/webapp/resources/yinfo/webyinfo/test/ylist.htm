@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>yinfo</title>
+
+<link type="text/css"
+	href="../../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link type="text/css" href="../css/yinfo.css" rel="stylesheet">
+<script type="text/javascript"
+	src="../../../lib/jquery/jquery-last.min.js"></script>
+<script type="text/javascript" src="../../../lib/jquery/jquery.srnpr.js"></script>
+<script type="text/javascript"
+	src="../../../lib/jquery/jquery.corner.js"></script>
+<script type="text/javascript"
+	src="../../../lib/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../../zen/zen.js"></script>
+<script type="text/javascript" src="../../../zen/zen_yinfo.js"></script>
+
+
+</head>
+<body class="yinfo_body">
+
+
+
+	<div class="yinfo_header y_center">
+		<div class="yinfo_header_logo">
+			<a href="/"></a>
+		</div>
+		<div class="yinfo_header_area">北京</div>
+		<div id="yinfo_header_search" class="yinfo_header_search">
+
+			<div class="input-append">
+				<input type="text" id="yinfo_header_search_input" class="span4"
+					placeholder="搜索城市、地区、或者养老院名称"> <a class="btn"
+					onclick="zen.yinfo.search(this)"> <i class="icon-search"></i>
+				</a>
+			</div>
+		</div>
+		<div id="yinfo_header_user" class="yinfo_header_user">
+			<a href="/yinfo/login-login">登录</a> &nbsp;&nbsp;<a
+				href="/yinfo/reg-reg">免费注册</a>
+		</div>
+		<div class="yinfo_header_link">
+			<a target="_blank"
+				href="http://wpa.qq.com/msgrd?v=3&uin=508681688&site=qq&menu=yes"><img
+				border="0" src="http://wpa.qq.com/pa?p=2:508681688:41"
+				alt="点击这里给我发消息" title="点击这里给我发消息" /></a>
+		</div>
+	</div>
+	<div class="yinfo_nav">
+		<div class="y_center">
+			<div class="yinfo_nav_box">
+				<div class="c_tip"></div>
+				<div class="c_nav">
+					<ul>
+						<li class="c_active"><a href="/">首页</a></li>
+						<li><a href="/yinfo/list-110108_0_0_0">海淀区</a></li>
+						<li><a href="/yinfo/list-110105_0_0_0">朝阳区</a></li>
+						<li><a href="/yinfo/list-110102_0_0_0">西城区</a></li>
+						<li><a href="/yinfo/list-110101_0_0_0">东城区</a></li>
+						<li><a href="/yinfo/list-110114_0_0_0">昌平区</a></li>
+						<li><a href="/yinfo/list-110107_0_0_0">石景山区</a></li>
+						<li id="yinfo_nav_box_address_other"><a href="#">其他区县</a></li>
+					</ul>
+				</div>
+
+				<div class="yinfo_nav_address">
+					<ul>
+						<li><a href="/yinfo/list-110112_0_0_0">·通州区</a></li>
+						<li><a href="/yinfo/list-110113_0_0_0">·顺义区</a></li>
+						<li><a href="/yinfo/list-110106_0_0_0">·丰台区</a></li>
+						<li><a href="/yinfo/list-110109_0_0_0">·门头沟区</a></li>
+						<li><a href="/yinfo/list-110111_0_0_0">·房山区</a></li>
+						<li><a href="/yinfo/list-110115_0_0_0">·大兴区</a></li>
+						<li><a href="/yinfo/list-110116_0_0_0">·怀柔区</a></li>
+						<li><a href="/yinfo/list-110117_0_0_0">·平谷区</a></li>
+						<li><a href="/yinfo/list-110228_0_0_0">·密云县</a></li>
+						<li><a href="/yinfo/list-110229_0_0_0">·延庆县</a></li>
+					</ul>
+				</div>
+
+				<div class="yinfo_nav_query">
+					<div class="c_box"></div>
+					<div class="c_bg">
+						<div class="c_info b_corner">
+							<div class="c_margin">
+								<dl>
+									<dt>
+										<i>1/</i>您希望养老院位于：
+									</dt>
+									<dd id="yinfo_nav_query_address">
+										<input name="query_dept" type="radio" value="0"
+											id="query_dept_0" checked="checked" /><label
+											for="query_dept_0">不限</label> <input name="query_dept"
+											type="radio" value="110108" id="query_dept_110108" /><label
+											for="query_dept_110108">海淀</label> <input name="query_dept"
+											type="radio" value="110105" id="query_dept_110105" /><label
+											for="query_dept_110105">朝阳</label> <input name="query_dept"
+											type="radio" value="110102" id="query_dept_110102" /><label
+											for="query_dept_110102">西城</label> <br /> <input
+											name="query_dept" type="radio" value="110101"
+											id="query_dept_110101" /><label for="query_dept_110101">东城</label>
+										<input name="query_dept" type="radio" value="110114"
+											id="query_dept_110114" /><label for="query_dept_110114">昌平</label>
+										<input name="query_dept" type="radio" value="110107"
+											id="query_dept_110107" /><label for="query_dept_110107">石景山</label>
+									</dd>
+								</dl>
+								<dl>
+									<dt>
+										<i>2/</i>您希望价格范围是：
+									</dt>
+									<dd id="yinfo_nav_query_money">
+										<input name="query_price" id="query_price_0" type="radio"
+											value="0" checked="checked" /><label for="query_price_0">不限</label>
+										<input name="query_price" type="radio"
+											id="query_price_32510001" value="32510001" /><label
+											for="query_price_32510001">2000元以下</label> <input
+											name="query_price" type="radio" value="32510002"
+											id="query_price_32510002" /><label
+											for="query_price_32510002">2000-3000</label> <input
+											name="query_price" type="radio" value="32510003"
+											id="query_price_32510003" /><label
+											for="query_price_32510003">3000-4000</label> <input
+											name="query_price" type="radio" value="32510004"
+											id="query_price_32510004" /><label
+											for="query_price_32510004">4000元以上</label>
+									</dd>
+								</dl>
+								<dl>
+									<dt>
+										<i>3/</i>老人的情况是：
+									</dt>
+									<dd id="yinfo_nav_query_older">
+										<input name="query_type" id="query_type_0" type="radio"
+											value="0" checked="checked" /><label for="query_type_0">不限</label>
+										<input name="query_type" type="radio" id="query_type_32520001"
+											value="32520001" /><label for="query_type_32520001">自理老人</label>
+										<input name="query_type" type="radio" value="32520002"
+											id="query_type_32520002" /><label for="query_type_32520002">半护理老人</label><br />
+										<input name="query_type" type="radio" value="32520003"
+											id="query_type_32520003" /><label for="query_type_32520003">全护理老人</label>
+										<input name="query_type" type="radio" value="32520004"
+											id="query_type_32520004" /><label for="query_type_32520004">特护</label>
+
+
+									</dd>
+								</dl>
+							</div>
+
+						</div>
+						<div class="c_bottons">
+							<div class="c_btn b_corner" onclick="zen.yinfo.query()">立即查看</div>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+	<div class="y_center">
+		<div class="yinfo_list">
+			<div class="yinfo_list_fox">
+				<div class="yinfo_list_nav">
+					<a href="/">回到首页</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp;<a
+						href="/yinfo/list-0">列表页</a>
+				</div>
+				<div class="yinfo_list_query">
+
+					<div class="c_item">
+						<div class="c_left">
+							<span>所在区域：</span>
+						</div>
+						<div class="c_right">
+
+
+							<a href="/yinfo/list-0_0_0_0_0">不限</a><a
+								href="/yinfo/list-110101_0_0_0_0">东城区</a><a
+								href="/yinfo/list-110102_0_0_0_0">西城区</a><a
+								href="/yinfo/list-110105_0_0_0_0">朝阳区</a><a
+								href="/yinfo/list-110106_0_0_0_0">丰台区</a><a
+								href="/yinfo/list-110107_0_0_0_0">石景山区</a><a class="c_active"
+								href="/yinfo/list-110108_0_0_0_0">海淀区</a><a
+								href="/yinfo/list-110109_0_0_0_0">门头沟区</a><a
+								href="/yinfo/list-110111_0_0_0_0">房山区</a><a
+								href="/yinfo/list-110112_0_0_0_0">通州区</a><a
+								href="/yinfo/list-110113_0_0_0_0">顺义区</a><a
+								href="/yinfo/list-110114_0_0_0_0">昌平区</a><a
+								href="/yinfo/list-110115_0_0_0_0">大兴区</a><a
+								href="/yinfo/list-110116_0_0_0_0">怀柔区</a><a
+								href="/yinfo/list-110117_0_0_0_0">平谷区</a><a
+								href="/yinfo/list-110228_0_0_0_0">密云县</a>
+						</div>
+						<div class="clearfix"></div>
+
+
+					</div>
+					<div class="c_item">
+						<div class="c_left">
+							<span>价格范围：</span>
+						</div>
+						<div class="c_right">
+
+							<a class="c_active" href="/yinfo/list-110108_0_0_0_0">不限</a><a
+								href="/yinfo/list-110108_32510001_0_0_0">2000元以下</a><a
+								href="/yinfo/list-110108_32510002_0_0_0">2000-3000</a><a
+								href="/yinfo/list-110108_32510003_0_0_0">3000-4000</a><a
+								href="/yinfo/list-110108_32510004_0_0_0">4000元以上</a>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="c_item">
+						<div class="c_left">
+							<span>老人情况：</span>
+						</div>
+						<div class="c_right">
+
+							<a class="c_active" href="/yinfo/list-110108_0_0_0_0">不限</a><a
+								href="/yinfo/list-110108_0_32520001_0_0">自理老人</a><a
+								href="/yinfo/list-110108_0_32520002_0_0"> 半护理老人</a><a
+								href="/yinfo/list-110108_0_32520003_0_0">全护理老人</a><a
+								href="/yinfo/list-110108_0_32520004_0_0">特护</a><a
+								href="/yinfo/list-110108_0_32520005_0_0"> 其他</a>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+
+					<div class="c_order">
+						<span>排序方式：</span> <a class="c_active"
+							href="/yinfo/list-110108_0_0_0_0">默认</a><a
+							href="/yinfo/list-110108_0_0_32600001_0">星级</a><a
+							href="/yinfo/list-110108_0_0_32600002_0">评论</a>
+					</div>
+				</div>
+				<div class="b_h20"></div>
+			</div>
+			<div>
+
+
+
+
+				<div class="yinfo_list_left">
+					<div class="c_item">
+
+						<div class="c_img">
+							<a href="/yinfo/home-jyjly" target="_blank"><img
+								src="http://www.yinxl.com/zzero/file/images_upload/20130629/48aa3e25753d4b2b94679c16a9f0d02b.jpg" /></a>
+						</div>
+						<div class="yinfo_item_box">
+							<div class="c_title">
+								<a href="/yinfo/home-jyjly" target="_blank">海淀区金宇敬老院</a>
+							</div>
+							<div class="c_in">
+								<div class="c_left">保障：</div>
+								<div class="c_right">
+									<div class="yinfo_keep">
+										<ul>
+											<li class="c_0  "></li>
+											<li class="c_1  c_a"></li>
+											<li class="c_2  "></li>
+											<li class="c_3  "></li>
+											<li class="c_4  "></li>
+											<li class="c_5  "></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="c_in">
+								<div class="c_left">评价：</div>
+								<div class="c_right">
+									<div class="yinfo_star">
+										<div class="c_line" style="width: 90%;"></div>
+									</div>
+									<div class="c_tips">好评率：90%</div>
+								</div>
+							</div>
+							<div class="c_in">
+								<div class="c_left">地区：</div>
+								<div class="c_right">北京 海淀区</div>
+							</div>
+							<div class="c_in">
+								<div class="c_left">床位：</div>
+								<div class="c_right">100</div>
+							</div>
+							<div class="clearfix"></div>
+							<div class="c_buttons">
+								<input type="checkbox" /><label>加入对比</label> <a
+									href="/yinfo/home-home-6fc5359a14394660adcb4f6e842ef456"
+									target="_blank" class="btn btn-success">去看看</a>
+							</div>
+						</div>
+
+					</div>
+					<div class="c_item">
+
+						<div class="c_img">
+							<a href="/yinfo/home-xljly" target="_blank"><img
+								src="http://www.yinxl.com/zzero/file/images_upload/20130625/8cc1ca6fd69d419b90bf6279c831e3f8.jpg" /></a>
+						</div>
+						<div class="yinfo_item_box">
+							<div class="c_title">
+								<a href="/yinfo/home-xljly" target="_blank">海淀区杏林敬老院</a>
+							</div>
+							<div class="c_in">
+								<div class="c_left">保障：</div>
+								<div class="c_right">
+									<div class="yinfo_keep">
+										<ul>
+											<li class="c_0  c_a"></li>
+											<li class="c_1  c_a"></li>
+											<li class="c_2  "></li>
+											<li class="c_3  "></li>
+											<li class="c_4  "></li>
+											<li class="c_5  "></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="c_in">
+								<div class="c_left">评价：</div>
+								<div class="c_right">
+									<div class="yinfo_star">
+										<div class="c_line" style="width: 90%;"></div>
+									</div>
+									<div class="c_tips">好评率：90%</div>
+								</div>
+							</div>
+							<div class="c_in">
+								<div class="c_left">地区：</div>
+								<div class="c_right">北京 海淀区</div>
+							</div>
+							<div class="c_in">
+								<div class="c_left">床位：</div>
+								<div class="c_right">156</div>
+							</div>
+							<div class="clearfix"></div>
+							<div class="c_buttons">
+								<input type="checkbox" /><label>加入对比</label> <a
+									href="/yinfo/home-home-ed15def81beb45d1b2d2f967e3cdeb46"
+									target="_blank" class="btn btn-success">去看看</a>
+							</div>
+						</div>
+
+					</div>
+					<div class="c_item">
+
+						<div class="c_img">
+							<a href="/yinfo/home-chlnzy" target="_blank"><img
+								src="http://www.yinxl.com/zzero/file/images_upload/20130616/8a2e3a5ca3bc4121bc8f1a386a369b35.jpg" /></a>
+						</div>
+						<div class="yinfo_item_box">
+							<div class="c_title">
+								<a href="/yinfo/home-chlnzy" target="_blank">海淀区翠湖老年庄园 </a>
+							</div>
+							<div class="c_in">
+								<div class="c_left">保障：</div>
+								<div class="c_right">
+									<div class="yinfo_keep">
+										<ul>
+											<li class="c_0  "></li>
+											<li class="c_1  "></li>
+											<li class="c_2  "></li>
+											<li class="c_3  "></li>
+											<li class="c_4  "></li>
+											<li class="c_5  "></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="c_in">
+								<div class="c_left">评价：</div>
+								<div class="c_right">
+									<div class="yinfo_star">
+										<div class="c_line" style="width: 90%;"></div>
+									</div>
+									<div class="c_tips">好评率：90%</div>
+								</div>
+							</div>
+							<div class="c_in">
+								<div class="c_left">地区：</div>
+								<div class="c_right">北京 海淀区</div>
+							</div>
+							<div class="c_in">
+								<div class="c_left">床位：</div>
+								<div class="c_right">100</div>
+							</div>
+							<div class="clearfix"></div>
+							<div class="c_buttons">
+								<input type="checkbox" /><label>加入对比</label> <a
+									href="/yinfo/home-home-25630e98219d4fe38d3caa7af240ca24"
+									target="_blank" class="btn btn-success">去看看</a>
+							</div>
+						</div>
+
+					</div>
+					<div class="c_item">
+
+						<div class="c_img">
+							<a href="/yinfo/home-xslngy" target="_blank"><img
+								src="http://www.yinxl.com/zzero/file/images_upload/20130614/cfb882ec9d5f4261a795b5c1382ae449.jpg" /></a>
+						</div>
+						<div class="yinfo_item_box">
+							<div class="c_title">
+								<a href="/yinfo/home-xslngy" target="_blank">海淀区香山老年公寓 </a>
+							</div>
+							<div class="c_in">
+								<div class="c_left">保障：</div>
+								<div class="c_right">
+									<div class="yinfo_keep">
+										<ul>
+											<li class="c_0  "></li>
+											<li class="c_1  "></li>
+											<li class="c_2  "></li>
+											<li class="c_3  "></li>
+											<li class="c_4  "></li>
+											<li class="c_5  "></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="c_in">
+								<div class="c_left">评价：</div>
+								<div class="c_right">
+									<div class="yinfo_star">
+										<div class="c_line" style="width: 90%;"></div>
+									</div>
+									<div class="c_tips">好评率：90%</div>
+								</div>
+							</div>
+							<div class="c_in">
+								<div class="c_left">地区：</div>
+								<div class="c_right">北京 海淀区</div>
+							</div>
+							<div class="c_in">
+								<div class="c_left">床位：</div>
+								<div class="c_right">420</div>
+							</div>
+							<div class="clearfix"></div>
+							<div class="c_buttons">
+								<input type="checkbox" /><label>加入对比</label> <a
+									href="/yinfo/home-home-5b270416301e4b7ab2522eb87db04317"
+									target="_blank" class="btn btn-success">去看看</a>
+							</div>
+						</div>
+
+					</div>
+					<div class="c_item">
+
+						<div class="c_img">
+							<a href="/yinfo/home-fhgahly" target="_blank"><img
+								src="http://www.yinxl.com/zzero/file/images_upload/20130614/e2fcbe74fddd4bd7a64a1c9f8a01e40d.jpg" /></a>
+						</div>
+						<div class="yinfo_item_box">
+							<div class="c_title">
+								<a href="/yinfo/home-fhgahly" target="_blank">海淀凤凰关爱护理院 </a>
+							</div>
+							<div class="c_in">
+								<div class="c_left">保障：</div>
+								<div class="c_right">
+									<div class="yinfo_keep">
+										<ul>
+											<li class="c_0  "></li>
+											<li class="c_1  "></li>
+											<li class="c_2  "></li>
+											<li class="c_3  "></li>
+											<li class="c_4  "></li>
+											<li class="c_5  "></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="c_in">
+								<div class="c_left">评价：</div>
+								<div class="c_right">
+									<div class="yinfo_star">
+										<div class="c_line" style="width: 90%;"></div>
+									</div>
+									<div class="c_tips">好评率：90%</div>
+								</div>
+							</div>
+							<div class="c_in">
+								<div class="c_left">地区：</div>
+								<div class="c_right">北京 海淀区</div>
+							</div>
+							<div class="c_in">
+								<div class="c_left">床位：</div>
+								<div class="c_right">300</div>
+							</div>
+							<div class="clearfix"></div>
+							<div class="c_buttons">
+								<input type="checkbox" /><label>加入对比</label> <a
+									href="/yinfo/home-home-1fd5b379a8f14a3799cb6b39f2ab98b1"
+									target="_blank" class="btn btn-success">去看看</a>
+							</div>
+						</div>
+
+					</div>
+					<div class="c_item">
+
+						<div class="c_img">
+							<a href="/yinfo/home-sjqzjly" target="_blank"><img
+								src="http://www.yinxl.com/zzero/file/images_upload/20130614/8b4702efa1b94114a693ba0c8b0158c8.jpg" /></a>
+						</div>
+						<div class="yinfo_item_box">
+							<div class="c_title">
+								<a href="/yinfo/home-sjqzjly" target="_blank">海淀区四季青镇敬老院 </a>
+							</div>
+							<div class="c_in">
+								<div class="c_left">保障：</div>
+								<div class="c_right">
+									<div class="yinfo_keep">
+										<ul>
+											<li class="c_0  "></li>
+											<li class="c_1  "></li>
+											<li class="c_2  "></li>
+											<li class="c_3  "></li>
+											<li class="c_4  "></li>
+											<li class="c_5  "></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="c_in">
+								<div class="c_left">评价：</div>
+								<div class="c_right">
+									<div class="yinfo_star">
+										<div class="c_line" style="width: 90%;"></div>
+									</div>
+									<div class="c_tips">好评率：90%</div>
+								</div>
+							</div>
+							<div class="c_in">
+								<div class="c_left">地区：</div>
+								<div class="c_right">北京 海淀区</div>
+							</div>
+							<div class="c_in">
+								<div class="c_left">床位：</div>
+								<div class="c_right">756</div>
+							</div>
+							<div class="clearfix"></div>
+							<div class="c_buttons">
+								<input type="checkbox" /><label>加入对比</label> <a
+									href="/yinfo/home-home-8fcf887c728f4f27a59b3a4c1abc3609"
+									target="_blank" class="btn btn-success">去看看</a>
+							</div>
+						</div>
+
+					</div>
+					<div class="c_item">
+
+						<div class="c_img">
+							<a href="/yinfo/home-qhjly" target="_blank"><img
+								src="http://www.yinxl.com/zzero/file/images_upload/20130614/a840a6bdecf643e3819419e91cd4d4f5.jpg" /></a>
+						</div>
+						<div class="yinfo_item_box">
+							<div class="c_title">
+								<a href="/yinfo/home-qhjly" target="_blank">海淀区千禾敬老院 </a>
+							</div>
+							<div class="c_in">
+								<div class="c_left">保障：</div>
+								<div class="c_right">
+									<div class="yinfo_keep">
+										<ul>
+											<li class="c_0  "></li>
+											<li class="c_1  "></li>
+											<li class="c_2  "></li>
+											<li class="c_3  "></li>
+											<li class="c_4  "></li>
+											<li class="c_5  "></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="c_in">
+								<div class="c_left">评价：</div>
+								<div class="c_right">
+									<div class="yinfo_star">
+										<div class="c_line" style="width: 90%;"></div>
+									</div>
+									<div class="c_tips">好评率：90%</div>
+								</div>
+							</div>
+							<div class="c_in">
+								<div class="c_left">地区：</div>
+								<div class="c_right">北京 海淀区</div>
+							</div>
+							<div class="c_in">
+								<div class="c_left">床位：</div>
+								<div class="c_right">200</div>
+							</div>
+							<div class="clearfix"></div>
+							<div class="c_buttons">
+								<input type="checkbox" /><label>加入对比</label> <a
+									href="/yinfo/home-home-597ee142a8dd46cebbe97724fe1e04a9"
+									target="_blank" class="btn btn-success">去看看</a>
+							</div>
+						</div>
+
+					</div>
+					<div class="c_item">
+
+						<div class="c_img">
+							<a href="/yinfo/home-wqjly" target="_blank"><img
+								src="http://www.yinxl.com/zzero/file/images_upload/20130615/decb34ed269d4a1a9f70c2ac3a11f6fc.jpg" /></a>
+						</div>
+						<div class="yinfo_item_box">
+							<div class="c_title">
+								<a href="/yinfo/home-wqjly" target="_blank">海淀区温泉镇敬老院 </a>
+							</div>
+							<div class="c_in">
+								<div class="c_left">保障：</div>
+								<div class="c_right">
+									<div class="yinfo_keep">
+										<ul>
+											<li class="c_0  "></li>
+											<li class="c_1  "></li>
+											<li class="c_2  "></li>
+											<li class="c_3  "></li>
+											<li class="c_4  "></li>
+											<li class="c_5  "></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="c_in">
+								<div class="c_left">评价：</div>
+								<div class="c_right">
+									<div class="yinfo_star">
+										<div class="c_line" style="width: 90%;"></div>
+									</div>
+									<div class="c_tips">好评率：90%</div>
+								</div>
+							</div>
+							<div class="c_in">
+								<div class="c_left">地区：</div>
+								<div class="c_right">北京 海淀区</div>
+							</div>
+							<div class="c_in">
+								<div class="c_left">床位：</div>
+								<div class="c_right">250</div>
+							</div>
+							<div class="clearfix"></div>
+							<div class="c_buttons">
+								<input type="checkbox" /><label>加入对比</label> <a
+									href="/yinfo/home-home-235c495e4c624e7f898fa961bba75aa6"
+									target="_blank" class="btn btn-success">去看看</a>
+							</div>
+						</div>
+
+					</div>
+					<div class="c_item">
+
+						<div class="c_img">
+							<a href="/yinfo/home-22" target="_blank"><img
+								src="http://www.yinxl.com/zzero/file/images_upload/20130623/e52f7f23b2804e6daa29b92a35c846ff.jpg" /></a>
+						</div>
+						<div class="yinfo_item_box">
+							<div class="c_title">
+								<a href="/yinfo/home-22" target="_blank">北京老年医院</a>
+							</div>
+							<div class="c_in">
+								<div class="c_left">保障：</div>
+								<div class="c_right">
+									<div class="yinfo_keep">
+										<ul>
+											<li class="c_0  c_a"></li>
+											<li class="c_1  c_a"></li>
+											<li class="c_2  c_a"></li>
+											<li class="c_3  c_a"></li>
+											<li class="c_4  "></li>
+											<li class="c_5  c_a"></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="c_in">
+								<div class="c_left">评价：</div>
+								<div class="c_right">
+									<div class="yinfo_star">
+										<div class="c_line" style="width: 90%;"></div>
+									</div>
+									<div class="c_tips">好评率：90%</div>
+								</div>
+							</div>
+							<div class="c_in">
+								<div class="c_left">地区：</div>
+								<div class="c_right">北京 海淀区</div>
+							</div>
+							<div class="c_in">
+								<div class="c_left">床位：</div>
+								<div class="c_right">600</div>
+							</div>
+							<div class="clearfix"></div>
+							<div class="c_buttons">
+								<input type="checkbox" /><label>加入对比</label> <a
+									href="/yinfo/home-home-b5cffa66eb54443e8ea3644883324005"
+									target="_blank" class="btn btn-success">去看看</a>
+							</div>
+						</div>
+
+					</div>
+
+
+					<div class="clearfix"></div>
+					<div class="yinfo_list_pagintion">
+						<div class="pagination" zen_page_pagination_size="10"
+							zen_page_pagination_index="1" zen_page_pagination_count="9">
+							<ul>
+							</ul>
+						</div>
+						<script>
+							$(document).ready(function() {
+								zen.yinfo.pagination()
+							});
+						</script>
+					</div>
+				</div>
+				<div class="yinfo_list_right">
+					<div class="c_item">
+						<a target="_blank"
+							href="http://wpa.qq.com/msgrd?v=3&amp;uin=508681688&amp;site=qq&amp;menu=yes">
+							<img
+							src="http://script.daoxila.com/root/img/img_20111201/service_pic.gif" />
+						</a>
+
+					</div>
+					<div class="c_item">
+						<div class="yinfo_list_newst">
+							<h4>最新加入的养老院</h4>
+
+
+
+							<div class="c_top">
+								<a href="home-syqrdjly">
+									<div class="c_topimg">
+										<img
+											src="http://www.yinxl.com/zzero/file/images_upload/20130629/0c4f7dd8fcc44c4bbc91d1bcb5c9b075.jpg" />
+									</div>
+									<div class="c_toptext">
+										<b>顺义区仁达敬老院</b> <br />床位数：150
+									</div>
+								</a>
+							</div>
+							<div class="clearfix"></div>
+							<div class="b_h10"></div>
+							<ul>
+
+								<li><a href="home-jyjly">2、海淀区金宇敬老院</a></li>
+
+								<li><a href="home-xljly">3、海淀区杏林敬老院</a></li>
+
+								<li><a href="home-xyqlngy">4、大兴区夕阳情老年公寓</a></li>
+
+								<li><a href="home-nkztwjly">5、昌平区南口镇桃洼敬老院 </a></li>
+
+								<li><a href="home-nkzjly">6、昌平区南口镇敬老院 </a></li>
+
+								<li><a href="home-sslzlrfwzx">7、昌平区十三陵镇老人服务中心 </a></li>
+
+								<li><a href="home-dxqfsyly">8、大兴区福顺养老院 </a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+	<script>
+		$(document).ready(function() {
+			zen.yinfo.headernav(false);
+		});
+	</script>
+
+
+
+
+	<div class="yinfo_footer">
+		<div class="c_border"></div>
+		<div class="y_center">
+			<div class="c_nav">
+
+				<span><a
+					href="/yinfo/static-static-e27aded41fe64709a378e168c9d38b9e">注册指南</a></span>|
+				<span><a
+					href="/yinfo/static-static-58437ccd23014d26bd09b67ddff247b9">公司介绍</a></span>|
+				<span><a
+					href="/yinfo/static-static-b176b9a729a64132a66f66ec02844ce8">隐私协议</a></span>|
+				<span><a
+					href="/yinfo/static-static-c364da320ff3498fbd48d55ebdf8f438">关于我们</a></span>|
+				<span><a
+					href="/yinfo/static-static-1f53de2f4fca4145b72981601318f3fa">机构加盟指南</a></span>|
+
+
+			</div>
+			<div class="b_h20"></div>
+			<div class="c_text">CopyRight 2013 京ICP备11035185号-2</div>
+			<div class="b_h40"></div>
+		</div>
+	</div>
+
+
+	<div id="yinfo_query_for" class="modal hide fade yinfo_query_for">
+		<div class="c_box">
+			<div class="c_top"></div>
+			<div class="c_info"></div>
+			<div class="c_input">
+				<input type="text" name="yinfo_query_for_phone"
+					id="yinfo_query_for_phone" maxlength="11" />
+			</div>
+			<div class="c_button">
+				<a class="btn  btn-success" onclick="zen.yinfo.querysubmit()">&nbsp;&nbsp;提&nbsp;&nbsp;交&nbsp;&nbsp;</a>
+			</div>
+			<div class="c_desc">您的重要信息不会被泄露,详见隐私条款</div>
+			<div class="c_skip">
+				<a href="#" onclick="$('#yinfo_query_for_notice').show();">跳过</a>
+			</div>
+
+			<div class="c_close" data-dismiss="modal" aria-hidden="true"></div>
+
+			<div id="yinfo_query_for_notice" class="c_notice">
+				<div class="c_notice_head">确定要跳过吗？</div>
+				<div class="c_notice_body">
+					<br /> 这样您将无法获得：
+					<ul>
+						<li>您需要的养老院最新折扣优惠信息</li>
+						<li>银杏林赠送的超值大礼</li>
+						<li>养老院免费一对一贴心顾问</li>
+					</ul>
+
+				</div>
+				<div class="c_notice_skip">确定要跳过吗？</div>
+				<div class="c_notice_buttons">
+					<a class="btn btn-small" onclick="zen.yinfo.queryskip()">&nbsp;&nbsp;是&nbsp;&nbsp;</a>&nbsp;&nbsp;&nbsp;&nbsp;
+					<a class="btn btn-small"
+						onclick="$('#yinfo_query_for_notice').hide();">&nbsp;&nbsp;否&nbsp;&nbsp;</a>
+				</div>
+			</div>
+			<input type="hidden" id="yinfo_query_for_query"
+				name="yinfo_query_for_query" />
+		</div>
+	</div>
+
+
+	<div id="yinfo_compare_for" class="yinfo_compare_for y_center">
+		<div class="c_box">
+			<div class="c_title">
+				<div class="b_fl c_bold">对比栏</div>
+				<div class="b_fr">[隐藏]</div>
+			</div>
+			<div class="c_list">
+				<div class="c_item b_fl">
+					<div class="b_fl">
+						<img
+							src="http://www.yinxl.com/zzero/file/images_upload/20130614/cfb882ec9d5f4261a795b5c1382ae449.jpg">
+					</div>
+					<div class="b_fl c_text">海淀区四季青镇敬老院
+					<a href="">删除</a>
+					</div>
+
+				</div>
+				<div class="c_item b_fl">
+					<div class="b_fl">
+						<img
+							src="http://www.yinxl.com/zzero/file/images_upload/20130614/cfb882ec9d5f4261a795b5c1382ae449.jpg">
+					</div>
+					<div class="b_fl c_text">哈哈</div>
+
+				</div>
+				<div class="c_item b_fl">
+					<div class="b_fl">
+						<img
+							src="http://www.yinxl.com/zzero/file/images_upload/20130614/cfb882ec9d5f4261a795b5c1382ae449.jpg">
+					</div>
+					<div class="b_fl c_text">哈哈</div>
+
+				</div>
+				<div class="c_item b_fl">
+					<div class="b_fl c_number">4</div>
+					<div class="b_fl c_add">您还可以继续添加</div>
+				</div>
+				
+				<div class="c_buttons b_fr">
+					<a class="btn btn-success">对比</a>
+					<br/>
+					<a href="">清空对比栏</a>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+
+
+</body>
+
+
+
+</html>

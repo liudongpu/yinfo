@@ -9,8 +9,8 @@
 <#assign base_url=pageexec.upConfigValue("zweb.url_home")>
 <#assign base_zero=pageexec.upConfigValue("zweb.url_home")+"zzero/web/">
 
-<#include "../lib/lib_html.ftl" />
-<#include "../lib/lib_page.ftl" />
+<#include "lib_html.ftl" />
+<#include "lib_page.ftl" />
 
 <#include "site_common.ftl" />
 
