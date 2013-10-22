@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
+<#--
 <#assign pageconfig=WebPage["PageConfig"]>
 <#assign pageinfo=WebPage["PageInfo"]>
 <#assign pageexec=WebPage["PageExec"]>
 <#assign pagemethod=WebPage["PageMethod"]>
+-->
 
-<#assign base_url=pageexec.upConfigValue("zweb.url_home")>
-<#assign base_zero=pageexec.upConfigValue("zweb.url_home")+"zzero/web/">
+<#assign pageinfo=WebPage["PageInfo"]>
+<#assign pageexec=WebPage["PageExec"]>
+<#assign pagemethod=WebPage["PageExec"]>
+
+<#assign base_url="/yinfo/">
+<#assign base_zero="/yinfo/resources/yinfo/">
 
 <#include "lib_html.ftl" />
 <#include "lib_page.ftl" />
@@ -16,18 +22,26 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
 
-
-	<@m_html_addcss pageconfig.getSrcCss() />
-	<@m_html_addjs pageconfig.getSrcJs() />
-	<@m_html_addjs [base_zero+"zen/zen_yinfo.js"] />
-	<@m_html_addjs [base_zero+"lib/jquery/jquery.corner.js"] />
-	<@m_html_addjs [base_zero+"lib/jquery/jquery.srnpr.js"] />
+	
+	
+	<link type="text/css" href="${base_zero}lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link type="text/css" href="${base_zero}webyinfo/css/yinfo.css" rel="stylesheet">
+	<script type="text/javascript" src="${base_zero}lib/jquery/jquery-last.min.js"></script>
+	<script type="text/javascript" src="${base_zero}lib/jquery/jquery-pluging.js"></script>
+	<script type="text/javascript" src="${base_zero}lib/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="${base_zero}zen/zen.js"></script>
+	<script type="text/javascript" src="${base_zero}zen/zen_yinfo.js"></script>
+	<script type="text/javascript" src="${base_zero}lib/jquery/jquery.corner.js"></script>
+	<script type="text/javascript" src="${base_zero}lib/jquery/jquery.srnpr.js"></script>
+	
+	
+	
 
 	<@m_html_addscript "zen.i({baseurl:'"+base_url+"'});" />
 
 	
 
-<#include "page_"+pageinfo.getPageInclude()?default('main')+".ftl" />
+<#include "page_"+WebPage["PageTarget"]?default('main')+".ftl" />
 
 
 

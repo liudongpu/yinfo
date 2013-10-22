@@ -1,5 +1,5 @@
 
-<#assign page_obj=pageexec.upDataOne("y_static","uid",pageinfo.getWebSet()["Url_Option"])>
+<#assign page_obj=pageexec.upDataOne("y_static","","","","uid",pageinfo.getWebSet()["Url_Option"])>
 <@m_site_common_header />
 
 

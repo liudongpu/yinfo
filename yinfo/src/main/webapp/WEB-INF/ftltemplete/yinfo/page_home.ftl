@@ -1,5 +1,5 @@
 
-<#assign page_obj=pageexec.upDataOne("y_info","domain",pageinfo.getWebSet()["Url_View"])>
+<#assign page_obj=pageexec.upDataOne("y_info","","","","domain",pageinfo.getWebSet()["Url_View"])>
 
 
 

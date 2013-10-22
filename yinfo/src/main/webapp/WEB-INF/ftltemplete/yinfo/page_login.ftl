@@ -3,7 +3,7 @@
 <@m_site_common_header />
 
 <#assign  pageListSearch=pageinfo.getWebSet()["Url_Option"]?default("")  >
-<#assign  pageSearchNav=pagemethod.upListPage(pageinfo.getWebSet()["Url_View"]?default(""),pageListSearch)  >
+
 
 
 	<div class="y_center">
