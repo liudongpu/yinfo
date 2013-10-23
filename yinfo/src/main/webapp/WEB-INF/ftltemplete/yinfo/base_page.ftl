@@ -12,12 +12,11 @@
 <#assign pageexec=WebPage["PageExec"]>
 <#assign pagemethod=WebPage["PageExec"]>
 
-<#assign base_url="/yinfo/">
-<#assign base_zero="/yinfo/resources/yinfo/">
+<#assign base_url="/">
+<#assign base_zero="/resources/yinfo/">
 
-<#include "lib_html.ftl" />
+
 <#include "lib_page.ftl" />
-
 <#include "site_common.ftl" />
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 

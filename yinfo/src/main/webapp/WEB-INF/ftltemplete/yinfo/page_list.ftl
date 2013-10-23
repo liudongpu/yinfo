@@ -11,7 +11,7 @@
 			<#if (pageListSearch=="")>
 				<div class="yinfo_list_fox">
 					<div class="yinfo_list_nav">
-						<a href="/">回到首页</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp;<a href="/yinfo/list-0">列表页</a>
+						<a href="/">回到首页</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp;<a href="${base_url}yinfo/list-0">列表页</a>
 					</div>
 					<div class="yinfo_list_query">
 		
@@ -49,7 +49,7 @@
 			<#else>
 				<div class="yinfo_list_search">
 					<div class="yinfo_list_nav">
-						<a href="/">回到首页</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp;<a href="">养老机构搜索</a>
+						<a href="${base_url}">回到首页</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp;<a href="">养老机构搜索</a>
 					</div>
 					<div class="yinfo_list_search_nav">
 						<span class="c_blue">您搜索的是
