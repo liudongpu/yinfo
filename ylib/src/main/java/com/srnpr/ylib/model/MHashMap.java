@@ -54,15 +54,42 @@ public class MHashMap extends ConcurrentHashMap<String, Object> {
 	public MDataMap toDataMap()
 	{
 		MDataMap map=new MDataMap();
-		map.inAllValues((String[])this.upObjs());
+		if(this!=null)
+		{
+			
+			
+			ArrayList<String> listReturn = new ArrayList<String>();
+			Enumeration<String> eKey = this.keys();
+
+			while (eKey.hasMoreElements()) {
+
+				String sKey = eKey.nextElement();
+				listReturn.add(sKey);
+				listReturn.add(get(sKey).toString());
+
+			}
+			
+			
+			
+			map.inAllValues(listReturn.toArray(new String[]{}));
+		}
+		
 		return map;
 	}
 	
 	
 	public MHashMap froDataMap(MDataMap map)
 	{
+		if(map!=null)
+		{
 		inAdd(map.upStrings());
 		return this;
+		}
+		else
+		{
+			return null;
+		}
+		
 	}
 	
 	

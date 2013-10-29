@@ -1,11 +1,13 @@
 package com.srnpr.yinfo;
 
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,7 +18,9 @@ import com.mchange.v2.c3p0.impl.NewPooledConnection;
 import com.srnpr.ylib.call.PageProcess;
 import com.srnpr.ylib.method.WebMethod;
 import com.srnpr.ylib.model.PageRequest;
+import com.srnpr.zapcom.basemodel.MDataMap;
 import com.srnpr.zapweb.webmethod.RootControl;
+import com.srnpr.zapweb.webpage.RootPage;
 
 @Controller
 public class HomeController extends RootControl {
@@ -29,7 +33,7 @@ public class HomeController extends RootControl {
 	public String home(Locale locale, Model model) {
 
 		model.addAttribute("b_method", web_method);
-		return yinfo("main-main", model);
+		return yinfo("main-main", model,null);
 	}
 
 	/**
@@ -41,7 +45,7 @@ public class HomeController extends RootControl {
 	 * @return
 	 */
 	@RequestMapping(value = "/yinfo/{url}")
-	public String yinfo(@PathVariable("url") String sUrl, Model model) {
+	public String yinfo(@PathVariable("url") String sUrl, Model model,HttpServletRequest hRequest) {
 		// model.addAttribute("b_method", web_method);
 
 		String[] sSplit = sUrl.split("-");
@@ -76,26 +80,54 @@ public class HomeController extends RootControl {
 
 			}
 		}
+		
+		
+	
+		
 
-		map.put("PageInfo", wRequest);
-
-		model.addAttribute("WebPage", map);
+		
 		
 		String sReturnString="";
 		
+		if(hRequest!=null)
+		wRequest.setReqMap(convertRequest(hRequest));
+
+		PageProcess process=new PageProcess();
+		
 		if(sSplit[0].equals("func"))
 		{
-			PageProcess process=new PageProcess();
+			
 			model.addAttribute("b_html",process.result(wRequest).ToJsonString());
 			
 			sReturnString="page/empty";
 		}
 		else
 		{
+			
+			map.put("PageInfo", process.processPage(wRequest));
+
+			model.addAttribute("WebPage", map);
+			
+			
 			sReturnString="yinfo/base_page";
 		}
 
 		return sReturnString;
+	}
+	
+	
+	public MDataMap convertRequest(HttpServletRequest hRequest) {
+		MDataMap mReqMap = new MDataMap();
+		@SuppressWarnings("unchecked")
+		Enumeration<String> eKey = hRequest.getParameterNames();
+
+		while (eKey.hasMoreElements()) {
+			String string = eKey.nextElement();
+			mReqMap.put(string,
+					StringUtils.join(hRequest.getParameterValues(string), ","));
+		}
+
+		return mReqMap;
 	}
 	
 	

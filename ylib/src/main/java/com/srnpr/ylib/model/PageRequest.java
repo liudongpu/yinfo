@@ -27,7 +27,7 @@ public class PageRequest {
 	public MDataMap getReqMap() {
 		return reqMap;
 	}
-
+	private String	pageInclude	= "";
 
 	public void setReqMap(MDataMap reqMap) {
 		this.reqMap = reqMap;
@@ -38,6 +38,18 @@ public class PageRequest {
 	{
 		reqMap=hRequest;
 
+	}
+	
+	public String getPageInclude()
+	{
+
+		return pageInclude;
+	}
+
+	public void setPageInclude(String pageInclude)
+	{
+
+		this.pageInclude = pageInclude;
 	}
 	
 	
@@ -54,6 +66,26 @@ public class PageRequest {
 	public MDataMap getWebSet()
 	{
 		return setMap;
+	}
+	
+	
+
+	 /**
+	 * @fields pageOptions
+	 */
+		
+	private Object	pageOptions;
+	
+	public Object getPageOptions()
+	{
+
+		return pageOptions;
+	}
+
+	public void setPageOptions(Object pageOptions)
+	{
+
+		this.pageOptions = pageOptions;
 	}
 	
 

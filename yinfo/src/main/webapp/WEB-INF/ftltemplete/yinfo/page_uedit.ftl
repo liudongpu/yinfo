@@ -17,11 +17,7 @@
 				<div class="yinfo_user_body_show">
 					<div class="yinfo_user_body_edit" style="width:95%;">
 						<form id="page_form" class="form-horizontal"   action="func-v_y_info-0e96331b4b404df7ac7c08bec3f6cf0c-func_from_page_did=416120105" method="post">
-							<#list pageinfo.getPageData() as e_list>
 							
-								<@m_page_autorun e_list />
-							
-							</#list>
 							
 							
 							<div class="control-group">

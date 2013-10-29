@@ -11,7 +11,7 @@ public class DataTableManager {
 	public static TableSupport Get(String sTaleName)
 	{
 		
-		return (TableSupport)DbUp.upTable(sTaleName);
+		return new TableSupport(sTaleName);
 		
 	}
 	

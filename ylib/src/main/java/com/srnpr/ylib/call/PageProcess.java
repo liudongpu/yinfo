@@ -1,10 +1,12 @@
 package com.srnpr.ylib.call;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
@@ -15,8 +17,88 @@ import com.srnpr.ylib.model.PageRequest;
 
 
 
+
+
 public class PageProcess  {
 
+	
+	
+	
+	
+	public PageRequest processPage(PageRequest wRequest)
+	{
+		
+		if (wRequest.upSet("Url_View").equals("user")) {
+			
+			
+			String sTargetString = wRequest.upSet("Url_Target");
+			
+
+			Map<String, Object> mUserMap = upUserInfo();
+
+			if (mUserMap != null && mUserMap.size() > 0) {
+				wRequest.setPageOptions(mUserMap);
+			} else {
+				wRequest.setPageInclude("uaccess");
+
+			}
+			
+			
+			if (sTargetString.equals("usign")) {
+
+				if (mUserMap.get("info_domain") != null
+						&& StringUtils.isNotEmpty(mUserMap.get("info_domain")
+								.toString())) {
+					
+					Map<String, Object> mInfoMap=DataTableManager.Get("y_info").upOneMap("domain",mUserMap.get("info_domain")
+							.toString());
+					
+					
+					String sSignName=mInfoMap.get("name").toString();
+					
+					
+					String sSignStatus=mInfoMap.get("sign_status").toString();
+					
+					mUserMap.put("sign_name",
+							sSignName);
+					
+					
+					if(StringUtils.isNotEmpty(sSignStatus)&&(sSignStatus.equals("32690002")||sSignStatus.equals("32690003")))
+					{
+						sSignStatus="1";
+					}
+					else {
+						
+						sSignStatus="";
+					}
+					
+					mUserMap.put("sign_statusinfo",
+							sSignStatus);
+					
+					wRequest.setPageOptions(mUserMap);
+					
+				}
+				else
+				{
+					wRequest.setPageInclude("uaccess");
+				}
+			}
+			
+			
+
+			
+
+		}
+		
+		
+		
+		return wRequest;
+		
+	}
+	
+	
+	
+	
 	
 	public MResult result(PageRequest pRequest) {
 		MResult mResult = new MResult();
