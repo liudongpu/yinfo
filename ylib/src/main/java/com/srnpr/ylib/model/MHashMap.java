@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.concurrent.ConcurrentHashMap;
 
+import com.srnpr.zapcom.basemodel.MDataMap;
+
 public class MHashMap extends ConcurrentHashMap<String, Object> {
 
 	/**
@@ -47,5 +49,23 @@ public class MHashMap extends ConcurrentHashMap<String, Object> {
 		return listReturn.toArray();
 
 	}
+	
+	
+	public MDataMap toDataMap()
+	{
+		MDataMap map=new MDataMap();
+		map.inAllValues((String[])this.upObjs());
+		return map;
+	}
+	
+	
+	public MHashMap froDataMap(MDataMap map)
+	{
+		inAdd(map.upStrings());
+		return this;
+	}
+	
+	
+	
 
 }

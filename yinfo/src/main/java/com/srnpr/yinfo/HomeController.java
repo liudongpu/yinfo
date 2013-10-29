@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.mchange.v2.c3p0.impl.NewPooledConnection;
+import com.srnpr.ylib.call.PageProcess;
 import com.srnpr.ylib.method.WebMethod;
 import com.srnpr.ylib.model.PageRequest;
 import com.srnpr.zapweb.webmethod.RootControl;
@@ -78,8 +80,31 @@ public class HomeController extends RootControl {
 		map.put("PageInfo", wRequest);
 
 		model.addAttribute("WebPage", map);
+		
+		String sReturnString="";
+		
+		if(sSplit[0].equals("func"))
+		{
+			PageProcess process=new PageProcess();
+			model.addAttribute("b_html",process.result(wRequest).ToJsonString());
+			
+			sReturnString="page/empty";
+		}
+		else
+		{
+			sReturnString="yinfo/base_page";
+		}
 
-		return "yinfo/base_page";
+		return sReturnString;
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }
