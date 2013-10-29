@@ -378,6 +378,8 @@ $(document).ready(function(){zen.yinfo.compare_init()});
 </#macro>
 
 <#macro m_site_common_user_menu>
+
+<#assign  userinfo=pageinfo.getPageOptions()  >
 			<div class="yinfo_user_menu">
 				<div class="yinfo_user_menu_show">
 					<div class="c_title">会员中心</div>
@@ -390,15 +392,17 @@ $(document).ready(function(){zen.yinfo.compare_init()});
 						</ul>
 					</div>
 					<div class="b_h10"></div>
-					<div class="c_label">&gt;&nbsp;&nbsp;养老机构</div>
-					<div class="c_sub">
-						<ul>
-							<li><a href="${base_url}yinfo/uaccess-user">·机构认证申请</a></li>
-							<li><a href="${base_url}yinfo/usign-user">·在线签约</a></li>
-							<li><a href="${base_url}yinfo/uedit-user">·机构资料编辑</a></li>
-
-						</ul>
-					</div>
+					<#if userinfo["yinxl_user_info_uid"]??&&userinfo["yinxl_user_info_uid"]!="">
+						<div class="c_label">&gt;&nbsp;&nbsp;养老机构</div>
+						<div class="c_sub">
+							<ul>
+								<li><a href="${base_url}yinfo/uaccess-user">·机构认证申请</a></li>
+								<li><a href="${base_url}yinfo/usign-user">·在线签约</a></li>
+								<li><a target="_blank" href="${base_url}changeinfo/changeinfo?zw_f_uid=${userinfo["yinxl_user_info_uid"] }">·机构资料编辑</a></li>
+	
+							</ul>
+						</div>
+					</#if>
 					<div class="b_h10"></div>
 					<div class="c_label">&gt;&nbsp;&nbsp;账户设置</div>
 					<div class="c_sub">

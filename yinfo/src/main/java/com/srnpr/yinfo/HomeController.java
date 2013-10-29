@@ -21,6 +21,7 @@ import com.srnpr.ylib.model.PageRequest;
 import com.srnpr.zapcom.basemodel.MDataMap;
 import com.srnpr.zapweb.webmethod.RootControl;
 import com.srnpr.zapweb.webpage.RootPage;
+import com.srnpr.zapweb.webpage.RootProcess;
 
 @Controller
 public class HomeController extends RootControl {
@@ -132,7 +133,38 @@ public class HomeController extends RootControl {
 	
 	
 	
+	/**
+	 * 页面
+	 * 
+	 * @param sUrl
+	 * @param model
+	 * @param request
+	 * @return
+	 */
+	@RequestMapping(value = "/manage")
+	public String manageinfo(@PathVariable("url") String sUrl, Model model,
+			HttpServletRequest request) {
+		return manage("home", model, request);
+	}
 	
+	
+	
+	/**
+	 * 页面
+	 * 
+	 * @param sUrl
+	 * @param model
+	 * @param request
+	 * @return
+	 */
+	@RequestMapping(value = "/changeinfo/{url}")
+	public String changeinfo(@PathVariable("url") String sUrl, Model model,
+			HttpServletRequest request) {
+		RootProcess page_Process=new RootProcess();
+		model.addAttribute("b_page", page_Process.process("page_edit_v_change_y_info", request));
+		model.addAttribute("b_method", web_method);
+		return "page/default";
+	}
 	
 	
 	

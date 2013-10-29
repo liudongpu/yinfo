@@ -157,6 +157,16 @@ public class PageProcess  {
 
 					mReturn = DataTableManager.Get("y_user").upOneMap(
 							"cookieid", c.getValue());
+					
+					
+					if (StringUtils.isNotBlank( mReturn.get("info_domain").toString()))
+					{
+						Map<String, Object> minfo= DataTableManager.Get("y_info").upOneMap("domain",mReturn.get("info_domain").toString());
+						
+						mReturn.put("yinxl_user_info_uid", minfo.get("uid"));
+					}
+					
+					
 				}
 			}
 
