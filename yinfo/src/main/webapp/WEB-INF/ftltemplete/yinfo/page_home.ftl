@@ -61,7 +61,7 @@
 									<div class="c_over c_scroll">
 										<ul>
 										
-											<#assign page_listimg=page_obj["list_img"]?split(",")>
+											<#assign page_listimg=page_obj["list_img"]?split("|")>
 										
 											<#if ((page_listimg?size)>0)&&(page_listimg[0]!="")>
 											
