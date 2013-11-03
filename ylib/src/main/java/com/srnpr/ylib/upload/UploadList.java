@@ -52,7 +52,7 @@ public class UploadList extends BaseClass implements IWebNotice  {
 
 				if (mSourceResult.upFlagTrue()) {
 
-					imageSupport.resize(800, 600,false);
+					imageSupport.scaleWhite(800, 600);
 
 					MWebResult mBigFile = webUpload.remoteUploadCustom(mUpload
 							.getFile().getName(), imageSupport.upTargetByte(),

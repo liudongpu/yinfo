@@ -52,7 +52,7 @@ public class UploadHome extends BaseClass implements IWebNotice  {
 
 				if (mSourceResult.upFlagTrue()) {
 
-					imageSupport.resize(400, 300,false);
+					imageSupport.scaleWhite(400, 300);
 
 					MWebResult mBigFile = webUpload.remoteUploadCustom(mUpload
 							.getFile().getName(), imageSupport.upTargetByte(),
