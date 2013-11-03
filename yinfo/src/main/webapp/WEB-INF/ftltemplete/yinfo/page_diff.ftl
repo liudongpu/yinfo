@@ -2,19 +2,26 @@
 
 <@m_site_common_header />
 
+	<style>
+	td
+	{
+		word-wrap: break-word;
+		word-break:break-all;
+	}
+	.diff_title
+	{
+		width:120px;
+		background-color:#fafafa;
+	}
+	
+	</style>
 	<div class="y_center">
 		<div class="yinfo_diff">
 			<div class="yinfo_diff_box">
-				<table  class="table table-bordered">
-				<caption>基本信息对比</caption>				
+				<table  class="table table-bordered" style="width:900px;word-wrap: break-word;table-layout：fixed;">
+				<caption>养老院基本信息对比</caption>				
 					<tbody>
-						<tr>
-							<th>项目</th>
-							<td>aaa</td>
-							<td>bbb</td>
-							<td>ccc</td>
-							<td>ddd</td>
-						</tr>
+						
 						
 						${pagemethod.upDiffContent(pageinfo.getWebSet()["Url_View"]?default(""))}
 						

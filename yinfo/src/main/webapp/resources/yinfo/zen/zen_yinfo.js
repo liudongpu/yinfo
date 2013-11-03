@@ -461,7 +461,17 @@ zen
 					}
 					else
 						{
-						
+							var aZid=[];
+							
+							for ( var i = 0, j = oCom.length; i < j; i++) {
+								
+								
+								aZid.push(oCom[i]["y_zid"]);
+								
+							}
+							
+							location.href="diff-"+aZid.join('_');
+							
 						}
 
 				},
