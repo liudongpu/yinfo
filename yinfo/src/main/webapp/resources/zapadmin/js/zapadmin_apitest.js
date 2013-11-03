@@ -1,18 +1,8 @@
 var zapadmin_apitest = {
 
 	init : function() {
-		require(['zapadmin/js/zapadmin_tree', 'zapadmin/js/zapadmin_md5'], function(a) {
-			zapadmin_tree.tree_show = function(oData) {
-				var x = zapadmin.tree_data(oData);
-
-				$('#zw_page_common_tree').tree({
-					data : x,
-					onClick : function(node) {
-						// alert('');
-						zapadmin_apitest.click_func(node);
-					}
-				});
-			};
+		require(['zapadmin/js/zapadmin_apitree', 'zapadmin/js/zapadmin_md5'], function(a) {
+			
 
 			a.tree_init();
 		});
@@ -35,8 +25,14 @@ var zapadmin_apitest = {
 
 		if (sId.toString().length > 12) {
 
-			zapjs.f.ajaxjson("../func/dcca78c87dd746649dca938e6d16b5b7?zw_f_uid=" + node.attributes.uid, {}, function(oData) {
+			zapjs.zw.api_call('com_srnpr_zapweb_webapi_InfoApi?zw_f_uid=' + node.attributes.uid,'', function(oData) {
 				// alert(data);
+				
+				if(oData.resultCode!=1)
+				{
+					zapjs.f.message(oData.resultMessage);
+				}
+				
 
 				$('#api_target').val(oData.resultObject.class_name.replace(/\./g, '_'));
 
@@ -47,7 +43,21 @@ var zapadmin_apitest = {
 				aHtml.push('<a href="' + sBaseUrl + zapadmin_apitest.replace_url(oData.resultObject.javadoc_input) + sExet + '" target="_blank">输入参数描述</a>');
 				aHtml.push("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
 				aHtml.push('<a href="' + sBaseUrl + zapadmin_apitest.replace_url(oData.resultObject.javadoc_result) + sExet + '" target="_blank">返回参数描述</a>');
-
+				aHtml.push("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;接口类型：");
+				
+				if(oData.resultObject.api_type=="467701200003")
+				{
+					aHtml.push('[后台接口]');
+				}
+				else if(oData.resultObject.api_type=="467701200002")
+				{
+					aHtml.push('[公开接口]');
+				}
+				else
+				{
+					aHtml.push('[私有接口]');
+				}
+				
 				$('#manage_apitest_javadoc').html(aHtml.join(''));
 
 				$('#api_input').val(oData.resultObject.template_input);

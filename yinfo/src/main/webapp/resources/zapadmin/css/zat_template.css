@@ -1,0 +1,149 @@
+.control-upload {
+
+}
+.control-upload_iframe iframe
+{
+	height:50px;
+}
+.control-upload_div
+{
+	margin-bottom:10px;
+}
+
+
+.control-upload ul li {
+	margin-right: 10px;
+	float: left;
+	list-style-type: none;
+	text-align: center;
+	width:112px;
+}
+
+.control-upload-image {
+	border: solid 1px #008A17;
+	padding: 5px;
+}
+.control-upload_fix
+{
+	height:40px;
+}
+
+
+.control-upload-delete {
+	margin-top: 5px;
+}
+
+.control-upload img {
+	width: 100px;
+}
+
+
+.zat_body_top
+{
+	position: absolute;
+	top:0px;
+	width:100%;
+	height:150px;
+	
+	
+	
+}
+.zat_body_head
+{
+	height:150px;
+	border-bottom:solid 1px #B1b1b1;
+}
+
+.zat_dragable_item
+{
+	width:100%;
+	
+}
+
+
+.zat_dragable_box_prev
+{
+	
+}
+
+.zat_dragable_box_prev .zat_dragable_options
+{
+	display:none;
+}
+
+.zat_dragable_box_prev .zat_dragable_item {
+	width:200px;
+	height:35px;
+	margin-right:20px;
+	float:left;
+}
+.zat_dragable_box_prev .zat_dragable_priview
+{
+	background-color:#fff;
+	height:35px;
+	border:solid 1px #ccc;
+}
+
+
+
+.zat_target_box .zat_dragable_priview {
+	height:35px;
+	background-color:#ebebeb;
+	
+}
+
+.zat_target_box .zat_dragable_view 
+{
+	margin:auto;
+	text-align:center;
+	
+}
+.zat_target_box .zat_dragable_view img
+{
+	max-width:100%;
+}
+
+.zat_target_inline
+{
+	margin:auto;
+	
+}
+
+.zat_dragable_button
+{
+	border:solid 1px #ccc;
+	background-color:#ccc;
+	padding:0px 10px 0px 10px;
+	display: inline-block;
+	height:20px;
+	margin-top:5px;
+}
+
+
+
+
+.zat_dragable_border
+{
+	border:solid 1px #ff0000;
+}
+
+
+.zat_target_box {
+	width:100%;
+	height:100%;
+}
+
+
+.zat_target_box .zat_dragable_options .zat_dragable_button
+{
+	cursor:pointer;
+}
+
+
+.zat_dragable_control
+{
+	width:300px;
+	height:300px;
+	float:left;
+	border:solid 1px #ffff00;
+}

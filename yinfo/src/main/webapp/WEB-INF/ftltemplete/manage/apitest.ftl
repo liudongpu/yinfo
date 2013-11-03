@@ -1,7 +1,9 @@
 <#include "../zapmacro/zapmacro_common.ftl" />
 <#include "../macro/macro_common.ftl" />
-<@m_common_page_head_common e_title="API测试接口"  />
-
+<@m_common_page_head_common e_title="API测试接口" e_bodyclass="w_h_100p"  />
+<style>
+.zab_home_home_html{height:100%;}
+</style>
 
 
 
@@ -84,13 +86,9 @@
 	    	<div class="controls">
 	    		<input type="text"  style="width:60%;" id="api_secret" name="api_secret"  placeholder="" value="">
 	    		<input type="checkbox" checked="checked" id="manage_apitest_checkbox_apisecret">自动生成
-	    		<span class="help-block">var [验证串]=Md5([api名称]+[APIKey]+[Json数据]+[时间戳]+[API密码]);
-	    		<br/>
-	    		post数据：api_key=[APIKey]&api_input=[Json数据]&api_target=[api名称]&api_secret=[验证串]&api_timespan=[时间戳]
-	    		<br/>
-	    		接口描述的链接请只观看【Private 属性】，其他请忽略。
-	    		<br/>
-	    		标记为公开的API只需要传api_key，api_target，api_input三个参数
+	    		<span class="help-block">
+	    		调用请参考：<a href="http://zapdoc.wcn.srnpr.com/?p=76" target="_blank">http://zapdoc.wcn.srnpr.com/?p=76</a>
+	    		<br/>请关注私有接口与公开接口的不同调用方式
 	    		</span>
 	    	</div>
 	  	</div>
@@ -144,7 +142,7 @@
 <input type="hidden" name="zw_page_tree_zw_s_addpage" id="zw_page_tree_zw_s_addpage" value="../show/page_add_v_za_menu"    />
 <input type="hidden" name="zw_page_tree_zw_s_editpage" id="zw_page_tree_zw_s_editpage" value="../show/page_edit_v_za_menu"    />
 <input type="hidden" name="zw_page_tree_zw_s_parent" id="zw_page_tree_zw_s_parent" value="zw_f_parent_menu"    />
-<input type="hidden" name="zw_page_tree_zw_s_jsonchart" id="zw_page_tree_zw_s_jsonchart" value="../jsonchart/page_chart_v_za_apiinfo"    />
+<input type="hidden" name="zw_page_tree_zw_s_jsonchart" id="zw_page_tree_zw_s_jsonchart" value="com_srnpr_zapweb_webapi_ListApi"    />
     
     
 	       

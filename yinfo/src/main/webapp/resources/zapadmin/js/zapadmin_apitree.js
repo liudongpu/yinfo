@@ -1,5 +1,5 @@
 
-var zapadmin_tree = {
+var zapadmin_apitree = {
 	temp : {
 		step : 4,
 		data : []
@@ -7,13 +7,16 @@ var zapadmin_tree = {
 
 	tree_init : function(oElm) {
 
-		zapadmin_tree.temp.step = $('#zw_page_tree_zw_s_step').val();
+		zapadmin_apitree.temp.step = $('#zw_page_tree_zw_s_step').val();
 
-		$.get($('#zw_page_tree_zw_s_jsonchart').val(), function(result) {
 
-			zapadmin_tree.temp.data = result;
 
-			zapadmin_tree.tree_show(result);
+
+		zapjs.zw.api_call('com_srnpr_zapweb_webapi_ListApi','', function(result) {
+
+			zapadmin_apitree.temp.data = result.resultObject;
+
+			zapadmin_apitree.tree_show(zapadmin_apitree.temp.data);
 		});
 
 	},
@@ -66,29 +69,22 @@ var zapadmin_tree = {
 	},
 
 	tree_show : function(oData) {
+				var x = zapadmin.tree_data(oData);
 
-		var x = zapadmin.tree_data(oData);
-
-		$('#zw_page_common_tree').tree(
-				{
+				$('#zw_page_common_tree').tree({
 					data : x,
 					onClick : function(node) {
-						$.get($('#zw_page_tree_zw_s_bookpage').val() + "?"
-								+ $('#zw_page_tree_zw_s_uid').val() + '='
-								+ node.attributes.uid, function(result) {
-							$('#zw_page_tree_right').html(result);
-						});
+						
+						zapadmin_apitest.click_func(node);
 					}
-
 				});
-
-	},
+			},
 	
 	tree_nodeup : function(oTag) {
 		var node = $('#zw_page_common_tree').tree('getSelected');
 		if (node) {
 			var k  = 0;
-			var oData = zapadmin_tree.temp.data;
+			var oData = zapadmin_apitree.temp.data;
 			var nodeData = [];
 			for ( var i = 0, j = oData.length; i < j; i++) {
 				if(node.id==oData[i][0]){
@@ -103,7 +99,7 @@ var zapadmin_tree = {
 				}
 			}
 			if(k>0){
-				zapadmin_tree.tree_forSortUp(oTag,nodeData,oData);
+				zapadmin_apitree.tree_forSortUp(oTag,nodeData,oData);
 			}else{
 				zapadmin.model_message('不能进行向上移动！');
 			}
@@ -148,7 +144,7 @@ var zapadmin_tree = {
 		var node = $('#zw_page_common_tree').tree('getSelected');
 		if (node) {
 			var k  = 0;
-			var oData = zapadmin_tree.temp.data;
+			var oData = zapadmin_apitree.temp.data;
 			var nodeData = [];
 			for ( var i = 0, j = oData.length; i < j; i++) {
 				if(node.id==oData[i][0]){
@@ -163,7 +159,7 @@ var zapadmin_tree = {
 				}
 			}
 			if(k>0){
-				zapadmin_tree.tree_forSortDown(oTag,nodeData,oData);
+				zapadmin_apitree.tree_forSortDown(oTag,nodeData,oData);
 			}else{
 				zapadmin.model_message('不能进行向下移动！');
 			}
@@ -227,7 +223,7 @@ var zapadmin_tree = {
 			var bFlag = false;
 			var sId = node.id;
 
-			var oData = zapadmin_tree.temp.data;
+			var oData = zapadmin_apitree.temp.data;
 			for ( var i = 0, j = oData.length; i < j; i++) {
 				if (oData[i][2] == sId) {
 					bFlag = true;
@@ -253,7 +249,7 @@ var zapadmin_tree = {
 			var sortmax = 0;//增加排序字段
 			var iMax = 0;
 
-			var oData = zapadmin_tree.temp.data;
+			var oData = zapadmin_apitree.temp.data;
 			for ( var i = 0, j = oData.length; i < j; i++) {
 				if (oData[i][2] == sId && oData[i][0].substr(oData[i][2].length,oData[i][0].length) > iMax) {
 					iMax = oData[i][0].substr(oData[i][0].length
@@ -295,7 +291,7 @@ var zapadmin_tree = {
 };
 
 if (typeof define === "function" && define.amd) {
-	define("zapadmin/js/zapadmin_tree",function() {
-		return zapadmin_tree;
+	define("zapadmin/js/zapadmin_apitree",function() {
+		return zapadmin_apitree;
 	});
 }
