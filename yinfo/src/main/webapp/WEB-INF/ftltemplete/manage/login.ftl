@@ -8,14 +8,14 @@
 
 			<div class="w_fl w_mt_15">
 
-				<div class="c_login_logo"></div>
+				<div style="width:146px;height:40px;background-position: 0px -260px;background-image:url(/resources/yinfo/webyinfo/images/yinfo_png.png)"></div>
 
 			</div>
 			<div class="w_fr w_mt_30">
 				<ul class="w_ul">
-					<li><a href="">商城首页</a></li>
-					<li><a href="">央视网</a></li>
-					<li><a href="">中国好物产</a></li>
+					<li><a href="/">银杏林首页</a></li>
+					<li><a href="/yinfo/login-login">会员中心</a></li>
+					<li><a href="/yinfo/static-static-1f53de2f4fca4145b72981601318f3fa">机构加盟</a></li>
 				</ul>
 			</div>
 		</div>
@@ -45,15 +45,15 @@
 										<input class="btn btn-large btn-danger" type="button"
 											zapweb_attr_operate_id="115793e80b38485aaba8223e0ea101b6"
 											onclick="zapjs.zw.func_call(this)" value="登录"/>
-										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a>新商户申请</a>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a>新用户注册</a>
 									</div>
 									<input type="hidden" id="zapjs_zw_login_sucess_target"
 										name="zapjs_zw_login_sucess_target" value="../manage/home" />
 
 								</form>
 								<div class="w_h_20"></div>
-								<div class="w_al_center c_login_desc">招商客服电话：010-82001009
-									/1139/1129</div>
+								<div class="w_al_center c_login_desc">客服电话：400-005-5050
+									</div>
 							</div>
 							<div class="c_login_version">当前系统版本：2.0.0.1</div>
 
@@ -69,22 +69,16 @@
 
 		<div class=" w_m_auto c_login_footer c_login_width">
 
-			<div class="w_fl w_mt_15">中国中央电视台 中国网络电视台 版权所有</div>
+			<div class="w_fl w_mt_15">北京慕莎科技有限公司 银杏林网 版权所有</div>
 			<div class="w_fr w_mt_15">
 				<ul class="w_ul">
-					<li><a href="http://cctvenchiridion.cctv.com/index.shtml"
-						target="_blank">关于CCTV</a></li>
-					<li><a
-						href="http://www.cctv.com/program/20110130/column_header/index.shtml"
-						target="_blank">联系CCTV</a></li>
-					<li><a href="http://www.cntv.cn/cntv/01/index.shtml"
-						target="_blank">CNTV介绍</a></li>
-					<li><a
-						href="http://www.cctv.com/program/C15676/15/index.shtml"
-						target="_blank">联系我们</a></li>
-					<li><a
-						href="http://www.cctv.com/program/C15676/15/index.shtml"
-						target="_blank">帮助中心</a></li>
+				
+					<li><a target="_blank" href="/yinfo/static-static-e27aded41fe64709a378e168c9d38b9e">注册指南</a></li>
+					<li><a target="_blank" href="/yinfo/static-static-58437ccd23014d26bd09b67ddff247b9">公司介绍</a></li>
+					<li><a target="_blank" href="/yinfo/static-static-b176b9a729a64132a66f66ec02844ce8">隐私协议</a></li>
+					<li><a target="_blank" href="/yinfo/static-static-c364da320ff3498fbd48d55ebdf8f438">关于我们</a></li>
+					<li><a target="_blank" href="/yinfo/static-static-1f53de2f4fca4145b72981601318f3fa">机构加盟</a></li>
+					
 				</ul>
 			</div>
 		</div>
