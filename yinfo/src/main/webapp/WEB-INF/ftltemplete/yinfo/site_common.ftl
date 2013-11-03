@@ -267,7 +267,7 @@ $(document).ready(function(){zen.yinfo.pagination()});
 		<div class="y_center">
 			<div class="c_nav">
 				
-				<#list pageexec.upData("y_static","type_cid","32630001") as el> 
+				<#list b_method.upData("y_static","type_cid","32630001") as el> 
 					<span><a href="${base_url}yinfo/static-static-${el["uid"]}">${el["title"]}</a></span>|
 				</#list>
 				
@@ -379,7 +379,7 @@ $(document).ready(function(){zen.yinfo.compare_init()});
 
 <#macro m_site_common_user_menu>
 
-<#assign  userinfo=pageinfo.getPageOptions()  >
+<#assign  userinfo=b_method.upYinfoUserInfo()  >
 			<div class="yinfo_user_menu">
 				<div class="yinfo_user_menu_show">
 					<div class="c_title">会员中心</div>
@@ -387,6 +387,8 @@ $(document).ready(function(){zen.yinfo.compare_init()});
 					<div class="c_sub">
 						<ul>
 							<li><a href="${base_url}yinfo/ucenter-user">·我的资料</a></li>
+							<li><a href="${base_url}ypage/page_chart_v_web_y_notice">·我的消息</a></li>
+							<li><a href="${base_url}ypage/page_chart_v_y_people">·入住老人信息</a></li>
 							<li><a href="${base_url}yinfo/ulike-user">·我的收藏</a></li>
 							<li><a href="${base_url}yinfo/ucomment-user">·我入住过的机构/评价</a></li>
 						</ul>
@@ -416,4 +418,6 @@ $(document).ready(function(){zen.yinfo.compare_init()});
 			</div>
 </#macro>
 
+<#macro m_site_common_site_zapjs_add >
 
+</#macro>

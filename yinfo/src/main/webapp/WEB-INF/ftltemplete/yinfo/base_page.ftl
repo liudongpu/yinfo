@@ -11,7 +11,7 @@
 <#assign pageinfo=WebPage["PageInfo"]>
 <#assign pageexec=WebPage["PageExec"]>
 <#assign pagemethod=WebPage["PageExec"]>
-
+<#assign b_method=WebPage["PageExec"]>
 <#assign base_url="/">
 <#assign base_zero="/resources/yinfo/">
 

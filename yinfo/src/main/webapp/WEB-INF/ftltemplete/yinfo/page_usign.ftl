@@ -1,6 +1,6 @@
 
 <@m_site_common_header />
-<#assign  userinfo=pageinfo.getPageOptions()  >
+<#assign  userinfo=pagemethod.upYinfoSignUser()  >
 
 <@m_html_addjs [base_zero+"zen/zen_page.js"] />
 <div class="y_center">
@@ -21,7 +21,7 @@
 						
 						<div style="margin:20px;">
 <p style="margin-bottom: 0cm; line-height: 1.02cm"><font size="4"><b>甲方：</b></font><font size="4">
-                         ${userinfo["sign_name"]}   </font>
+                         ${userinfo["sign_name"]?default("")}   </font>
 </p>
 <p style="margin-bottom: 0cm; line-height: 1.02cm"><font size="4"><b>乙方</b></font><font size="4">：北京慕沙科技有限公司</font></p>
 <p style="margin-left: 1.22cm; text-indent: -1.22cm; margin-bottom: 0cm; line-height: 1.02cm">
@@ -56,7 +56,7 @@ yinxl.com</font></font></font><font size="4">）上对甲方信息检索、咨�
 						
 							<div class="control-group">
 								<div class="controls">
-									<#if userinfo["sign_statusinfo"]=="">
+									<#if userinfo["sign_statusinfo"]??&&userinfo["sign_statusinfo"]=="">
 								
 										<a  class="btn btn-success" onclick="if(confirm('确认同意该协议吗？')){zen.yinfo.submit(this);zen.f.refresh();}">确认同意</a>
 									<#else>

@@ -13,6 +13,10 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import com.srnpr.ylib.data.DataTableManager;
 import com.srnpr.ylib.model.MResult;
 import com.srnpr.ylib.model.PageRequest;
+import com.srnpr.zapweb.helper.WebSessionHelper;
+import com.srnpr.zapweb.usermodel.MUserInfo;
+import com.srnpr.zapweb.webdo.WebConst;
+import com.srnpr.zapweb.webfactory.UserFactory;
 
 
 
@@ -157,14 +161,34 @@ public class PageProcess  {
 
 					mReturn = DataTableManager.Get("y_user").upOneMap(
 							"cookieid", c.getValue());
-					
+					String sMangeCode="";
 					
 					if (StringUtils.isNotBlank( mReturn.get("info_domain").toString()))
 					{
 						Map<String, Object> minfo= DataTableManager.Get("y_info").upOneMap("domain",mReturn.get("info_domain").toString());
 						
+						sMangeCode=minfo.get("uid").toString();
+						
 						mReturn.put("yinxl_user_info_uid", minfo.get("uid"));
 					}
+					
+					
+					if(!UserFactory.INSTANCE.checkUserLogin())
+					{
+						MUserInfo mLoginUserInfo=new MUserInfo();
+						
+						mLoginUserInfo.setFlagLogin(1);
+						mLoginUserInfo.setLoginName(mReturn.get("uname").toString());
+						mLoginUserInfo.setUserCode(mReturn.get("uid").toString());
+						mLoginUserInfo.setManageCode(sMangeCode);
+						mLoginUserInfo.setRealName(mReturn.get("username").toString());
+						
+						
+						WebSessionHelper.create().inSession(
+								WebConst.CONST_WEB_SESSION_USER, mLoginUserInfo);
+						
+					}
+					
 					
 					
 				}

@@ -15,11 +15,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.mchange.v2.c3p0.impl.NewPooledConnection;
-import com.srnpr.ylib.call.PageProcess;
+
 import com.srnpr.ylib.method.WebMethod;
 import com.srnpr.ylib.model.PageRequest;
 import com.srnpr.zapcom.basemodel.MDataMap;
 import com.srnpr.zapweb.webmethod.RootControl;
+import com.srnpr.zapweb.webpage.PageProcess;
 import com.srnpr.zapweb.webpage.RootPage;
 import com.srnpr.zapweb.webpage.RootProcess;
 
@@ -27,7 +28,7 @@ import com.srnpr.zapweb.webpage.RootProcess;
 public class HomeController extends RootControl {
 
 	private static final WebMethod web_method = new WebMethod();
-
+	private static final PageProcess page_Process = new PageProcess();
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	@Override
@@ -93,7 +94,7 @@ public class HomeController extends RootControl {
 		if(hRequest!=null)
 		wRequest.setReqMap(convertRequest(hRequest));
 
-		PageProcess process=new PageProcess();
+		com.srnpr.ylib.call.PageProcess process=new com.srnpr.ylib.call.PageProcess();
 		
 		if(sSplit[0].equals("func"))
 		{
@@ -168,7 +169,21 @@ public class HomeController extends RootControl {
 	
 	
 	
-	
+	/**
+	 * 页面
+	 * 
+	 * @param sUrl
+	 * @param model
+	 * @param request
+	 * @return
+	 */
+	@RequestMapping(value = "/ypage/{url}")
+	public String ypage(@PathVariable("url") String sUrl, Model model,
+			HttpServletRequest request) {
+		model.addAttribute("b_page", page_Process.process(sUrl, request));
+		model.addAttribute("b_method", web_method);
+		return web_method.checkLogin("yinfo/page_ypage");
+	}
 	
 
 }
