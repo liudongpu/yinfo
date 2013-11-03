@@ -23,6 +23,9 @@
 	 -->
 	 
 	 <resources mapping="/staticfiles/**" location="/uploadfiles/" />
+	 
+	 
+	  <resources mapping="/zzero/**" location="/zzero/" />
 	
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 
