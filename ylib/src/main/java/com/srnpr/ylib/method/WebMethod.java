@@ -218,8 +218,8 @@ public class WebMethod extends RootMethod {
 					mDataMap));
 		}
 
-		mPageNav.setPageData(DbUp.upTable(sTableName).query(sFields, sWhere,
-				sOrder, mDataMap,
+		mPageNav.setPageData(DbUp.upTable(sTableName).query(sFields,sOrder, sWhere,
+				 mDataMap,
 				(mPageNav.getPageIndex() - 1) * mPageNav.getPageSize(),
 				mPageNav.getPageSize()));
 
