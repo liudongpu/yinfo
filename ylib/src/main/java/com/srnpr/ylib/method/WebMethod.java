@@ -248,6 +248,20 @@ public class WebMethod extends RootMethod {
 
 			}
 		}
+		
+		if(sUrlStrings.length>=5)
+		{
+			if(sUrlStrings[4].equals("32700001"))
+			{
+				aWhere.add(" main_img!='' ");
+			}
+			else if(sUrlStrings[4].equals("32700002"))
+			{
+				aWhere.add(" main_img='' ");
+			}
+		}
+		
+		
 
 		// 搜索
 		if (StringUtils.isNotEmpty(sSearch)) {
