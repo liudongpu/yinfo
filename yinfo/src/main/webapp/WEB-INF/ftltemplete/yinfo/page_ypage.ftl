@@ -9,7 +9,7 @@
 
 
 <#assign base_url="/">
-<#assign base_zero="/resources/yinfo/">
+<#assign base_zero="http://bcs.duapp.com/srnprresources/resources/yinfo/">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
 	<link type="text/css" href="${base_zero}lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link type="text/css" href="${base_zero}webyinfo/css/yinfo.css" rel="stylesheet">

@@ -14,6 +14,16 @@
 		<org.slf4j-version>1.6.6</org.slf4j-version>
 	</properties>
 	<dependencies>
+	
+		<dependency>
+            <groupId>bcs</groupId>
+            <artifactId>bcs</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/bcs-sdk-java_1.4.5.jar</systemPath>
+        </dependency>
+	
+	
 		<!-- Spring -->
 				
 		<!-- AspectJ -->
