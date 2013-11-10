@@ -15,7 +15,11 @@ public class TestCloub {
 		
 		CloubSave cloubSave=new CloubSave();
 		
-		cloubSave.uploadDir("/Users/srnpr/git/yinfo/yinfo/src/main/webapp/resources/","/resources/");
+		
+		//cloubSave.uploadDir("D:\\WebSite\\yinfo\\zzero\\","/zzero/");
+		cloubSave.uploadDir("D:\\WebSite\\yinfo\\uploadfiles\\","/staticfiles/");
+		
+		//cloubSave.uploadDir("/Users/srnpr/git/yinfo/yinfo/src/main/webapp/resources/","/resources/");
 		
 	}
 

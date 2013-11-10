@@ -16,3 +16,21 @@ zw_field.field_name=c.field_name
 
 update zw_field set sort_edit=0 where view_code='v_change_y_info' and LOCATE(field_name,
 ',domain,area,money_cid,peopletype_cid,score,icon_cids,adv_cid,show_flag,send_info,sign_status,')>0;
+
+update y_info set main_img=replace(main_img,'/zzero/','http://bcs.duapp.com/srnprresources/zzero/')   
+where locate('http://bcs.duapp.com/srnprresources/',main_img)=0
+and main_img!='';
+update y_info set list_img=replace(list_img,'/zzero/','http://bcs.duapp.com/srnprresources/zzero/')   
+where locate('http://bcs.duapp.com/srnprresources/',list_img)=0
+and list_img!='';
+
+
+update y_info set main_img=replace(main_img,'/staticfiles/','http://bcs.duapp.com/srnprresources/staticfiles/')   
+where locate('http://bcs.duapp.com/srnprresources/',main_img)=0
+and main_img!='';
+
+update y_info set list_img=replace(list_img,'/staticfiles/','http://bcs.duapp.com/srnprresources/staticfiles/')   
+where locate('http://bcs.duapp.com/srnprresources/',list_img)=0
+and list_img!='';
+
+

@@ -87,9 +87,10 @@ public class CloubSave {
 			
 			String sSubPath=StringUtils.substringAfter(sFullPath, sBaeeDir);
 			
+			sSubPath=sSubPath.replace("\\", "/");
 			
 			String sUploadName=sFatherPath+sSubPath;
-			
+			log.info(sUploadName);
 			uploadFile(baiduBCS, f, sUploadName);
 			
 			
