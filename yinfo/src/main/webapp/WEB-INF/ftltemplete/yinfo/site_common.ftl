@@ -389,8 +389,10 @@ $(document).ready(function(){zen.yinfo.compare_init()});
 							<li><a href="${base_url}yinfo/ucenter-user">·我的资料</a></li>
 							<li><a href="${base_url}ypage/page_chart_v_web_y_notice">·我的消息</a></li>
 							<li><a href="${base_url}ypage/page_chart_v_y_people">·入住老人信息</a></li>
+							<!--
 							<li><a href="${base_url}yinfo/ulike-user">·我的收藏</a></li>
 							<li><a href="${base_url}yinfo/ucomment-user">·我入住过的机构/评价</a></li>
+							-->
 						</ul>
 					</div>
 					<div class="b_h10"></div>
@@ -398,6 +400,8 @@ $(document).ready(function(){zen.yinfo.compare_init()});
 						<div class="c_label">&gt;&nbsp;&nbsp;养老机构</div>
 						<div class="c_sub">
 							<ul>
+								<li><a href="${base_url}ypage/page_chart_v_change_y_call?iuid=${userinfo["yinxl_user_info_uid"]}">·用户探视记录</a></li>
+								
 								<li><a href="${base_url}yinfo/uaccess-user">·机构认证申请</a></li>
 								<li><a href="${base_url}yinfo/usign-user">·在线签约</a></li>
 								<li><a target="_blank" href="${base_url}changeinfo/changeinfo?zw_f_uid=${userinfo["yinxl_user_info_uid"] }">·机构资料编辑</a></li>

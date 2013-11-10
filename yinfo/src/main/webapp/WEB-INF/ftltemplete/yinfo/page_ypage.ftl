@@ -9,24 +9,24 @@
 
 
 <#assign base_url="/">
-<#assign base_zero="http://bcs.duapp.com/srnprresources/resources/yinfo/">
+<#assign base_zero="http://bcs.duapp.com/srnprresources/resources/">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
-	<link type="text/css" href="${base_zero}lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link type="text/css" href="${base_zero}webyinfo/css/yinfo.css" rel="stylesheet">
-	<script type="text/javascript" src="${base_zero}lib/jquery/jquery-last.min.js"></script>
-	<script type="text/javascript" src="${base_zero}lib/jquery/jquery-pluging.js"></script>
-	<script type="text/javascript" src="${base_zero}lib/bootstrap/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="${base_zero}zen/zen.js"></script>
-	<script type="text/javascript" src="${base_zero}zen/zen_yinfo.js"></script>
-	<script type="text/javascript" src="${base_zero}lib/jquery/jquery.corner.js"></script>
-	<script type="text/javascript" src="${base_zero}lib/jquery/jquery.srnpr.js"></script>
+	<link type="text/css" href="${base_zero}yinfo/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link type="text/css" href="${base_zero}yinfo/webyinfo/css/yinfo.css" rel="stylesheet">
+	<script type="text/javascript" src="${base_zero}yinfo/lib/jquery/jquery-last.min.js"></script>
+	<script type="text/javascript" src="${base_zero}yinfo/lib/jquery/jquery-pluging.js"></script>
+	<script type="text/javascript" src="${base_zero}yinfo/lib/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="${base_zero}yinfo/zen/zen.js"></script>
+	<script type="text/javascript" src="${base_zero}yinfo/zen/zen_yinfo.js"></script>
+	<script type="text/javascript" src="${base_zero}yinfo/lib/jquery/jquery.corner.js"></script>
+	<script type="text/javascript" src="${base_zero}yinfo/lib/jquery/jquery.srnpr.js"></script>
 	<@m_html_addscript "zen.i({baseurl:'"+base_url+"'});" />
-	<script type="text/javascript" src="/resources/zapjs/zapjs.js"></script>
-	<script type="text/javascript" src="/resources/zapjs/zapjs.zw.js"></script>
-	<script type="text/javascript" src="/resources/lib/easyui/jquery.easyui.min.js"></script>
-	<link type="text/css" href="../resources/lib/easyui/themes/bootstrap/easyui.css" rel="stylesheet">
-	<link type="text/css" href="../resources/zapadmin/css/zab_base.css" rel="stylesheet">
-	<link type="text/css" href="../resources/zapweb/css/w.css" rel="stylesheet">
+	<script type="text/javascript" src="${base_zero}zapjs/zapjs.js"></script>
+	<script type="text/javascript" src="${base_zero}zapjs/zapjs.zw.js"></script>
+	<script type="text/javascript" src="${base_zero}lib/easyui/jquery.easyui.min.js"></script>
+	<link type="text/css" href="${base_zero}lib/easyui/themes/bootstrap/easyui.css" rel="stylesheet">
+	<link type="text/css" href="${base_zero}zapadmin/css/zab_base.css" rel="stylesheet">
+	<link type="text/css" href="${base_zero}zapweb/css/w.css" rel="stylesheet">
 
 <@m_site_common_header />
 
