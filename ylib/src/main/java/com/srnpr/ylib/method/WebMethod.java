@@ -16,11 +16,13 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import com.srnpr.ylib.data.DataTableManager;
 import com.srnpr.ylib.model.MHashMap;
 import com.srnpr.ylib.model.MPageNav;
+import com.srnpr.zapcom.basehelper.FormatHelper;
 import com.srnpr.zapcom.basemodel.MDataMap;
 import com.srnpr.zapdata.dbdo.DbUp;
 import com.srnpr.zapweb.helper.WebSessionHelper;
 import com.srnpr.zapweb.usermodel.MUserInfo;
 import com.srnpr.zapweb.webdo.WebConst;
+import com.srnpr.zapweb.webdo.WebTemp;
 import com.srnpr.zapweb.webfactory.UserFactory;
 import com.srnpr.zapweb.webmethod.RootMethod;
 
@@ -326,17 +328,23 @@ public class WebMethod extends RootMethod {
 
 		List<MDataMap> lMaps = DbUp.upTable("y_info").queryIn("", "", "", new MDataMap(),
 				0, 0, "zid", sCode.replace("_", ","));
+		
+		int iLength=lMaps.size();
+		int iStep=0;
+		
+		String sWidthString=" style=\"width:"+ String.valueOf( (int)(750/iLength))+"px;\" ";
+		
+		
 
-		for (MDataMap mFieldDataMap : DbUp.upTable("zw_field").queryAll("", "sort_edit",
-				"view_code='v_change_y_info' and sort_edit>0", new MDataMap())) {
+		for (MDataMap mFieldDataMap : DbUp.upTable("zw_field").queryAll("", "sort_book",
+				"view_code='v_y_info' and sort_book>0", new MDataMap())) {
 
 			long lFieldType = -1;
 
-			if (mFieldDataMap.get("field_type_aid").equals("104005009")) {
-
+			
 				lFieldType = Long
 						.parseLong(mFieldDataMap.get("field_type_aid"));
-			}
+			
 
 			if (lFieldType > -1) {
 
@@ -344,21 +352,53 @@ public class WebMethod extends RootMethod {
 
 				sBuffer.append("<td class=\"diff_title\">" + mFieldDataMap.get("field_note")
 						+ "</td>");
+				
+				
 
 				for (MDataMap mInfoMap : lMaps) {
 
 					
+					String sTextString="";
+					
 					if(lFieldType==104005009)
 					{
 						
-						sBuffer.append("<td>"+mInfoMap.get(mFieldDataMap.get("column_name"))+"</td>");
+						sTextString=mInfoMap.get(mFieldDataMap.get("column_name"));
 					}
+					if(lFieldType==104005103||lFieldType==104005019)
+					{
+						
+				     String[] sValues=mInfoMap.get(mFieldDataMap.get("column_name")).split(",");
+				     if(sValues!=null&&sValues.length>0)
+				     {
+				    	 MDataMap mSourceSet= WebTemp.upTempDataMap("zw_source", "", "source_code",mFieldDataMap.get("source_code").toString());
+					     
+				    	 List<String> lShowTextList=new ArrayList<String>();
+				    	 
+				    	 for(String s:sValues)
+				    	 {
+				    		String sText= WebTemp.upTempDataOne(mSourceSet.get("source_from"), mSourceSet.get("field_text"), mSourceSet.get("field_value"),s);
+				    		 lShowTextList.add(sText);
+				    	 }
+				    	 
+				    	 sTextString=StringUtils.join(lShowTextList,",");
+				    	 
+				     }
+				     
+						
+					}
+					
+					sBuffer.append("<td"+(iStep==0?sWidthString:"")+">"+sTextString+"</td>");
+					
 					
 					
 				}
 
 				sBuffer.append("</tr>");
 			}
+			
+			
+			iStep++;
 
 		}
 

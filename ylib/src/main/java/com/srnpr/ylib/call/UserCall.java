@@ -12,6 +12,8 @@ import com.srnpr.ylib.model.MResult;
 import com.srnpr.ylib.model.PageRequest;
 import com.srnpr.zapcom.baseclass.BaseClass;
 import com.srnpr.zapcom.basehelper.FormatHelper;
+import com.srnpr.zapcom.basemodel.MDataMap;
+import com.srnpr.zapdata.dbdo.DbUp;
 import com.srnpr.zapweb.helper.WebHelper;
 
 
@@ -268,11 +270,19 @@ public class UserCall extends BaseClass {
 
 		}
 		
-		
+		//每天每个手机不超过10条
 		if (result.getFlag()) {
 			if (StringUtils.isNotEmpty(pRequest.upRequestParam("phone"))) {
-				if (DataTableManager.Get("y_call").upCount("phone",
-						pRequest.getReqMap().get("phone").toString()) > 3) {
+				String sToday=FormatHelper.upDateTime().substring(0, 10);
+				
+				
+				MDataMap mCountDataMap=new MDataMap();
+				mCountDataMap.put("phone", pRequest.getReqMap().get("phone").toString());
+				mCountDataMap.put("today", sToday);
+				
+				
+				
+				if (DbUp.upTable("y_call").dataCount("phone=:phone and left(create_time,10)=:today", mCountDataMap) > 10) {
 					result.error(965901015);
 				}
 
@@ -284,7 +294,7 @@ public class UserCall extends BaseClass {
 			
 			
 			Map<String, Object> mInfoMap= DataTableManager.Get("y_info").upOneMap("uid",pRequest.getReqMap().get("info_uid").toString().trim());
-			String sTextString=mInfoMap.get("name")+"地址"+mInfoMap.get("link_address")+"电话"+mInfoMap.get("link_telephone")+"联系人"+mInfoMap.get("link_people_one")+" "+mInfoMap.get("link_phone_one")+"请提前预约。";
+			String sTextString=mInfoMap.get("name")+"地址"+mInfoMap.get("link_address")+"电话"+mInfoMap.get("link_telephone")+"联系人"+mInfoMap.get("link_people_one")+" "+mInfoMap.get("link_phone_one")+"请提前预约。如成功入驻，拨4000055050有豪礼。";
 			new SmsSend().send(sPhoneNUmber, sTextString);
 			MHashMap mHashMap = new MHashMap();
 			mHashMap.put("uid", WebHelper.upUuid());
@@ -296,6 +306,14 @@ public class UserCall extends BaseClass {
 			mHashMap.put("create_time", FormatHelper.upDateTime());
 			mHashMap.put("user_email", mUserInfo.get("email").toString());
 			DataTableManager.Get("y_call").inPut(mHashMap);
+			
+			String sYphoneString=mInfoMap.get("link_phone_one").toString();
+			if(StringUtils.isNotBlank(sYphoneString))
+			{
+				String sLinkMsg="有老人要访视养老院，如老人未主动联系，请明天到银杏林后台查询老人联系方式。";
+				new SmsSend().send(sYphoneString, sLinkMsg);
+			}
+			
 
 		}
 

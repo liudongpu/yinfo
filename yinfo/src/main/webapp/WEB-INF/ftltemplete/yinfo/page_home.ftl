@@ -18,11 +18,11 @@
 		
 		<#if page_obj["send_info"]!="" >
 		
-			<#assign page_gift=pageexec.upDataTop("y_send","flag_use=30010001 and uid in('"+page_obj["send_info"]+"')","",10)>
+			<#assign page_gift=pageexec.upDataTop("y_send","flag_use=30010001 and LOCATE(uid,'"+page_obj["send_info"]+"')>0","",10)>
 			<#if page_gift??>
 				<#list page_gift as e_item>
 				
-				aLink.push('<img src="${e_item["send_url"]}"/>');
+				aLink.push('<img src="${e_item["send_url"]}"/><br/>');
 				
 				
 				</#list>
