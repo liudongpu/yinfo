@@ -125,7 +125,7 @@
 										<input name="query_type" type="radio" value="32520003"
 											id="query_type_32520003" /><label for="query_type_32520003">全护理老人</label>
 										<input name="query_type" type="radio" value="32520004"
-											id="query_type_32520004" /><label for="query_type_32520004">特护</label>
+											id="query_type_32520004" /><label for="query_type_32520004">临终关怀</label>
 										
 
 									</dd>
