@@ -89,6 +89,11 @@ zen
 								path : '/',
 								expires : 365
 							});
+					zen.f.cookie("yinxl_user_phone",
+							o.result["yinxl_user_phone"], {
+								path : '/',
+								expires : 365
+							});
 					zen.yinfo.href('yinfo/ucenter-user');
 
 				},
@@ -288,6 +293,11 @@ zen
 									.val();
 
 					$('#yinfo_query_for_query').val(sQuery);
+					var sUserPhone = zen.f.cookie("yinxl_user_phone");
+					if(sUserPhone)
+						{
+						$('#yinfo_query_for_phone').val(sUserPhone);
+						}
 
 					$(function() {
 						$('#yinfo_query_for').modal('show');
@@ -333,7 +343,12 @@ zen
 						var aText = '您希望预约参观：'
 								+ $('.yold_info_right .c_top .c_left ').text();
 						$('#yinfo_query_for .c_info').html(aText);
-
+						var sUserPhone = zen.f.cookie("yinxl_user_phone");
+						if(sUserPhone)
+							{
+							$('#yinfo_query_for_phone').val(sUserPhone);
+							}
+						
 						$('#yinfo_query_for').modal('show');
 						$('#yinfo_query_for').on('shown', function() {
 							$('#yinfo_query_for_phone').focus();

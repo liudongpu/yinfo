@@ -139,6 +139,7 @@ public class UserCall extends BaseClass {
 				mHashMap.put("yinxl_user_cookieid", mUserInfo.get("cookieid"));
 				mHashMap.put("yinxl_user_name", mUserInfo.get("username"));
 				mHashMap.put("yinxl_user_levelid", mUserInfo.get("level_cid"));
+				mHashMap.put("yinxl_user_phone", mUserInfo.get("phone"));
 
 				result.setResult(mHashMap);
 
