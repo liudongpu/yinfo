@@ -8,7 +8,12 @@
 </head>
 <body class="yinfo_body">
 
-
+	<div class="yinfo_topbanner">
+		<a href="${base_url}yinfo/static-static-40048de680df4aa5938b53bd5aa02ab9">
+		<div class="yinfo_topbanner_adv">
+		</div>
+		</a>
+	</div>
 
 	<div class="yinfo_header y_center">
 		<div class="yinfo_header_logo"><a href="${base_url}"></a></div>

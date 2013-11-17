@@ -1376,3 +1376,12 @@ cursor: pointer;
     border:solid 1px #99cb7a;
 }
 
+.yinfo_topbanner_adv
+{
+	background-image: url(../images/sydbgg.jpg);
+	height:60px;
+	
+	margin: 0 auto;
+	max-width: 980px;
+	width: 980px;
+}
