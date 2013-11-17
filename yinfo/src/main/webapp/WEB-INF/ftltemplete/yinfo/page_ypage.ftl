@@ -21,6 +21,7 @@
 	<script type="text/javascript" src="${base_zero}yinfo/lib/jquery/jquery.corner.js"></script>
 	<script type="text/javascript" src="${base_zero}yinfo/lib/jquery/jquery.srnpr.js"></script>
 	<@m_html_addscript "zen.i({baseurl:'"+base_url+"'});" />
+	<script type="text/javascript" src="${base_zero}lib/require/require.js"></script>
 	<script type="text/javascript" src="${base_zero}zapjs/zapjs.js"></script>
 	<script type="text/javascript" src="${base_zero}zapjs/zapjs.zw.js"></script>
 	<script type="text/javascript" src="${base_zero}lib/easyui/jquery.easyui.min.js"></script>

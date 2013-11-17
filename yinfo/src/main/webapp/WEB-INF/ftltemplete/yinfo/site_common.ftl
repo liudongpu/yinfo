@@ -409,7 +409,7 @@ $(document).ready(function(){zen.yinfo.compare_init()});
 								
 								<li><a href="${base_url}yinfo/uaccess-user">·机构认证申请</a></li>
 								<li><a href="${base_url}yinfo/usign-user">·在线签约</a></li>
-								<li><a target="_blank" href="${base_url}changeinfo/changeinfo?zw_f_uid=${userinfo["yinxl_user_info_uid"] }">·机构资料编辑</a></li>
+								<li><a href="${base_url}ypage/page_edit_v_change_y_info?zw_f_uid=${userinfo["yinxl_user_info_uid"] }">·机构资料编辑</a></li>
 	
 							</ul>
 						</div>
