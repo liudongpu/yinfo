@@ -19,9 +19,9 @@
 							<#list page_main_listadv as el>
 							
 							<div class="item <#if el_index==0>active</#if>">
-								<img
+								<a href="${el["link_url"]}"><img
 									src="${el["file_url"]}"
-									alt="">
+									alt=""></a>
 								<div class="carousel-caption">
 									<p>
 										<a href="${el["link_url"]}">${el["name"]}</a>
