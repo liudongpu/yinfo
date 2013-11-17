@@ -35,7 +35,7 @@ public class UserCall extends BaseClass {
 				.toString())) {
 			result.error(965901003);
 		} else {
-
+			/*
 			final String pattern1 = "^([a-z0-9A-Z]+[-|\\.]?)+[a-z0-9A-Z]@([a-z0-9A-Z]+(-[a-z0-9A-Z]+)?\\.)+[a-zA-Z]{2,}$";
 			Pattern pattern = Pattern.compile(pattern1);
 			Matcher mat = pattern.matcher((pRequest.getReqMap().get("reg_name")
@@ -43,6 +43,7 @@ public class UserCall extends BaseClass {
 			if (!mat.find()) {
 				result.error(965901004);
 			}
+			*/
 		}
 
 		String sPhoneNUmber = "";

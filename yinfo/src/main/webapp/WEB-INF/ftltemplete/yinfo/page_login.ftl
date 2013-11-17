@@ -21,8 +21,8 @@
 							<form class="form-horizontal" action="${base_url}yinfo/func-login" method="post">
 								<div class="b_h40"></div>
 								<div class="control-group">
-									<span class="c_weight">注册邮箱：</span> <input type="text" name="login_name" /> <span
-										class="help-inline">请输入注册时的邮箱</span>
+									<span class="c_weight">用户名称：</span> <input type="text" name="login_name" /> <span
+										class="help-inline">请输入注册时填写的用户名</span>
 								</div>
 								<div class="b_h10"></div>
 								<div class="control-group">
