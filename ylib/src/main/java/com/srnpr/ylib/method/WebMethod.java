@@ -276,7 +276,7 @@ public class WebMethod extends RootMethod {
 
 		sWhereString = StringUtils.join(aWhere, " and ");
 
-		return upPageNavQuery("y_info", "", sWhereString, "-zid",
+		return upPageNavQuery("y_info", "", sWhereString, "-repay_money,-zid",
 				mHashMap.upObjs());
 
 	}
