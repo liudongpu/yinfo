@@ -182,7 +182,7 @@
 	<div class="yold_headadv ">
 		<div class="y_center">
 			<img
-				src="<#if imgurl!="">${imgurl}<#else>/zzero/web/themes/webyinfo/images/topad.jpg</#if>" />
+				src="<#if imgurl!="">${imgurl}<#else>${base_zero}yinfo/webyinfo/images/topad.jpg</#if>" />
 		</div>
 
 	</div>
