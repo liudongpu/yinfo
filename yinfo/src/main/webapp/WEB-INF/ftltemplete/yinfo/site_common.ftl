@@ -281,8 +281,11 @@ $(document).ready(function(){zen.yinfo.pagination()});
 			<div class="b_h20"></div>
 			<div style="display:none;">
 			<script type="text/javascript">
+
 			var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-			document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F0073957679fd212cf143885c0e093fdc' type='text/javascript'%3E%3C/script%3E"));
+			
+			document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F76be1d1daefa4a133790ced2d9634156' type='text/javascript'%3E%3C/script%3E"));
+			
 			</script>
 			</div>
 			<div class="c_text">CopyRight 2013 京ICP备11035185号-2 </div>
