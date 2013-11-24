@@ -20,7 +20,7 @@
 						<input type="hidden" name="cookieid"  value="${userinfo["cookieid"]}"/>
 						<div class="b_h10"></div>
 						<div class="control-group">
-							<label class="control-label">注册邮箱：</label> <input type="text" value="${userinfo["uname"]}" readonly="readonly"/> 
+							<label class="control-label">用户名称：</label> <input type="text" value="${userinfo["uname"]}" readonly="readonly"/> 
 						</div>
 						<div class="b_h10"></div>
 						<div class="control-group">

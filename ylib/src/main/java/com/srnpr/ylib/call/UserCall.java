@@ -173,7 +173,7 @@ public class UserCall extends BaseClass {
 			mHashMap.put("phone", sPhoneNUmber);
 			mHashMap.put("username", pRequest.upRequestParam("username"));
 			mHashMap.put("cookieid", pRequest.upRequestParam("cookieid"));
-
+			mHashMap.put("email", pRequest.upRequestParam("email"));
 			DataTableManager.Get("y_user").inPost(mHashMap, "cookieid");
 
 		}

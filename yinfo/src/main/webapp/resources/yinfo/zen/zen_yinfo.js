@@ -335,7 +335,7 @@ zen
 
 				querysuccess : function(o) {
 					$('#yinfo_query_for').modal('hide');
-					zen.yinfo.model("提示消息", "操作成功，稍后会有工作人员与您联系，谢谢！");
+					zen.yinfo.model("提示消息", "操作成功，稍后会有工作人员与您联系，谢谢！",zen.yinfo.queryskip);
 				},
 				callhome : function() {
 					var sUserCookie = zen.f.cookie("yinxl_user_cookieid");
