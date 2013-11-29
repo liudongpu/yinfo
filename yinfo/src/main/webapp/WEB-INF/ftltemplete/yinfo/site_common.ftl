@@ -239,6 +239,7 @@ $(document).ready(function(){zen.yinfo.pagination()});
 										</div>
 									</div>
 								</div>
+								<!--
 								<div class="c_in">
 									<div class="c_left">评价：</div>
 									<div class="c_right">
@@ -248,6 +249,7 @@ $(document).ready(function(){zen.yinfo.pagination()});
 										<div class="c_tips">好评率：90%</div>
 									</div>
 								</div>
+								-->
 								<div class="c_in">
 									<div class="c_left">地区：</div>
 									<div class="c_right">北京 ${pagemethod.upClassName("area_"+el["area"])}</div>
