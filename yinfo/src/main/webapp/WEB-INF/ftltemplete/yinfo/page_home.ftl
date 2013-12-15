@@ -122,6 +122,9 @@
 								<div class="c_item">
 									<span>机构地址：</span>${page_obj["link_address"]}<a class="c_link" href="#yinfo_home_t7">【查看地图】</a>
 								</div>
+								<div class="c_item">
+									<span>联系电话：</span>400-005-5050
+								</div>
 								<div class="clearfix"></div>
 								<div class="b_h20"></div>
 								<div>
@@ -222,7 +225,7 @@
 					<div class="c_title">联系方式</div>
 					<div>联系地址：${page_obj["link_address"]}
 					<br/>邮编：${page_obj["link_zipcode"]}
-					<br/>固定电话：${page_obj["link_telephone"]}
+					<br/>固定电话：400-005-5050
 					</div>
 					<div>${page_obj["link_travel"]}</div>
 				</div>
