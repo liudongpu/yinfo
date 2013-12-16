@@ -7,7 +7,7 @@
 			<div class="index_center">
 				<div class="index_adv">
 					<div id="myCarousel" class="carousel slide">
-						<#assign page_main_listadv=pageexec.upData("y_adv","position_cid","32620001")>
+						<#assign page_main_listadv=pageexec.upDataQuery("y_adv","-sortid","","position_cid","32620001")>
 					
 						<ol class="carousel-indicators">
 							<#list page_main_listadv as el>

@@ -9,8 +9,10 @@
 <body class="yinfo_body">
 
 	<div class="yinfo_topbanner">
-		<a href="${base_url}yinfo/static-static-40048de680df4aa5938b53bd5aa02ab9">
+		<#assign site_common_header_adv=pageexec.upDataOne("y_adv","","-sortid","","position_cid","32620003")>
+		<a href="${site_common_header_adv["link_url"]}" target="_blank">
 		<div class="yinfo_topbanner_adv">
+			<img src="${site_common_header_adv["file_url"]}" alt="${site_common_header_adv["info"]}"/>
 		</div>
 		</a>
 	</div>

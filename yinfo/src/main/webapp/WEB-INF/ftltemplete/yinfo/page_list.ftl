@@ -106,6 +106,21 @@
 					</a>
 						
 					</div>
+					<#assign page_list_listadv=pageexec.upDataQuery("y_adv","-sortid","","position_cid","32620002")>
+					<#list page_list_listadv as el>
+						
+					<div class="c_item">
+					<a target="_blank" href="${el["link_url"]}">
+						<img
+							src="${el["file_url"]}" alt="${el["info"]}"/>
+					</a>
+						
+					</div>
+					
+					</#list>
+					
+					
+					
 					<div class="c_item">
 						<div class="yinfo_list_newst">
 							<h4>最新加入的养老院</h4>
