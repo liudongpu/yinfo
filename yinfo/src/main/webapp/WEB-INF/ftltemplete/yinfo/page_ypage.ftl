@@ -6,7 +6,8 @@
 <#include "site_common.ftl" />
 <#include "../zapmacro/zapmacro_common.ftl" />
 <#include "../macro/macro_common.ftl" />
-
+<#assign pageexec=b_method>
+<#assign pagemethod=b_method>
 
 <#assign base_url="/">
 <#assign base_zero="http://bcs.duapp.com/srnprresources/resources/">

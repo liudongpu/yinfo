@@ -258,7 +258,7 @@ $(document).ready(function(){zen.yinfo.pagination()});
 								</div>
 								<div class="c_in">
 									<div class="c_left">床位：</div>
-									<div class="c_right">${el["q_bednumber"]}</div>
+									<div class="c_right">${el["q_bednumber"]}张床</div>
 								</div>
 								<div class="clearfix"></div>
 								<div class="c_buttons">
