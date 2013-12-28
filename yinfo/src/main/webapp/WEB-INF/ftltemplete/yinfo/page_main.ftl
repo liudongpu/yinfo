@@ -76,7 +76,7 @@
 			</div>
 			<div class="index_list">
 				<div class="c_box">
-					<#list pageexec.upDataTop("y_info","","-repay_money,-zid",6,"show_flag","30010001","adv_cid","32660003") as el>
+					<#list pageexec.upDataTop("y_info","","-zid",6,"show_flag","30010001","adv_cid","32660003") as el>
 						<div class="c_item <#if (el_index%3==0)>c_first</#if>">
 							<@m_site_common_site_list el "main"/>
 						</div>					
