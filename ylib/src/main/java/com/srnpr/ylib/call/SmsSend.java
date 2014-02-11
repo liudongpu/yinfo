@@ -26,11 +26,17 @@ public class SmsSend extends BaseClass {
 			
 
 			StringBuffer sBuffer = new StringBuffer();
+			/*
 			sBuffer.append("http://ws.montnets.com:7903/MWGate/wmgw.asmx/MongateCsSpSendSmsNew?");
 			sBuffer.append("userId=J21386&password=597912&");
 			sBuffer.append("pszMobis=" + sMobilePhone + "&pszMsg=" + sContent);
 			sBuffer.append("&iMobiCount=1&pszSubPort=*");
-
+			*/
+			
+			sBuffer.append("http://utf8.sms.webchinese.cn/?Uid=joshuama&Key=6e2b9c801713280cc5c9&smsMob="+sMobilePhone+"&smsText=");
+			sBuffer.append(sContent);
+			
+			
 			httpgets= new HttpGet(sBuffer.toString());
 			
 
