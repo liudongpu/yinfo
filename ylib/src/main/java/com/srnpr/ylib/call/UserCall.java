@@ -296,7 +296,7 @@ public class UserCall extends BaseClass {
 			
 			
 			Map<String, Object> mInfoMap= DataTableManager.Get("y_info").upOneMap("uid",pRequest.getReqMap().get("info_uid").toString().trim());
-			String sTextString=mInfoMap.get("name")+"地址"+mInfoMap.get("link_address")+"电话"+mInfoMap.get("link_telephone")+"联系人"+mInfoMap.get("link_people_one")+" "+mInfoMap.get("link_phone_one")+"请提前预约。如成功入驻，拨4000055050有豪礼。";
+			String sTextString=mInfoMap.get("name")+"地址是"+mInfoMap.get("link_address")+"联系人"+mInfoMap.get("link_people_one")+" "+mInfoMap.get("link_phone_one")+"请提前预约。成功入驻致电4000055050有豪礼";
 			new SmsSend().send(sPhoneNUmber, sTextString);
 			MHashMap mHashMap = new MHashMap();
 			mHashMap.put("uid", WebHelper.upUuid());
@@ -310,12 +310,19 @@ public class UserCall extends BaseClass {
 			DataTableManager.Get("y_call").inPut(mHashMap);
 			
 			String sYphoneString=mInfoMap.get("link_phone_one").toString();
+			
+			String sLinkMsg="有老人"+mUserInfo.get("uname").toString()+"要访视贵机构，如老人未主动联系，请明天到银杏林www.yinxl.com后台用户探视记录里查看老人联系方式";
 			if(StringUtils.isNotBlank(sYphoneString))
 			{
-				String sLinkMsg="有老人要访视养老院，如老人未主动联系，请明天到银杏林后台查询老人联系方式。";
+				
 				new SmsSend().send(sYphoneString, sLinkMsg);
 			}
 			
+			String sYphoneString2=mInfoMap.get("link_phone_two").toString();
+			if(StringUtils.isNotBlank(sYphoneString2))
+			{
+				new SmsSend().send(sYphoneString2, sLinkMsg);
+			}
 
 		}
 

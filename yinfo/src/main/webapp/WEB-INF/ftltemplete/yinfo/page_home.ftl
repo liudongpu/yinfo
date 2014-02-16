@@ -129,7 +129,7 @@
 								<div class="b_h20"></div>
 								<div>
 									<div class="c_float">
-										<a class="btn btn-success"  onclick="zen.yinfo.callhome()">免费预约参观</a>
+										<a class="btn btn-success"  onclick="zen.yinfo.callhome()">免费获取联系方式</a>
 									</div>
 									<div class="c_float">
 										<a class="c_gift" href="#"></a>
