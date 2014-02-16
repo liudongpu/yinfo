@@ -134,9 +134,11 @@
 									<div class="c_float">
 										<a class="c_gift" href="#"></a>
 									</div>
+									<!--
 									<div class="c_float">
 										<a class="c_collect" href="#"></a>
 									</div>
+									-->
 								</div>
 							</div>
 							<div class="c_share">
