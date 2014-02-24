@@ -1,5 +1,5 @@
 
-<#macro m_site_common_header title="专业的养老机构网站" keywords="" description="" >
+<#macro m_site_common_header title="专业养老机构对比查询网" keywords="" description="" >
 
 
 <title>${title}-银杏林</title> 
@@ -157,7 +157,7 @@
 </#macro>
 
 
-<#macro m_site_common_oldhead title="专业的养老机构网站" imgurl="" keywords="" description="">
+<#macro m_site_common_oldhead title="专业养老机构对比查询网" imgurl="" keywords="" description="">
 <title>${title}-银杏林</title> 
 <meta name="keywords" content="银杏林" />
 <meta name="description" content="${title}-银杏林" />

@@ -296,7 +296,7 @@ public class UserCall extends BaseClass {
 			
 			
 			Map<String, Object> mInfoMap= DataTableManager.Get("y_info").upOneMap("uid",pRequest.getReqMap().get("info_uid").toString().trim());
-			String sTextString=mInfoMap.get("name")+"地址是"+mInfoMap.get("link_address")+"联系人"+mInfoMap.get("link_people_one")+" "+mInfoMap.get("link_phone_one")+"请提前预约。成功入驻致电4000055050有豪礼";
+			String sTextString=mInfoMap.get("name")+"地址是"+mInfoMap.get("link_address")+"联系人"+mInfoMap.get("link_people_one")+" "+mInfoMap.get("link_phone_one")+"请提前预约。成功入住致电4000055050有豪礼";
 			new SmsSend().send(sPhoneNUmber, sTextString);
 			MHashMap mHashMap = new MHashMap();
 			mHashMap.put("uid", WebHelper.upUuid());
