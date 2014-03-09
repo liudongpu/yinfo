@@ -5,6 +5,7 @@
 <title>${title}-银杏林</title> 
 <meta name="keywords" content="银杏林" />
 <meta name="description" content="${title}-银杏林" />
+<link rel="shortcut icon" href="/resources/yinfo/favicon.ico"  type="image/x-icon" />
 </head>
 <body class="yinfo_body">
 
