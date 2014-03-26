@@ -48,7 +48,7 @@
 										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a>新用户注册</a>
 									</div>
 									<input type="hidden" id="zapjs_zw_login_sucess_target"
-										name="zapjs_zw_login_sucess_target" value="../manage/home" />
+										name="zapjs_zw_login_sucess_target" value="http://web.yinxl.com/manage/home" />
 
 								</form>
 								<div class="w_h_20"></div>
