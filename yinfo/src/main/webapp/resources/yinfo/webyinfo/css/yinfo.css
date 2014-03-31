@@ -726,6 +726,7 @@ color:#000;
     background-image: url("../images/yinfo_png.png");
     background-position: -200px -310px;
     margin-left:20px;
+    display:none;
 }
 .yold_info_right .c_collect
 {
