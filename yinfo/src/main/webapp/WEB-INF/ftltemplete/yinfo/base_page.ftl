@@ -13,7 +13,7 @@
 <#assign pagemethod=WebPage["PageExec"]>
 <#assign b_method=WebPage["PageExec"]>
 <#assign base_url="/">
-<#assign base_zero="http://bcs.duapp.com/srnprresources/resources/">
+<#assign base_zero="../resources/">
 
 
 <#include "lib_page.ftl" />
