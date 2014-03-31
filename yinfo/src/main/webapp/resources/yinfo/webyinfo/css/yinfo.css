@@ -1383,6 +1383,7 @@ cursor: pointer;
 	
 	
 	margin: 0 auto;
-	max-width: 980px;
-	width: 980px;
+	margin-bottom:10px;
+	max-width: 960px;
+	width: 960px;
 }
