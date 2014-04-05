@@ -45,28 +45,28 @@
 				<div class="c_nav">
 					<ul>
 						<li class="c_active"><a href="${base_url}">首页</a></li>
-						<li><a href="${base_page_url}yinfo/list-110108_0_0_0">海淀区</a></li>
-						<li><a href="${base_page_url}yinfo/list-110105_0_0_0">朝阳区</a></li>
-						<li><a href="${base_page_url}yinfo/list-110102_0_0_0">西城区</a></li>
-						<li><a href="${base_page_url}yinfo/list-110101_0_0_0">东城区</a></li>
-						<li><a href="${base_page_url}yinfo/list-110114_0_0_0">昌平区</a></li>
-						<li><a href="${base_page_url}yinfo/list-110107_0_0_0">石景山区</a></li>
+						<li><a href="${base_page_url}yinfo/list-110108_0_0_0${base_page_end}">海淀区</a></li>
+						<li><a href="${base_page_url}yinfo/list-110105_0_0_0${base_page_end}">朝阳区</a></li>
+						<li><a href="${base_page_url}yinfo/list-110102_0_0_0${base_page_end}">西城区</a></li>
+						<li><a href="${base_page_url}yinfo/list-110101_0_0_0${base_page_end}">东城区</a></li>
+						<li><a href="${base_page_url}yinfo/list-110114_0_0_0${base_page_end}">昌平区</a></li>
+						<li><a href="${base_page_url}yinfo/list-110107_0_0_0${base_page_end}">石景山区</a></li>
 						<li id="yinfo_nav_box_address_other"><a href="#">其他区县</a></li>
 					</ul>
 				</div>
 
 				<div class="yinfo_nav_address">
 					<ul>
-						<li><a href="${base_page_url}yinfo/list-110112_0_0_0">·通州区</a></li>
-						<li><a href="${base_page_url}yinfo/list-110113_0_0_0">·顺义区</a></li>
-						<li><a href="${base_page_url}yinfo/list-110106_0_0_0">·丰台区</a></li>
-						<li><a href="${base_page_url}yinfo/list-110109_0_0_0">·门头沟区</a></li>
-						<li><a href="${base_page_url}yinfo/list-110111_0_0_0">·房山区</a></li>
-						<li><a href="${base_page_url}yinfo/list-110115_0_0_0">·大兴区</a></li>
-						<li><a href="${base_page_url}yinfo/list-110116_0_0_0">·怀柔区</a></li>
-						<li><a href="${base_page_url}yinfo/list-110117_0_0_0">·平谷区</a></li>
-						<li><a href="${base_page_url}yinfo/list-110228_0_0_0">·密云县</a></li>
-						<li><a href="${base_page_url}yinfo/list-110229_0_0_0">·延庆县</a></li>
+						<li><a href="${base_page_url}yinfo/list-110112_0_0_0${base_page_end}">·通州区</a></li>
+						<li><a href="${base_page_url}yinfo/list-110113_0_0_0${base_page_end}">·顺义区</a></li>
+						<li><a href="${base_page_url}yinfo/list-110106_0_0_0${base_page_end}">·丰台区</a></li>
+						<li><a href="${base_page_url}yinfo/list-110109_0_0_0${base_page_end}">·门头沟区</a></li>
+						<li><a href="${base_page_url}yinfo/list-110111_0_0_0${base_page_end}">·房山区</a></li>
+						<li><a href="${base_page_url}yinfo/list-110115_0_0_0${base_page_end}">·大兴区</a></li>
+						<li><a href="${base_page_url}yinfo/list-110116_0_0_0${base_page_end}">·怀柔区</a></li>
+						<li><a href="${base_page_url}yinfo/list-110117_0_0_0${base_page_end}">·平谷区</a></li>
+						<li><a href="${base_page_url}yinfo/list-110228_0_0_0${base_page_end}">·密云县</a></li>
+						<li><a href="${base_page_url}yinfo/list-110229_0_0_0${base_page_end}">·延庆县</a></li>
 					</ul>
 				</div>
 
@@ -223,10 +223,10 @@ $(document).ready(function(){zen.yinfo.pagination()});
 <#macro m_site_common_site_list el fromtype>
 
 							<div class="c_img">
-								<a href="${base_page_url}yinfo/home-${el["domain"]}" target="_blank"><img src="${el["main_img"]}" /></a>
+								<a href="${base_page_url}yinfo/home-${el["domain"]}${base_page_end}" target="_blank"><img src="${el["main_img"]}" /></a>
 							</div>
 							<div class="yinfo_item_box">
-								<div class="c_title"><a href="${base_page_url}yinfo/home-${el["domain"]}" target="_blank">${el["name"]}</a></div>
+								<div class="c_title"><a href="${base_page_url}yinfo/home-${el["domain"]}${base_page_end}" target="_blank">${el["name"]}</a></div>
 								<div class="c_in">
 									<div class="c_left">保障：</div>
 									<div class="c_right">
@@ -263,8 +263,8 @@ $(document).ready(function(){zen.yinfo.pagination()});
 								</div>
 								<div class="clearfix"></div>
 								<div class="c_buttons">
-									<#if (fromtype=="list")><input type="checkbox" id="yinfo_compare_cb_${el["zid"]}" class="yinfo_compare_checkbox" y_name="${el["name"]}"  y_zid="${el["zid"]}" y_img="${el["main_img"]?default("")}" y_link="${base_page_url}yinfo/home-${el["domain"]}" onclick="zen.yinfo.compare_add(this)" /><label for="yinfo_compare_cb_${el["zid"]}">加入对比</label></#if>
-									<a href="${base_page_url}yinfo/home-${el["domain"]}" target="_blank" class="btn btn-success">去看看</a>
+									<#if (fromtype=="list")><input type="checkbox" id="yinfo_compare_cb_${el["zid"]}" class="yinfo_compare_checkbox" y_name="${el["name"]}"  y_zid="${el["zid"]}" y_img="${el["main_img"]?default("")}" y_link="${base_page_url}yinfo/home-${el["domain"]}${base_page_end}" onclick="zen.yinfo.compare_add(this)" /><label for="yinfo_compare_cb_${el["zid"]}">加入对比</label></#if>
+									<a href="${base_page_url}yinfo/home-${el["domain"]}${base_page_end}" target="_blank" class="btn btn-success">去看看</a>
 								</div>
 							</div>
 
@@ -278,7 +278,7 @@ $(document).ready(function(){zen.yinfo.pagination()});
 			<div class="c_nav">
 				
 				<#list b_method.upData("y_static","type_cid","32630001") as el> 
-					<span><a href="${base_page_url}yinfo/static-static-${el["uid"]}">${el["title"]}</a></span>|
+					<span><a href="${base_page_url}yinfo/static-static-${el["uid"]}${base_page_end}">${el["title"]}</a></span>|
 				</#list>
 				
 				

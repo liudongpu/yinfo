@@ -11,7 +11,7 @@
 			<#if (pageListSearch=="")>
 				<div class="yinfo_list_fox">
 					<div class="yinfo_list_nav">
-						<a href="/">回到首页</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp;<a href="${base_url}yinfo/list-0">列表页</a>
+						<a href="/">回到首页</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp;<a href="${base_url}yinfo/list-0${base_page_end}">列表页</a>
 					</div>
 					<div class="yinfo_list_query">
 		
@@ -66,12 +66,13 @@
 							家养老院符合您的要求
 						</span>
 						<span class="c_hot"><b>热门搜索：</b></span>
-						<a href="${base_page_url}yinfo/list-0_0_0_0-昌平 养老院">昌平 养老院</a>
-						<a href="${base_page_url}yinfo/list-0_0_0_0-特护">特护</a>
-						<a href="${base_page_url}yinfo/list-0_0_0_0-全护理老人">全护理老人</a>
-						<a href="${base_page_url}yinfo/list-0_0_0_0-海淀">海淀</a>
-						<a href="${base_page_url}yinfo/list-0_0_0_0-机构中心">机构中心</a>
-						<a href="${base_page_url}yinfo/list-0_0_0_0-优惠">优惠</a>
+						<a href="${base_page_url}yinfo/list-0_0_0_0-昌平${base_page_end}">昌平</a>
+						<a href="${base_page_url}yinfo/list-0_0_0_0-养老院${base_page_end}">养老院</a>
+						<a href="${base_page_url}yinfo/list-0_0_0_0-特护${base_page_end}">特护</a>
+						<a href="${base_page_url}yinfo/list-0_0_0_0-全护理老人${base_page_end}">全护理老人</a>
+						<a href="${base_page_url}yinfo/list-0_0_0_0-海淀${base_page_end}">海淀</a>
+						<a href="${base_page_url}yinfo/list-0_0_0_0-机构中心${base_page_end}">机构中心</a>
+						<a href="${base_page_url}yinfo/list-0_0_0_0-优惠${base_page_end}">优惠</a>
 					</div>
 				</div>
 				<script>
@@ -130,7 +131,7 @@
 							<#if (el_index==0)>
 							
 							<div class="c_top">
-								<a href="${base_page_url}yinfo/home-${el["domain"]}">
+								<a href="${base_page_url}yinfo/home-${el["domain"]}${base_page_end}">
 									<div class="c_topimg">
 										<img
 											src="${el["main_img"]}" />
@@ -144,7 +145,7 @@
 							<div class="b_h10"></div>
 							<ul>
 							<#else>
-								<li><a href="${base_page_url}yinfo/home-${el["domain"]}">${el_index+1}、${el["name"]}</a></li>
+								<li><a href="${base_page_url}yinfo/home-${el["domain"]}${base_page_end}">${el_index+1}、${el["name"]}</a></li>
 							</#if>
 							</#list>
 							</ul>

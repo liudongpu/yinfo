@@ -16,7 +16,7 @@
 <#assign base_zero="http://yinxlcdn.yinxl.com/resources/">
 <#assign base_user_url="/">
 <#assign base_page_url="/">
-
+<#assign base_page_end=".html">
 
 <#include "lib_page.ftl" />
 <#include "site_common.ftl" />

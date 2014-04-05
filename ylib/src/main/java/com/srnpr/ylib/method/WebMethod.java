@@ -314,7 +314,7 @@ public class WebMethod extends RootMethod {
 			sBuffer.append("<a "
 					+ (sNnowKey.equals(s) ? "class=\"c_active\" " : "")
 					+ " href=\"/yinfo/list-"
-					+ StringUtils.join(sUrlStrings, "_") + "\">"
+					+ StringUtils.join(sUrlStrings, "_") + ".html\">"
 					+ mSourceHashMap.get(s).toString() + "</a>");
 
 		}
