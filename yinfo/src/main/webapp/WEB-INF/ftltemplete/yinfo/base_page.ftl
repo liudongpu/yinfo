@@ -13,7 +13,9 @@
 <#assign pagemethod=WebPage["PageExec"]>
 <#assign b_method=WebPage["PageExec"]>
 <#assign base_url="/">
-<#assign base_zero="../resources/">
+<#assign base_zero="http://yinxlcdn.yinxl.com/resources/">
+<#assign base_user_url="/">
+<#assign base_page_url="/">
 
 
 <#include "lib_page.ftl" />
@@ -23,7 +25,7 @@
 <meta name="360-site-verification" content="bea101e2eaecbf4cc5f55f9b061b0018" />
 
 	
-	
+	<link rel="shortcut icon" href="${base_zero}yinfo/favicon.ico"  type="image/x-icon" />
 	<link type="text/css" href="${base_zero}yinfo/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link type="text/css" href="${base_zero}yinfo/webyinfo/css/yinfo.css" rel="stylesheet">
 	<script type="text/javascript" src="${base_zero}yinfo/lib/jquery/jquery-last.min.js"></script>

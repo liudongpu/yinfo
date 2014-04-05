@@ -10,7 +10,9 @@
 <#assign pagemethod=b_method>
 
 <#assign base_url="/">
-<#assign base_zero="http://bcs.duapp.com/srnprresources/resources/">
+<#assign base_zero="http://yinxlcdn.yinxl.com/resources/">
+<#assign base_user_url="/">
+<#assign base_page_url="/">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
 	<link type="text/css" href="${base_zero}yinfo/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link type="text/css" href="${base_zero}yinfo/webyinfo/css/yinfo.css" rel="stylesheet">
