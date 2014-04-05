@@ -20,7 +20,7 @@
 <#include "site_common.ftl" />
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
-<meta name="360-site-verification" content="d25c0d99ec6edbe3fe378f631c4780a0" />
+<meta name="360-site-verification" content="bea101e2eaecbf4cc5f55f9b061b0018" />
 
 	
 	
@@ -52,4 +52,3 @@
 
 
 
-</html>

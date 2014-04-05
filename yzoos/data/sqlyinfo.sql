@@ -34,3 +34,29 @@ where locate('http://bcs.duapp.com/srnprresources/',list_img)=0
 and list_img!='';
 
 
+
+
+#更新图片到cdn
+
+update y_info set main_img=replace(main_img,'http://bcs.duapp.com/srnprresources/','http://yinxlcdn.yinxl.com/')   
+where  main_img!='';
+update y_info set list_img=replace(list_img,'/zzero/','http://bcs.duapp.com/srnprresources/zzero/')   
+where locate('http://bcs.duapp.com/srnprresources/',list_img)=0
+and list_img!='';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

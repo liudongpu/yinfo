@@ -339,7 +339,9 @@ $(document).ready(function(){zen.yinfo.pagination()});
 		</div>
 	</div>
 
-
+<!-- WPA Button Begin -->
+<script charset="utf-8" type="text/javascript" src="http://wpa.b.qq.com/cgi/wpa.php?key=XzkzODA0MzgzMV8xMjI5NjBfNDAwMDA1NTA1MF8"></script>
+<!-- WPA Button End -->
 </body>
 </html>
 </#macro>
