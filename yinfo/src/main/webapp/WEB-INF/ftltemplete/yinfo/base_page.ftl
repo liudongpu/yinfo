@@ -26,6 +26,7 @@
 
 	
 	<link rel="shortcut icon" href="${base_zero}yinfo/favicon.ico"  type="image/x-icon" />
+	<#--
 	<link type="text/css" href="${base_zero}yinfo/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link type="text/css" href="${base_zero}yinfo/webyinfo/css/yinfo.css" rel="stylesheet">
 	<script type="text/javascript" src="${base_zero}yinfo/lib/jquery/jquery-last.min.js"></script>
@@ -35,9 +36,9 @@
 	<script type="text/javascript" src="${base_zero}yinfo/zen/zen_yinfo.js"></script>
 	<script type="text/javascript" src="${base_zero}yinfo/lib/jquery/jquery.corner.js"></script>
 	<script type="text/javascript" src="${base_zero}yinfo/lib/jquery/jquery.srnpr.js"></script>
-	
-	
-	
+	-->
+	<link type="text/css" href="${base_zero}fileconcat/css-autoconcat.css" rel="stylesheet">
+	<script type="text/javascript" src="${base_zero}fileconcat/js-autoconcat.js"></script>
 
 	<@m_html_addscript "zen.i({baseurl:'"+base_url+"'});" />
 
