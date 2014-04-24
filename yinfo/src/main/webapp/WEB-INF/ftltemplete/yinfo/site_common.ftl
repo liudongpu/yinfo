@@ -5,7 +5,7 @@
 <title>${title}-银杏林</title> 
 <meta name="keywords" content="银杏林" />
 <meta name="description" content="${title}-银杏林" />
-<link rel="shortcut icon" href="${base_zero}yinfo/favicon.ico"  type="image/x-icon" />
+
 </head>
 <body class="yinfo_body">
 
@@ -293,7 +293,7 @@ $(document).ready(function(){zen.yinfo.pagination()});
 			
 			</script>
 			</div>
-			<div class="c_text">CopyRight 2013  &nbsp;&nbsp;<a href="http://www.miibeian.gov.cn/">京ICP备11035185号-2</a>&nbsp;&nbsp; <a id="jsl_speed_stat2" href="http://jiasule.baidu.com/#zid=531c948ebf9efd5a419efada" target="_blank">百度加速乐</a><script src="http://jiasule.baidu.com/static/js/stat/picture2_stat.js" charset="utf-8" type="text/javascript"></script></div>
+			<div class="c_text">CopyRight 2013  &nbsp;&nbsp;<a href="http://www.miibeian.gov.cn/">京ICP备11035185号-2</a>&nbsp;&nbsp; </div>
 			<div class="b_h40"></div>
 		</div>
 	</div>
