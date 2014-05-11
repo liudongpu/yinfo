@@ -13,7 +13,7 @@
 <#assign pagemethod=WebPage["PageExec"]>
 <#assign b_method=WebPage["PageExec"]>
 <#assign base_url="/">
-<#assign base_zero="http://yinxlcdn.yinxl.com/resources/">
+<#assign base_zero="http://yinxlaqb.yinxl.com/resources/">
 <#assign base_user_url="/">
 <#assign base_page_url="/">
 <#assign base_page_end=".html">
