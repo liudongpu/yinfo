@@ -111,6 +111,13 @@ zen
 						target : '.yinfo_nav_address'
 
 					});
+					
+					
+					$('#yinfo_header_area').srnprtip({
+						target : '.yinfo_header_change'
+
+					});
+					
 					$('.yinfo_nav_address').hover(
 							function() {
 								$('#yinfo_nav_box_address_other').addClass(

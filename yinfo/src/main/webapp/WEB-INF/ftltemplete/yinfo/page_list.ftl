@@ -18,8 +18,8 @@
 						<div class="c_item">
 							<div class="c_left">
 							<span>所在区域：</span></div> <div class="c_right">
-							
-							<@m_page_list_query title="不限" source="area_11" now=0/></div>
+							<#assign pl_area_code="area_"+pageexec.upAreaCode() >
+							<@m_page_list_query title="不限" source=pl_area_code now=0/></div>
 							<div class="clearfix"></div>
 							
 							
@@ -126,7 +126,7 @@
 						<div class="yinfo_list_newst">
 							<h4>最新加入的养老院</h4>
 							
-							<#list pageexec.upDataTop("y_info","","-zid",8) as el>
+							<#list b_method.upListInfo("last") as el>
 							
 							<#if (el_index==0)>
 							

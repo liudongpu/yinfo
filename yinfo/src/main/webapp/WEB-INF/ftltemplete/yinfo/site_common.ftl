@@ -20,7 +20,25 @@
 
 	<div class="yinfo_header y_center">
 		<div class="yinfo_header_logo"><a href="${base_url}"></a></div>
-		<div class="yinfo_header_area">北京</div>
+		<div id="yinfo_header_area" class="yinfo_header_area">${b_method.upAreaName()}&nbsp;&nbsp;[切换城市]</div>
+		
+		
+		
+		<div class="yinfo_header_change" >
+					<div><dl>
+						<dt>选择城市
+						</dt>
+						<dd>
+							<ul>
+								<li><a href="http://bj.yinxl.com">北京</a></li>
+								<li><a href="http://qhd.yinxl.com">秦皇岛</a></li>
+							</ul>
+						</dd></dl>
+						</div>
+					<div class="w_clear" style="clear:both;padding-top:25px;">其他区域尽请期待</div>
+		</div>
+		
+		
 		<div id="yinfo_header_search" class="yinfo_header_search">
 			
 			<div class="input-append">
@@ -42,31 +60,27 @@
 		<div class="y_center">
 			<div class="yinfo_nav_box">
 				<div class="c_tip"></div>
+				<#local sc_morenav=b_method.upAreaList("nav-more") >
+				
 				<div class="c_nav">
 					<ul>
 						<li class="c_active"><a href="${base_url}">首页</a></li>
-						<li><a href="${base_page_url}yinfo/list-110108_0_0_0${base_page_end}">海淀区</a></li>
-						<li><a href="${base_page_url}yinfo/list-110105_0_0_0${base_page_end}">朝阳区</a></li>
-						<li><a href="${base_page_url}yinfo/list-110102_0_0_0${base_page_end}">西城区</a></li>
-						<li><a href="${base_page_url}yinfo/list-110101_0_0_0${base_page_end}">东城区</a></li>
-						<li><a href="${base_page_url}yinfo/list-110114_0_0_0${base_page_end}">昌平区</a></li>
-						<li><a href="${base_page_url}yinfo/list-110107_0_0_0${base_page_end}">石景山区</a></li>
+						
+						<#list b_method.upAreaList("nav-menu") as el> 
+							<li><a href="${base_page_url}yinfo/list-${el['code']}_0_0_0${base_page_end}">${el['name']}</a></li>
+						</#list>
+						
 						<li id="yinfo_nav_box_address_other"><a href="#">其他区县</a></li>
 					</ul>
 				</div>
 
 				<div class="yinfo_nav_address">
 					<ul>
-						<li><a href="${base_page_url}yinfo/list-110112_0_0_0${base_page_end}">·通州区</a></li>
-						<li><a href="${base_page_url}yinfo/list-110113_0_0_0${base_page_end}">·顺义区</a></li>
-						<li><a href="${base_page_url}yinfo/list-110106_0_0_0${base_page_end}">·丰台区</a></li>
-						<li><a href="${base_page_url}yinfo/list-110109_0_0_0${base_page_end}">·门头沟区</a></li>
-						<li><a href="${base_page_url}yinfo/list-110111_0_0_0${base_page_end}">·房山区</a></li>
-						<li><a href="${base_page_url}yinfo/list-110115_0_0_0${base_page_end}">·大兴区</a></li>
-						<li><a href="${base_page_url}yinfo/list-110116_0_0_0${base_page_end}">·怀柔区</a></li>
-						<li><a href="${base_page_url}yinfo/list-110117_0_0_0${base_page_end}">·平谷区</a></li>
-						<li><a href="${base_page_url}yinfo/list-110228_0_0_0${base_page_end}">·密云县</a></li>
-						<li><a href="${base_page_url}yinfo/list-110229_0_0_0${base_page_end}">·延庆县</a></li>
+					
+						<#list sc_morenav as el> 
+							<li><a href="${base_page_url}yinfo/list-${el['code']}_0_0_0${base_page_end}">·${el['name']}</a></li>
+						</#list>
+						
 					</ul>
 				</div>
 
@@ -82,17 +96,17 @@
 									<dd id="yinfo_nav_query_address">
 										<input name="query_dept" type="radio" value="0"
 											id="query_dept_0" checked="checked" /><label
-											for="query_dept_0">不限</label> <input name="query_dept"
-											type="radio" value="110108" id="query_dept_110108" /><label
-											for="query_dept_110108">海淀</label> <input name="query_dept"
-											type="radio" value="110105" id="query_dept_110105" /><label
-											for="query_dept_110105">朝阳</label> <input name="query_dept"
-											type="radio" value="110102" id="query_dept_110102" /><label
-											for="query_dept_110102">西城</label> <br />
-										<input name="query_dept" type="radio" value="110101"
-											id="query_dept_110101" /><label for="query_dept_110101">东城</label>
-										<input name="query_dept" type="radio" value="110114"
-											id="query_dept_110114" /><label for="query_dept_110114">昌平</label>
+											for="query_dept_0">不限</label>
+											
+											<#list pageexec.upAreaList("nav-left") as el> 
+												<input name="query_dept" type="radio" value="${el['code']}" id="query_dept_${el['code']}" /><label for="query_dept_${el['code']}">${el['name']}</label>
+												<#if el_index=1><br/>
+												</#if>
+											
+											</#list>
+											
+											
+											 
 											
 											<input name="query_dept" type="radio" value="0"
 											id="query_dept_00"  /><label
@@ -160,7 +174,7 @@
 
 <#macro m_site_common_oldhead title="专业养老机构对比查询网" imgurl="" keywords="" description="">
 <title>${title}-银杏林</title> 
-<meta name="keywords" content="银杏林" />
+<meta name="keywords" content="银杏林,专业养老机构对比查询网,北京养老院" />
 <meta name="description" content="${title}-银杏林" />
 </head>
 <body class="yinfo_body">
@@ -255,11 +269,15 @@ $(document).ready(function(){zen.yinfo.pagination()});
 								-->
 								<div class="c_in">
 									<div class="c_left">地区：</div>
-									<div class="c_right">北京 ${pagemethod.upClassName("area_"+el["area"])}</div>
+									<div class="c_right">${b_method.upAreaName()} ${pagemethod.upClassName("area_"+el["area"])}</div>
 								</div>
 								<div class="c_in">
 									<div class="c_left">床位：</div>
 									<div class="c_right">${el["q_bednumber"]}张床</div>
+								</div>
+								<div class="c_in">
+									<div class="c_left">特色：</div>
+									<div class="c_right">${el["info_feature"]}</div>
 								</div>
 								<div class="clearfix"></div>
 								<div class="c_buttons">

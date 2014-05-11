@@ -104,11 +104,17 @@
 									</div>
 								</div>
 								<div class="c_item">
-									<span>地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;区：</span>北京
+									<span>地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;区：</span>
 									${pagemethod.upClassName("area_"+page_obj["area"])}
 	
 	
 								</div>
+								<div class="c_item">
+									<span>特&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;色：</span>
+									${page_obj["info_feature"]}
+	
+								</div>
+								
 								<div class="c_item">
 									<span>床&nbsp;&nbsp;位&nbsp;&nbsp;数：</span>${page_obj["q_bednumber"]}
 								</div>
@@ -127,7 +133,7 @@
 								</div>
 								<div class="clearfix"></div>
 								<div class="b_h20"></div>
-								<div>
+								<div  class="b_h40">
 									<div class="c_float">
 										<a class="btn btn-success"  onclick="zen.yinfo.callhome()">免费获取联系方式</a>
 									</div>
@@ -140,7 +146,10 @@
 									</div>
 									-->
 								</div>
+								
+								<div class="clearfix"></div>
 							</div>
+							
 							<div class="c_share">
 								<!-- JiaThis Button BEGIN -->
 								<div class="jiathis_style">
@@ -156,6 +165,7 @@
 								<!-- JiaThis Button END -->
 							
 							</div>
+							
 						</div>
 						<div class="yold_info_giftbox">
 							<div class="yold_info_giftbox_info"></div>
