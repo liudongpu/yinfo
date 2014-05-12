@@ -490,12 +490,12 @@ a {
 
 .yinfo_item_box .c_left {
 	width: 40px;
-	color: #b8b8b8;
+	
 	float: left;
 }
 
 .yinfo_item_box .c_right {
-	color: #b8b8b8;
+	
 	float: left;
 }
 
@@ -729,7 +729,7 @@ a {
 }
 
 .yold_info_right .c_item {
-	height: 30px;
+	
 	line-height: 30px;
 	color: #000;
 	font-size: 13px;
