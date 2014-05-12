@@ -490,12 +490,13 @@ a {
 
 .yinfo_item_box .c_left {
 	width: 40px;
-	
+	color:#008a17;
+	font-weight:bold;
 	float: left;
 }
 
 .yinfo_item_box .c_right {
-	
+	color:#008a17;
 	float: left;
 }
 
