@@ -93,7 +93,7 @@
 
 
 
-
+<@m_site_common_js_lazyload />
 
 	<script>
 		$(document).ready(function() {
@@ -111,6 +111,6 @@
 		});
 	</script>
 
-<@m_site_common_js_lazyload />
+
 
 <@m_site_common_footer />
