@@ -22,6 +22,12 @@
 <#include "site_common.ftl" />
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<link rel="dns-prefetch" href="//yinxlcdn.yinxl.com"/>
+
+
 <meta name="360-site-verification" content="bea101e2eaecbf4cc5f55f9b061b0018" />
 
 	

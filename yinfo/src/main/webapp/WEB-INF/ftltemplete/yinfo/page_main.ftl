@@ -1,5 +1,6 @@
 
-<script src="http://siteapp.baidu.com/static/webappservice/uaredirect.js" type="text/javascript"></script><script type="text/javascript">uaredirect("http://siteapp.baidu.com/site/www.yinxl.com","http://www.yinxl.com");</script>
+<script defer="true" src="http://siteapp.baidu.com/static/webappservice/uaredirect.js" type="text/javascript"></script>
+<script defer="true" type="text/javascript">uaredirect("http://siteapp.baidu.com/site/www.yinxl.com","http://www.yinxl.com");</script>
 <@m_site_common_header />
 
 	<div class="y_center">

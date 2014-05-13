@@ -506,12 +506,18 @@ a {
 
 .yinfo_item_box .c_in .c_right
 {
-	width:170px;
+	width:150px;
 	height:20px;
 	overflow:hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
 }
+
+.index_list .yinfo_item_box .c_in .c_right
+{
+	width:170px;
+}
+
 
 
 .yinfo_item_box .c_in .c_tips {

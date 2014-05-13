@@ -277,7 +277,7 @@ $(document).ready(function(){zen.yinfo.pagination()});
 								</div>
 								<div class="c_in">
 									<div class="c_left">特色：</div>
-									<div class="c_right">${el["info_feature"]}</div>
+									<div class="c_right" title="${el['info_feature']}">${el["info_feature"]}</div>
 								</div>
 								<div class="clearfix"></div>
 								<div class="c_buttons">
@@ -303,11 +303,11 @@ $(document).ready(function(){zen.yinfo.pagination()});
 			</div>
 			<div class="b_h20"></div>
 			<div style="display:none;">
-			<script type="text/javascript">
+			<script type="text/javascript" defer="true">
 
 			var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
 			
-			document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F76be1d1daefa4a133790ced2d9634156' type='text/javascript'%3E%3C/script%3E"));
+			document.write(unescape("%3Cscript defer='true' src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F76be1d1daefa4a133790ced2d9634156' type='text/javascript'%3E%3C/script%3E"));
 			
 			</script>
 			</div>
@@ -360,7 +360,7 @@ $(document).ready(function(){zen.yinfo.pagination()});
 
 
 <!-- WPA Button Begin -->
-<script charset="utf-8" type="text/javascript" src="http://wpa.b.qq.com/cgi/wpa.php?key=XzkzODA0MzgzMV8xMjI5NjBfNDAwMDA1NTA1MF8"></script>
+<script charset="utf-8" defer="true" type="text/javascript" src="http://wpa.b.qq.com/cgi/wpa.php?key=XzkzODA0MzgzMV8xMjI5NjBfNDAwMDA1NTA1MF8"></script>
 <!-- WPA Button End -->
 </body>
 </html>
