@@ -171,7 +171,7 @@
 		});
 	</script>
 
-
+<@m_site_common_js_lazyload />
 
 <@m_site_common_footer />
 

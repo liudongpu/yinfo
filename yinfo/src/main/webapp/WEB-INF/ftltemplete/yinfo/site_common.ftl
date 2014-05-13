@@ -237,7 +237,7 @@ $(document).ready(function(){zen.yinfo.pagination()});
 <#macro m_site_common_site_list el fromtype>
 
 							<div class="c_img">
-								<a href="${base_page_url}yinfo/home-${el["domain"]}${base_page_end}" target="_blank"><img src="${el["main_img"]}" /></a>
+								<a href="${base_page_url}yinfo/home-${el["domain"]}${base_page_end}" target="_blank"><@m_site_common_image_lazyload src=el["main_img"] /></a>
 							</div>
 							<div class="yinfo_item_box">
 								<div class="c_title"><a href="${base_page_url}yinfo/home-${el["domain"]}${base_page_end}" target="_blank">${el["name"]}</a></div>
@@ -460,3 +460,21 @@ $(document).ready(function(){zen.yinfo.compare_init()});
 <#macro m_site_common_site_zapjs_add >
 
 </#macro>
+
+
+
+
+<#macro m_site_common_image_lazyload src="" alt="" >
+<img class="lazy" data-original="${src}" alt="${alt}" />
+</#macro>
+
+<#macro m_site_common_js_lazyload>
+
+<script>
+$(document).ready(function() {
+$("img.lazy").lazyload({skip_invisible:false,threshold:100,placeholder:""});
+});
+</script>
+
+</#macro>
+

@@ -19,9 +19,9 @@
 							<#list page_main_listadv as el>
 							
 							<div class="item <#if el_index==0>active</#if>">
-								<a href="${el["link_url"]}"><img
-									src="${el["file_url"]}"
-									alt=""></a>
+								<a href="${el["link_url"]}">
+									<@m_site_common_image_lazyload src=el["file_url"] />
+									</a>
 								<div class="carousel-caption">
 									<p>
 										<a href="${el["link_url"]}">${el["name"]}</a>
@@ -111,6 +111,6 @@
 		});
 	</script>
 
-
+<@m_site_common_js_lazyload />
 
 <@m_site_common_footer />
