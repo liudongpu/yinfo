@@ -211,6 +211,7 @@
 					<li><a class="c_active" href="#yold_header">首页</a></li>
 					<li><a href="#yinfo_home_t1">养老院简介</a></li>
 					<li><a href="#yinfo_home_t2">收费标准</a></li>
+					<li><a href="#yinfo_home_t8">特色栏目</a></li>
 					<li><a href="#yinfo_home_t3">入住须知</a></li>
 					<li><a href="#yinfo_home_t4">服务指南</a></li>
 					<li><a href="#yinfo_home_t5">优惠信息</a></li>
