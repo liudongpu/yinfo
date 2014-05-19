@@ -221,6 +221,10 @@
 						</table>
 					</div>
 				</div>
+				<div id="yinfo_home_t8" class="c_item">
+					<div class="c_title">特色栏目</div>
+					<div>${page_obj["field_welcome"]}</div>
+				</div>
 				<div id="yinfo_home_t3" class="c_item">
 					<div class="c_title">入住须知</div>
 					<div>${page_obj["field_live"]}</div>

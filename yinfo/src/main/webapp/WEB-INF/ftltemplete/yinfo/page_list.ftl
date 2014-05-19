@@ -173,10 +173,12 @@
 
 <@m_site_common_js_lazyload />
 
-<@m_site_common_footer />
+
 
 <#macro m_page_list_query  title="不限" source="area_11" now=0 >
 	
 	${pagemethod.upListLink(pageinfo.getWebSet()["Url_View"]?default(""),title,source,now)}
 </#macro>
 <@m_site_common_compare />
+
+<@m_site_common_footer />
