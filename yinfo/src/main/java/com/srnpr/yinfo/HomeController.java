@@ -185,5 +185,24 @@ public class HomeController extends RootControl {
 		return web_method.checkLogin("yinfo/page_ypage");
 	}
 	
+	
+	/**
+	 * 页面
+	 * 
+	 * @param sUrl
+	 * @param model
+	 * @param request
+	 * @return
+	 */
+	@RequestMapping(value = "/mobile/{url}")
+	public String mobile(@PathVariable("url") String sUrl, Model model,
+			HttpServletRequest request) {
+		
+		model.addAttribute("b_method", web_method);
+		return "mobile/"+sUrl;
+	}
+	
+	
+	
 
 }
