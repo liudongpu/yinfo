@@ -10,7 +10,9 @@
 </#macro>
 
 
-
+<#macro m_mobile_image_lazyload src="" alt="" >
+<img class="lazy" data-original="${src}" alt="${alt}" />
+</#macro>
 
 
 

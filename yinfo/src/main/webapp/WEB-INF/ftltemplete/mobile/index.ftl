@@ -2,12 +2,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="/resources/lib/jqmobile/jquery.mobile-1.4.2.min.css" />
 
 
 <script src="/resources/lib/jquery/jquery-last.min.js"></script>
 <script src="/resources/lib/jqmobile/jquery.mobile-1.4.2.js"></script>
+<script src="/resources/lib/jplugins/jquery.lazyload.js"></script>
 
 <script src="/resources/zapapp/base/zapapp.js"></script>
 <script src="/resources/zapapp/yinfo/yinfoapp.js"></script>

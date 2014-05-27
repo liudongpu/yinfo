@@ -11,9 +11,18 @@
 }
 
 
+.cmb_body_list_split
+{
+	height:20px;
+	.w_clear;
+}
+
 
 .cmb_list_info
 {
+
+	border-top:solid 1px @color-border-base;
+
 	ul
 	{
 		.w_ullist;
@@ -22,6 +31,37 @@
 	ul li
 	{
 		.w_ullist_li;
+		border-bottom:solid 1px @color-border-base;
 	}
+	ul li .c_item
+	{
+		
+		
+		
+		.w_clear;
+		
+		.c_left
+		{
+			width:20%;
+			margin-right:3%;
+			.w_fl;
+			height:auto;
+		}
+		
+		.c_right
+		{
+			width:75%;
+			.w_fl;
+		}
+	}
+	
+	
+	
+	ul li img
+	{
+		width:100%;
+		height:auto;
+	}
+	
 }
 

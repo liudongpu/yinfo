@@ -8,7 +8,7 @@
 	</div>
 
 	<div role="main" class="ui-content" >
-		${e_id}
+		loading
 	</div>
 
 
