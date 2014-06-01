@@ -1,6 +1,6 @@
 <#include "../zapmacro/zapmacro_app.ftl" />
 <!DOCTYPE html>
-<html>
+<html class="cmb_root_html">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="/resources/lib/jqmobile/jquery.mobile-1.4.2.min.css" />
@@ -20,7 +20,7 @@
 <script src="/resources/lib/less/less-1.5.0.min.js" type="text/javascript"></script>
 
 </head>
-<body>
+<body class="cmb_root_body">
 	
 	
 <@m_zapmacro_app_page_base  e_id="mobile_main" e_title="首页" />
