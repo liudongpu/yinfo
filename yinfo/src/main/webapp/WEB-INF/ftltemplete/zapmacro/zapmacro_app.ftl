@@ -1,17 +1,17 @@
-<#-- 添加页 -->
+<#-- 通用页面展示 -->
 <#macro m_zapmacro_app_page_base e_id="" e_title="">
-
 <div data-role="page" id="${e_id}">
-
-	<div data-role="header"  data-position="fixed">
-		<h1>${e_title}</h1>
+	<div class="ui-header ui-bar-inherit">
+		<h1 class="ui-title">loading</h1>
 	</div>
-
-	<div role="main" class="ui-content" >
-		loading
+	
+	<div class="ui-header ui-bar-inherit ui-header-fixed slidedown">
+		<h1 class="ui-title">${e_title}</h1>
 	</div>
-
-
+	
+	
+	<div class="zmb_page_center">
+	</div>
 	<@m_zapmacro_app_page_footer e_index=e_id />
 </div>
 
@@ -19,23 +19,49 @@
 
 
 
+<#-- 通用内容起始 -->
+<#macro m_zapmacro_app_page_center_start>
 
-
-
-<#macro m_zapmacro_app_page_footer e_index="mobile_main" >
-
-	<div data-role="footer" data-position="fixed"  data-id="footernav">
-        <div data-role="navbar">
-            <ul>
-                <li><a href="#mobile_main"  data-transition="slide" onclick="zapapp.page.toPage('mobile_main')"  data-icon="grid" <#if e_index='mobile_main'> class="ui-btn-active ui-state-persist" </#if> >首页</a></li>
-                <li><a href="#mobile_list"  data-transition="slide" onclick="zapapp.page.toPage('mobile_list')"  data-icon="star" <#if e_index='mobile_list'>  class="ui-btn-active ui-state-persist" </#if>>列表</a></li>
-                <li><a href="#mobile_search"  data-transition="slide" onclick="zapapp.page.toPage('mobile_search')"  data-icon="gear" <#if e_index='mobile_search'>  class="ui-btn-active ui-state-persist" </#if>>搜索</a></li>
-                <li><a href="#mobile_user"  data-transition="slide" onclick="zapapp.page.toPage('mobile_user')"  data-icon="gear" <#if e_index='mobile_user'>  class="ui-btn-active ui-state-persist" </#if>>个人中心</a></li>
-            </ul>
-        </div>
-	</div>
-
-
+	<div role="main" class="ui-content" >
 
 </#macro>
+<#-- 通用内容结束 -->
+<#macro m_zapmacro_app_page_center_end>
+	</div>
+</#macro>
+
+
+<#-- 临时页面底部 -->
+<#macro m_zapmacro_app_page_footer e_index="mobile_main" >
+	<div  class="zmb_layout_inline_footer">
+       
+	</div>
+</#macro>
+
+
+
+
+<#-- 脚本-轮播图 -->
+<#macro m_zapmacro_app_script_slide e_class_name="" >
+	<script>
+		
+	
+	 zapapp.plug.slidePlay('${e_class_name}');
+	 
+  </script>
+
+</#macro>
+
+
+
+
+
+
+
+
+
+
+
+
+
 

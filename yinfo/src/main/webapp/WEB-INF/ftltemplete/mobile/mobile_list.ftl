@@ -2,7 +2,7 @@
 <#include "../macro/macro_mobile.ftl" />
 
 
-
+<@m_zapmacro_app_page_center_start />
 
 <form>
 <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
@@ -31,6 +31,7 @@
 
 
 
+<@m_zapmacro_app_page_center_end />
 
 
 

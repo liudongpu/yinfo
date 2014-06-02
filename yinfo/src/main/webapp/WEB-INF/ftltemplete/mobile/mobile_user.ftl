@@ -1,51 +1,26 @@
 <#include "../zapmacro/zapmacro_app.ftl" />
+<#include "../macro/macro_mobile.ftl" />
 
 
-		<h2>One</h2>
-
-		<p>I have an <code>id</code> of "one" on my page container. I'm first in the source order so I'm shown when the page loads.</p>
-
-		<p>This is a multi-page boilerplate template that you can copy to build your first jQuery Mobile page. This template contains multiple "page" containers inside, unlike a single page template that has just one page within it.</p>
-		<p>Just view the source and copy the code to get started. All the CSS and JS is linked to the jQuery CDN versions so this is super easy to set up. Remember to include a meta viewport tag in the head to set the zoom level.</p>
-		<p>You link to internal pages by referring to the <code>id</code> of the page you want to show. For example, to <a href="#two" >link</a> to the page with an <code>id</code> of "two", my link would have a <code>href="#two"</code> in the code.</p>
-
-		<h3>Show internal pages:</h3>
-		<p><a href="#two" class="ui-btn ui-shadow ui-corner-all">Show page "two"</a></p>
-		<p><a href="#popup" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Show page "popup" (as a dialog)</a></p>
 
 
-<h2>One</h2>
 
-		<p>I have an <code>id</code> of "one" on my page container. I'm first in the source order so I'm shown when the page loads.</p>
+<div style="height:25rem;overflow:hidden;">
+	<img src="http://dl.bizhi.sogou.com/images/2012/05/12/13618.jpg" style="width:100%;"/>
+</div>
 
-		<p>This is a multi-page boilerplate template that you can copy to build your first jQuery Mobile page. This template contains multiple "page" containers inside, unlike a single page template that has just one page within it.</p>
-		<p>Just view the source and copy the code to get started. All the CSS and JS is linked to the jQuery CDN versions so this is super easy to set up. Remember to include a meta viewport tag in the head to set the zoom level.</p>
-		<p>You link to internal pages by referring to the <code>id</code> of the page you want to show. For example, to <a href="#two" >link</a> to the page with an <code>id</code> of "two", my link would have a <code>href="#two"</code> in the code.</p>
+<@m_zapmacro_app_page_center_start />
 
-		<h3>Show internal pages:</h3>
-		<p><a href="#two" class="ui-btn ui-shadow ui-corner-all">Show page "two"</a></p>
-		<p><a href="#popup" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Show page "popup" (as a dialog)</a></p>
-<h2>One</h2>
+<ul data-role="listview" data-inset="true">
+    <li><a href="#">我的资料</a></li>
+    <li><a href="#">我的消息</a></li>
+    <li><a href="#">入住老人信息</a></li>
+    
+</ul>
 
-		<p>I have an <code>id</code> of "one" on my page container. I'm first in the source order so I'm shown when the page loads.</p>
-
-		<p>This is a multi-page boilerplate template that you can copy to build your first jQuery Mobile page. This template contains multiple "page" containers inside, unlike a single page template that has just one page within it.</p>
-		<p>Just view the source and copy the code to get started. All the CSS and JS is linked to the jQuery CDN versions so this is super easy to set up. Remember to include a meta viewport tag in the head to set the zoom level.</p>
-		<p>You link to internal pages by referring to the <code>id</code> of the page you want to show. For example, to <a href="#two" >link</a> to the page with an <code>id</code> of "two", my link would have a <code>href="#two"</code> in the code.</p>
-
-		<h3>Show internal pages:</h3>
-		<p><a href="#two" class="ui-btn ui-shadow ui-corner-all">Show page "two"</a></p>
-		<p><a href="#popup" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Show page "popup" (as a dialog)</a></p>
-<h2>One</h2>
-
-		<p>I have an <code>id</code> of "one" on my page container. I'm first in the source order so I'm shown when the page loads.</p>
-
-		<p>This is a multi-page boilerplate template that you can copy to build your first jQuery Mobile page. This template contains multiple "page" containers inside, unlike a single page template that has just one page within it.</p>
-		<p>Just view the source and copy the code to get started. All the CSS and JS is linked to the jQuery CDN versions so this is super easy to set up. Remember to include a meta viewport tag in the head to set the zoom level.</p>
-		<p>You link to internal pages by referring to the <code>id</code> of the page you want to show. For example, to <a href="#two" >link</a> to the page with an <code>id</code> of "two", my link would have a <code>href="#two"</code> in the code.</p>
-
-		<h3>Show internal pages:</h3>
-		<p><a href="#two" class="ui-btn ui-shadow ui-corner-all">Show page "two"</a></p>
-		<p><a href="#popup" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Show page "popup" (as a dialog)</a></p>
-
-
+<ul data-role="listview" data-inset="true">
+    <li><a href="#">修改密码</a></li>
+    <li><a href="#">退出系统</a></li>
+    
+</ul>
+<@m_zapmacro_app_page_center_end />
