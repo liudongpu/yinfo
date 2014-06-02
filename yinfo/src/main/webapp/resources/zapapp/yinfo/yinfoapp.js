@@ -10,7 +10,12 @@ var yinfoapp={
 		init:function()
 		{
 			
+			
+			$.mobile.defaultPageTransition='none';
+			//$.mobile.hashListeningEnabled=false;
 			//zapapp.page.toPage('mobile_main');
+			
+			
 			
 			zapapp.init.initDo();
 			zapapp.init.createPage(['mobile_main','mobile_list','mobile_search','mobile_user']);

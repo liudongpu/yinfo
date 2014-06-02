@@ -27,7 +27,7 @@
 <body class="cmb_root_body">
 	
 	
-<@m_zapmacro_app_page_base  e_id="mobile_main" e_title="首页" />
+<@m_zapmacro_app_page_base  e_id="mobile_main" e_title="银杏林 " />
 <@m_zapmacro_app_page_base  e_id="mobile_list"  e_title="养老院列表" />
 <@m_zapmacro_app_page_base  e_id="mobile_search"  e_title="搜索养老院" />
 <@m_zapmacro_app_page_base  e_id="mobile_user"  e_title="个人中心" />
@@ -35,7 +35,6 @@
 <@m_zapmacro_app_page_base  e_id="mobile_auto_1"  e_title="" />
 <@m_zapmacro_app_page_base  e_id="mobile_auto_2"  e_title="" />
 <@m_zapmacro_app_page_base  e_id="mobile_auto_3"  e_title="" />
-
 
 
 <@m_mobile_layout_footer />

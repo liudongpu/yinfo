@@ -31,7 +31,7 @@
 </#macro>
 
 
-<#-- 临时页面底部 -->
+<#-- 页面底部占位 -->
 <#macro m_zapmacro_app_page_footer e_index="mobile_main" >
 	<div  class="zmb_layout_inline_footer">
        
