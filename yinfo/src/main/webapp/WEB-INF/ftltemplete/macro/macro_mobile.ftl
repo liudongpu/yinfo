@@ -75,14 +75,19 @@
 
 <div class="cmb_layout_footer zmb_layout_footer">
 <ul>
-	<li><a href="#mobile_main"  data-icon="home" class="c_active ui-link ui-btn ui-icon-home ui-btn-icon-top">首页</a></li>
-	<li><a href="#mobile_list"  data-icon="grid" class="ui-link ui-btn ui-icon-grid ui-btn-icon-top">列表</a></li>
-    <li><a href="#mobile_search"  data-icon="search" class="ui-link ui-btn ui-icon-search ui-btn-icon-top">搜索</a></li>
-    <li><a href="#mobile_user"  data-icon="user" class="ui-link ui-btn ui-icon-user ui-btn-icon-top">个人中心</a></li>
+	<li><a <@m_mobile_switch_page e_page='mobile_main'/>  data-icon="home" class="c_active ui-link ui-btn ui-icon-home ui-btn-icon-top">首页</a></li>
+	<li><a <@m_mobile_switch_page e_page='mobile_list'/>  data-icon="grid" class="ui-link ui-btn ui-icon-grid ui-btn-icon-top">列表</a></li>
+    <li><a <@m_mobile_switch_page e_page='mobile_search'/>  data-icon="search" class="ui-link ui-btn ui-icon-search ui-btn-icon-top">搜索</a></li>
+    <li><a <@m_mobile_switch_page e_page='mobile_user'/>  data-icon="user" class="ui-link ui-btn ui-icon-user ui-btn-icon-top">个人中心</a></li>
 </ul>
 </div>
 </#macro>
 
+
+<#macro m_mobile_switch_page e_page>
+ <#-- href="#${mobile_main}" -->
+ onclick="zapapp.page.toMenu('${e_page}')"
+</#macro>
 
 
 

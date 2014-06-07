@@ -39,6 +39,9 @@
 
 <@m_mobile_layout_footer />
 
+
+<div class="cmb_layout_loading zmb_layout_loading">loading</div>
+
 </body>
 </html>
 

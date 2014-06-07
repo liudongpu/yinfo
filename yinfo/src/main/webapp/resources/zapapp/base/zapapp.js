@@ -17,6 +17,9 @@ zapapp.config = {
 	// 默认情况下的css开始名称
 	cssStart : '.zmb_',
 
+	// 本地存储的过期时间
+	storageExpire : 'storage_expire_time',
+
 	// 激活状态的css样式名称
 	cssActive : 'c_active',
 
@@ -26,37 +29,90 @@ zapapp.config = {
 zapapp.temp = {
 	// 自动页面当前编号
 	autoPageIndex : 0,
-	
-	lastPageHash:''
+
+	lastPageHash : ''
+
+};
+
+/* 存储相关 */
+zapapp.storage = {
+
+	save : function(sKey, oVal) {
+
+		localStorage.setItem(sKey, JSON.stringify(oVal));
+	},
+	read : function(sKey) {
+		return JSON.parse(localStorage.getItem(sKey));
+	},
+	// 判断是否存在
+	exist : function(sKey) {
+		
+		
+		
+		return localStorage.getItem(sKey) != null;
+	}
 
 };
 
 /* 私有函数 该属性内所有函数禁止外调 */
 zapapp.priv = {
 
-		upAutoPageId : function(sUrl) {
+	upAutoPageId : function(sUrl) {
 
-			return '#' + zapapp.config.autoPageName + zapapp.temp.autoPageIndex;
+		return '#' + zapapp.config.autoPageName + zapapp.temp.autoPageIndex;
 
-		},
-		
-		upHashName:function()
-		{
-			var sHash = location.hash;
+	},
 
-			// 默认如果取出的hash为空则设置为第一个hash
-			if (sHash == "") {
-				sHash = $(zapapp.config.cssStart + "layout_footer a")
-						.first().attr('href');
-			}
-			
-			return sHash;
+	upHashName : function() {
+		var sHash = location.hash;
+
+		// 默认如果取出的hash为空则设置为第一个hash
+		if (sHash == "") {
+			/*
+			sHash = $(zapapp.config.cssStart + "layout_footer a").first().attr(
+					'href');
+					*/
+			sHash="mobile_main";
 		}
-		
-	};
 
+		return sHash;
+	},
 
+	// 获取缓存的html内容
+	upCacheHtml : function(sUrl, fCallBack) {
 
+		var sKey = "cachehtml:" + sUrl;
+
+		if (zapapp.storage.exist(sKey)) {
+			var sHtml = zapapp.storage.read(sKey)["data"];
+			
+			
+			
+			fCallBack(sHtml);
+		} else {
+
+			$.ajax({
+				type : "GET",
+				url : sUrl,
+				dataType : "html",
+				success : function(data) {
+					
+					var oStorage = {
+						data : data
+					};
+
+					zapapp.storage.save(sKey, oStorage);
+
+					fCallBack(data);
+
+				}
+			});
+
+		}
+
+	}
+
+};
 
 /* 调用插件相关 */
 zapapp.plug = {
@@ -118,27 +174,21 @@ zapapp.init = {
 				function(event, data) {
 
 					var sHash = zapapp.priv.upHashName();
-					
-					
+
 					console.log("zapapp.init.hashchange:", sHash);
 
-					
-					//$(zapapp.temp.lastPageHash+' '+zapapp.config.pageCenterClass).hide();
-					
-					
-					$(sHash+' '+zapapp.config.pageCenterClass).show();
-					
-					
-					zapapp.temp.lastPageHash=sHash;
-					
-					
-					
-					
+					// $(zapapp.temp.lastPageHash+'
+					// '+zapapp.config.pageCenterClass).hide();
+
+					$(sHash + ' ' + zapapp.config.pageCenterClass).show();
+
+					zapapp.temp.lastPageHash = sHash;
+
 					$(
 							zapapp.config.cssStart + "layout_footer a[href!='"
 									+ sHash + "']").removeClass(
 							zapapp.config.cssActive);
-					
+
 					$(
 							zapapp.config.cssStart + "layout_footer a[href='"
 									+ sHash + "']").addClass(
@@ -160,74 +210,83 @@ zapapp.init = {
 
 };
 
-
-
 // 页面相关
 zapapp.page = {
 
 	toMenu : function(sId) {
 
-		zapapp.page.toPage(sId);
+		//zapapp.page.toPage(sId);
+		
+		//$('#' + sId + ' ' + zapapp.config.pageCenterClass).show();
+		
+		
+		$('.zmb_layout_loading').show();
+		
+		setTimeout(function(){$('.zmb_layout_loading').hide();},2000);
+		setTimeout(function(){$.mobile.pageContainer.pagecontainer("change", '#'+sId);},100);
+		//$.mobile.pageContainer.pagecontainer("change", '#'+sId);
 
 	},
 
 	hrefPage : function(sUrl) {
 
 		console.log('zapapp.page.hrefPage:' + sUrl);
-		
-		//$(zapapp.priv.upHashName()+' '+zapapp.config.pageCenterClass).hide();
-		
-		//$.mobile.loading(); 
-		
-		
-		$.mobile.loading('show');
-		$(zapapp.priv.upHashName()+' '+zapapp.config.pageCenterClass).hide();
-		
-		
-		$.ajax({
-			type : "GET",
-			url : sUrl,
-			dataType : "html",
-			success : function(data) {
 
-				$(
-						zapapp.priv.upAutoPageId(sUrl) + ' '
-								+ zapapp.config.pageCenterClass).html(data);
+		// $(zapapp.priv.upHashName()+' '+zapapp.config.pageCenterClass).hide();
 
-				//$(zapapp.priv.upAutoPageId(sUrl)).trigger('create');
-				//$.mobile.changePage(zapapp.priv.upAutoPageId(sUrl));
-				//$(zapapp.priv.upAutoPageId(sUrl) + ' '+ zapapp.config.pageCenterClass).show();
-				$.mobile.pageContainer.pagecontainer( "change", zapapp.priv.upAutoPageId(sUrl) );
-				$(zapapp.priv.upAutoPageId(sUrl)).trigger('create');
-				//zapapp.plug.lazyload();
-			}
+		// $.mobile.loading();
+
+		//$.mobile.loading('show');
+		
+		$(zapapp.priv.upHashName() + ' ' + zapapp.config.pageCenterClass)
+		.html('');
+		
+		/*
+		$(zapapp.priv.upHashName() + ' ' + zapapp.config.pageCenterClass)
+				.hide();
+		*/
+		
+		
+		zapapp.priv.upCacheHtml(sUrl, function(data){
+			
+			$(
+					zapapp.priv.upAutoPageId(sUrl) + ' '
+							+ zapapp.config.pageCenterClass).html(data);
+
+			$.mobile.pageContainer.pagecontainer("change", zapapp.priv
+					.upAutoPageId(sUrl));
+			$(zapapp.priv.upAutoPageId(sUrl)).trigger('create');
+			// zapapp.plug.lazyload();
+			
+			
 		});
+		
+		
+
 
 	},
 
 	// 转到页面
 	toPage : function(sId) {
+		
+		
+		
+		
+		zapapp.priv.upCacheHtml(sId, function(data){
+			
+			$('#' + sId + ' ' + zapapp.config.pageCenterClass).html(data);
 
-		$.ajax({
-			type : "GET",
-			url : sId,
-			dataType : "html",
-			success : function(data) {
+			$('#' + sId).trigger('create');
 
-				$('#' + sId + ' ' + zapapp.config.pageCenterClass).html(data);
-
-				$('#' + sId).trigger('create');
-
-				// $.mobile.navigate( "#"+sId );
-				console.log('zapapp.page.toPage:', sId);
-				// $.mobile.changePage( "#"+sId );
-				// $.mobile.navigate( "#"+sId );
-				// $.mobile.refresh();
-				zapapp.plug.lazyload();
-			}
+			console.log('zapapp.page.toPage:', sId);
+			
+			//zapapp.plug.lazyload();
+			
 		});
-
-		// $.mobile.changePage( "#"+sId );
+		
+		
+		
+	
 
 	}
 
