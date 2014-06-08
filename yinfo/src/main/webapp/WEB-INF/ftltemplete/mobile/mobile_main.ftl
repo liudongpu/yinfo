@@ -20,8 +20,10 @@
 
 
 </div>
-<@m_zapmacro_app_script_slide e_class_name="cmb_mobile_main_slide" />
 
+<div>
+<@m_zapmacro_app_script_slide e_class_name="cmb_mobile_main_slide" />
+</div>
 
 <@m_zapmacro_app_page_center_start />
 	

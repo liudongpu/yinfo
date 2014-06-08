@@ -15,9 +15,13 @@ var yinfoapp={
 			//$.mobile.hashListeningEnabled=false;
 			//zapapp.page.toPage('mobile_main');
 			
+			//$.mobile.pushStateEnabled=false;
 			
+			//$.mobile.hashListeningEnabled=false;
 			
 			zapapp.init.initDo();
+			
+			
 			zapapp.init.createPage(['mobile_main','mobile_list','mobile_search','mobile_user']);
 			
 			//zapapp.page.toPage('mobile_list');

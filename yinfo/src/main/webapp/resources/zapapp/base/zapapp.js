@@ -30,7 +30,10 @@ zapapp.temp = {
 	// 自动页面当前编号
 	autoPageIndex : 0,
 
-	lastPageHash : ''
+	lastPageHash : '',
+
+	// 标记现在是否正显示加载中
+	flagNowLoading : false
 
 };
 
@@ -46,9 +49,7 @@ zapapp.storage = {
 	},
 	// 判断是否存在
 	exist : function(sKey) {
-		
-		
-		
+
 		return localStorage.getItem(sKey) != null;
 	}
 
@@ -69,10 +70,11 @@ zapapp.priv = {
 		// 默认如果取出的hash为空则设置为第一个hash
 		if (sHash == "") {
 			/*
-			sHash = $(zapapp.config.cssStart + "layout_footer a").first().attr(
-					'href');
-					*/
-			sHash="mobile_main";
+			 * sHash = $(zapapp.config.cssStart + "layout_footer
+			 * a").first().attr( 'href');
+			 */
+			console.log("zapapp.priv.upHashName: hash empty");
+			sHash = "#mobile_main";
 		}
 
 		return sHash;
@@ -85,9 +87,7 @@ zapapp.priv = {
 
 		if (zapapp.storage.exist(sKey)) {
 			var sHtml = zapapp.storage.read(sKey)["data"];
-			
-			
-			
+
 			fCallBack(sHtml);
 		} else {
 
@@ -96,7 +96,7 @@ zapapp.priv = {
 				url : sUrl,
 				dataType : "html",
 				success : function(data) {
-					
+
 					var oStorage = {
 						data : data
 					};
@@ -110,6 +110,30 @@ zapapp.priv = {
 
 		}
 
+	}
+
+	,
+
+	showLoading : function() {
+
+		// $('.zmb_layout_loading').height($(document).height());
+		$(zapapp.config.cssStart + 'layout_loading').show();
+
+		if (!zapapp.temp.flagNowLoading) {
+			zapapp.temp.flagNowLoading=true;
+			setTimeout(function() {
+				zapapp.priv.cloaseLoading();
+			}, 1000);
+		}
+	},
+
+	cloaseLoading : function() {
+		
+		$(zapapp.config.cssStart + 'layout_loading').hide();
+		
+		$(zapapp.config.cssStart + 'layout_loading').height($(document).height());
+		
+		zapapp.temp.flagNowLoading=false;
 	}
 
 };
@@ -146,7 +170,7 @@ zapapp.init = {
 
 	initDo : function() {
 		zapapp.init.hashChange();
-		zapapp.init.pageChange();
+		 zapapp.init.pageChange();
 
 	},
 
@@ -165,6 +189,7 @@ zapapp.init = {
 		for ( var i in sIds) {
 			zapapp.page.toPage(sIds[i]);
 		}
+
 	},
 
 	hashChange : function() {
@@ -182,7 +207,7 @@ zapapp.init = {
 
 					$(sHash + ' ' + zapapp.config.pageCenterClass).show();
 
-					zapapp.temp.lastPageHash = sHash;
+					
 
 					$(
 							zapapp.config.cssStart + "layout_footer a[href!='"
@@ -200,8 +225,8 @@ zapapp.init = {
 	// 页面变更事件的监听
 	pageChange : function() {
 
-		$(document).on("pagechange", function(event, data) {
-
+		$(document).on("pagebeforechange", function(event, data) {
+			zapapp.priv.showLoading();
 			console.log("zapapp.init.pageChange:", data);
 
 		});
@@ -214,18 +239,55 @@ zapapp.init = {
 zapapp.page = {
 
 	toMenu : function(sId) {
+		//zapapp.priv.showLoading();
 
-		//zapapp.page.toPage(sId);
-		
-		//$('#' + sId + ' ' + zapapp.config.pageCenterClass).show();
 		
 		
-		$('.zmb_layout_loading').show();
+		//setTimeout(function(){
 		
-		setTimeout(function(){$('.zmb_layout_loading').hide();},2000);
-		setTimeout(function(){$.mobile.pageContainer.pagecontainer("change", '#'+sId);},100);
-		//$.mobile.pageContainer.pagecontainer("change", '#'+sId);
+		var sPage = sId;
 
+		
+		//$('#' + (zapapp.temp.lastPageHash==""?"mobile_main":zapapp.temp.lastPageHash) ).css('height','0px');
+		//$('#' + (zapapp.temp.lastPageHash==""?"mobile_main":zapapp.temp.lastPageHash) ).hide();
+		
+		console.log(zapapp.temp.lastPageHash);
+		
+		//$('#' + sPage).show();
+		
+		//$('#' + sPage).css('height','auto');
+		
+		//zapapp.temp.lastPageHash = sPage;
+		
+		
+		//},1000)
+		
+		$.mobile.pageContainer.pagecontainer("change",
+				 '#'+sPage);
+		
+		//setTimeout(function(){zapapp.page.toPage(sId)},500);
+		/*
+		setTimeout(function(){$.mobile.pageContainer.pagecontainer("change",
+				 '#'+sPage);},100);
+		*/
+		
+		
+		
+		/*
+		 * if(zapapp.temp.lastPageHash) { $('#'+zapapp.temp.lastPageHash + ' ' +
+		 * zapapp.config.pageCenterClass).html('');
+		 * $('#'+zapapp.temp.lastPageHash).hide(); } zapapp.temp.lastPageHash =
+		 * sId;
+		 * 
+		 * 
+		 * zapapp.page.toPage(sId);
+		 */
+
+		// $('#' + sId + ' ' + zapapp.config.pageCenterClass).show();
+		// setTimeout(function(){$.mobile.pageContainer.pagecontainer("change",
+		// '#'+sId);},100);
+		// $.mobile.pageContainer.pagecontainer("change", '#'+sId);
+		// zapapp.page.hrefPage(sId);
 	},
 
 	hrefPage : function(sUrl) {
@@ -236,57 +298,51 @@ zapapp.page = {
 
 		// $.mobile.loading();
 
-		//$.mobile.loading('show');
-		
-		$(zapapp.priv.upHashName() + ' ' + zapapp.config.pageCenterClass)
-		.html('');
-		
+		// $.mobile.loading('show');
+
+		// $(zapapp.priv.upHashName() + ' ' +
+		// zapapp.config.pageCenterClass).html('');
+
 		/*
-		$(zapapp.priv.upHashName() + ' ' + zapapp.config.pageCenterClass)
-				.hide();
-		*/
-		
-		
-		zapapp.priv.upCacheHtml(sUrl, function(data){
-			
-			$(
-					zapapp.priv.upAutoPageId(sUrl) + ' '
-							+ zapapp.config.pageCenterClass).html(data);
+		 * $(zapapp.priv.upHashName() + ' ' + zapapp.config.pageCenterClass)
+		 * .hide();
+		 */
 
-			$.mobile.pageContainer.pagecontainer("change", zapapp.priv
-					.upAutoPageId(sUrl));
-			$(zapapp.priv.upAutoPageId(sUrl)).trigger('create');
+		var sPage = zapapp.priv.upAutoPageId(sUrl);
+
+		//zapapp.priv.showLoading();
+
+		zapapp.priv.upCacheHtml(sUrl, function(data) {
+
+			$(sPage + ' ' + zapapp.config.pageCenterClass).html(data);
+
+			$.mobile.pageContainer.pagecontainer("change", sPage);
+
+			$(sPage).trigger('create');
 			// zapapp.plug.lazyload();
-			
-			
-		});
-		
-		
 
+		});
 
 	},
 
 	// 转到页面
 	toPage : function(sId) {
-		
-		
-		
-		
-		zapapp.priv.upCacheHtml(sId, function(data){
+
+		zapapp.priv.upCacheHtml(sId, function(data) {
+
+			//$.mobile.pageContainer.pagecontainer("change", '#'+sId);
 			
 			$('#' + sId + ' ' + zapapp.config.pageCenterClass).html(data);
 
 			$('#' + sId).trigger('create');
 
+			
+			
 			console.log('zapapp.page.toPage:', sId);
-			
-			//zapapp.plug.lazyload();
-			
+
+			// zapapp.plug.lazyload();
+
 		});
-		
-		
-		
-	
 
 	}
 

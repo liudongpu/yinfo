@@ -85,8 +85,11 @@
 
 
 <#macro m_mobile_switch_page e_page>
- <#-- href="#${mobile_main}" -->
- onclick="zapapp.page.toMenu('${e_page}')"
+
+ href="#${e_page}"
+
+ <#--href="#${e_page}" -->
+<#--onclick="zapapp.page.toMenu('${e_page}')"-->
 </#macro>
 
 

@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="/resources/lib/jqmobile/jquery.mobile-1.4.2.min.css" />
 
 <link rel="stylesheet" href="/resources/lib/swiper/idangerous.swiper.css" />
-<script src="/resources/lib/jquery/jquery-last.min.js"></script>
+<script src="/resources/lib/jquery/jquery-2.1.1.js"></script>
 <script src="/resources/lib/jqmobile/jquery.mobile-1.4.2.js"></script>
 <script src="/resources/lib/jplugins/jquery.lazyload.js"></script>
 <script src="/resources/lib/swiper/idangerous.swiper.min.js"></script>
@@ -25,8 +25,8 @@
 
 </head>
 <body class="cmb_root_body">
-	
-	
+
+
 <@m_zapmacro_app_page_base  e_id="mobile_main" e_title="银杏林 " />
 <@m_zapmacro_app_page_base  e_id="mobile_list"  e_title="养老院列表" />
 <@m_zapmacro_app_page_base  e_id="mobile_search"  e_title="搜索养老院" />
@@ -36,11 +36,10 @@
 <@m_zapmacro_app_page_base  e_id="mobile_auto_2"  e_title="" />
 <@m_zapmacro_app_page_base  e_id="mobile_auto_3"  e_title="" />
 
-
 <@m_mobile_layout_footer />
 
 
-<div class="cmb_layout_loading zmb_layout_loading">loading</div>
+<div class="cmb_layout_loading zmb_layout_loading"></div>
 
 </body>
 </html>
