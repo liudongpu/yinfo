@@ -22,6 +22,9 @@ zapapp.config = {
 
 	// 激活状态的css样式名称
 	cssActive : 'c_active',
+	
+	//是否本地缓存 默认为true
+	flagCache:false
 
 };
 
@@ -85,7 +88,7 @@ zapapp.priv = {
 
 		var sKey = "cachehtml:" + sUrl;
 
-		if (zapapp.storage.exist(sKey)) {
+		if (zapapp.config.flagCache&&   zapapp.storage.exist(sKey)) {
 			var sHtml = zapapp.storage.read(sKey)["data"];
 
 			fCallBack(sHtml);

@@ -8,11 +8,18 @@
 <link rel="stylesheet" href="/resources/lib/jqmobile/jquery.mobile-1.4.2.min.css" />
 
 <link rel="stylesheet" href="/resources/lib/swiper/idangerous.swiper.css" />
+
+<link rel="stylesheet" href="/resources/lib/jqmobile/plugins/jquery.mobile.carousel.css" />
+
 <script src="/resources/lib/jquery/jquery-2.1.1.js"></script>
 <script src="/resources/lib/jqmobile/jquery.mobile-1.4.2.js"></script>
 <script src="/resources/lib/jplugins/jquery.lazyload.js"></script>
 <script src="/resources/lib/swiper/idangerous.swiper.min.js"></script>
 
+<script src="/resources/lib/jqmobile/plugins/carousel.js"></script>
+
+
+<script src="/resources/lib/jqmobile/plugins/jquery.slides.min.js"></script>
 
 <script src="/resources/zapapp/base/zapapp.js"></script>
 <script src="/resources/zapapp/yinfo/yinfoapp.js"></script>
