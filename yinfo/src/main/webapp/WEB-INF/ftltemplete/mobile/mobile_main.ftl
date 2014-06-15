@@ -1,18 +1,18 @@
 <#include "../zapmacro/zapmacro_app.ftl" />
 <#include "../macro/macro_mobile.ftl" />
 
-<div >
+
 <div class="cmb_mobile_main_slide">
 
 	<div class="swiper-container">
-      <div class="swiper-wrapper">
+      <div class="swiper-wrapper" >
       
       <#assign page_main_listadv=b_method.upDataQuery("y_adv","-sortid","","position_cid","32620001")>
 					
       <#list page_main_listadv as el>
-					<div class="swiper-slide"> <img src="${el["file_url"]}" /> </div>		
+					<div class="swiper-slide" > <img src="${el["file_url"]}" /> </div>		
 		</#list>
-      
+     
        
       </div>
     </div>
@@ -21,7 +21,7 @@
 
 </div>
 
-</div>
+
 
 <#--
 <div class="cmb_mobile_main_carousel">

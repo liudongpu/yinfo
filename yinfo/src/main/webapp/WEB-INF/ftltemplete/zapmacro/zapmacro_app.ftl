@@ -1,13 +1,8 @@
 <#-- 通用页面展示 -->
 <#macro m_zapmacro_app_page_base e_id="" e_title="">
 <div data-role="page" id="${e_id}">
-	<div class="ui-header ui-bar-inherit">
-		<h1 class="ui-title">loading</h1>
-	</div>
 	
-	<div class="ui-header ui-bar-inherit ui-header-fixed slidedown">
-		<h1 class="ui-title">${e_title}</h1>
-	</div>
+	<@m_zapmacro_app_page_header e_title />
 	
 	
 	<div class="zmb_page_center">
@@ -16,6 +11,9 @@
 </div>
 
 </#macro>
+
+
+
 
 
 
@@ -29,6 +27,26 @@
 <#macro m_zapmacro_app_page_center_end>
 	</div>
 </#macro>
+
+
+
+
+
+
+<#macro m_zapmacro_app_page_header e_title="" >
+
+
+<div class="ui-header ui-bar-inherit">
+		<h1 class="ui-title">loading</h1>
+	</div>
+	
+	<div class="ui-header ui-bar-inherit ui-header-fixed slidedown">
+		<h1 class="ui-title">${e_title}</h1>
+	</div>
+
+
+</#macro>
+
 
 
 <#-- 页面底部占位 -->

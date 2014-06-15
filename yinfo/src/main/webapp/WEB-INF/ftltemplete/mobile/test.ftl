@@ -46,9 +46,29 @@
 <@m_mobile_layout_footer />
 
 
-<div class="cmb_layout_loading zmb_layout_loading">
+<div class="cmb_layout_loading zmb_layout_loading"></div>
 
-</div>
+
+<script>
+
+$("#mobile_main").on("scrollstart",function(){
+  console.log('scrollstart');
+  //alert('a');
+});
+
+$( function () {
+$( "#mobile_main" ).on( "vmousedown", ".ui-content", function() {
+	//$( this ).append( "<span style='color:#108040;'> vmousedown fired...</span>" );
+	$('.swpier-load').show();
+	console.log('scrollstart');
+	
+	});
+	
+});
+
+
+</script>
+
 
 </body>
 </html>
