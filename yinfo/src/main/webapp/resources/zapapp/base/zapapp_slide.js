@@ -1,5 +1,5 @@
 /**
- * 
+ * 轮播图专用
  */
 
 var zapapp_slide = {

@@ -12,6 +12,7 @@ var yinfoapp={
 			
 			
 			$.mobile.defaultPageTransition='none';
+			//$.mobile.defaultPageTransition='fade';
 			//$.mobile.hashListeningEnabled=false;
 			//zapapp.page.toPage('mobile_main');
 			

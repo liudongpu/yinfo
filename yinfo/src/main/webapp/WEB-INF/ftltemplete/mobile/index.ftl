@@ -10,6 +10,7 @@
 
 
 <script src="/resources/lib/jquery/jquery-2.1.1.js"></script>
+
 <script src="/resources/lib/jqmobile/jquery.mobile-1.4.2.js"></script>
 <script src="/resources/lib/jplugins/jquery.lazyload.js"></script>
 
@@ -40,9 +41,7 @@
 <@m_mobile_layout_footer />
 
 
-<div class="cmb_layout_loading zmb_layout_loading">
-
-</div>
+<@m_mobile_layout_loading />
 
 </body>
 </html>
