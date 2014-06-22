@@ -71,6 +71,19 @@
 </#macro>
 
 
+<#-- 脚本-轮播图 -->
+<#macro m_zapmacro_app_slide_img e_id="" >
+	<script>
+		
+	$(function(){zapapp_slide.slide({id:"${e_id}"});});
+	 
+	 
+  </script>
+
+</#macro>
+
+
+
 
 
 

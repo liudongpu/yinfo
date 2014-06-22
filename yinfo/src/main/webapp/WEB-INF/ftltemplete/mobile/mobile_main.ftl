@@ -2,48 +2,32 @@
 <#include "../macro/macro_mobile.ftl" />
 
 
-<div class="cmb_mobile_main_slide">
 
-	<div class="swiper-container">
-      <div class="swiper-wrapper" >
-      
-      <#assign page_main_listadv=b_method.upDataQuery("y_adv","-sortid","","position_cid","32620001")>
+
+
+
+
+<div id="mobile_main_slide_img" class="cmb_mobile_main_slide">
+<div class="c_box">
+	<ul class="c_ul">
+		<#assign page_main_listadv=b_method.upDataQuery("y_adv","-sortid","","position_cid","32620001")>
 					
       <#list page_main_listadv as el>
-					<div class="swiper-slide" > <img src="${el["file_url"]}" /> </div>		
+					<li> <img src="${el["file_url"]}" /> </li>		
 		</#list>
-     
-       
-      </div>
-    </div>
-    <div class="pagination"></div>
-
-
+			     		
+     </ul>
+</div>
 </div>
 
+<@m_zapmacro_app_slide_img e_id="#mobile_main_slide_img" />
 
 
-<#--
-<div class="cmb_mobile_main_carousel">
-	<ul data-role="carousel" data-captions="true" data-shadow="true">
-	
-	<#assign page_main_listadv=b_method.upDataQuery("y_adv","-sortid","","position_cid","32620001")>
-					
-      <#list page_main_listadv as el>
-      
-     
-	<li><a href="#"><img alt="" src="${el["file_url"]}" /><h1>a</h1></a></li>
-	
-	</#list>
-	
-	</ul>
-
-			
-</div>
--->
 
 
-<@m_zapmacro_app_script_slide e_class_name="cmb_mobile_main_slide" />
+
+
+
 
 
 <@m_zapmacro_app_page_center_start />

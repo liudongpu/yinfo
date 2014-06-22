@@ -4,31 +4,22 @@
 <#assign page_obj=b_method.upDataOne("y_info","","","","uid",b_method.upRequestParameter('uid'))>
 
 
-
-
-
 <#assign page_listimg=page_obj["list_img"]?split("|")>
 										
 <#if ((page_listimg?size)>0)&&(page_listimg[0]!="")>
-											
-							
-				<div class="cmb_mobile_info_slide">
 
-					<div class="swiper-container">
-				      <div class="swiper-wrapper">
-				      
-				      <#list page_listimg as el>
-						<div class="swiper-slide"> <div class="swiper-info"><img src="${el}" /></div> </div>		
-						</#list>
-				      
-				       
-				      </div>
-				    </div>
-				    <div class="pagination"></div>
-				
-				
-				</div>							
-						<@m_zapmacro_app_script_slide e_class_name="cmb_mobile_info_slide" />						
+<div class="cmb_mobile_info_slide" id="mobile_info_slide_img">
+<div class="c_box">
+	<ul class="c_ul">
+		<#list page_listimg as el>
+					<li> <img src="${el}" /> </li>		
+		</#list>
+			     		
+     </ul>
+</div>
+</div>
+
+<@m_zapmacro_app_slide_img e_id="#mobile_info_slide_img" />
 </#if>
 
 
