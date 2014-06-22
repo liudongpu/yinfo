@@ -12,7 +12,7 @@ zapapp.config = {
 	// 自动页面名称
 	autoPageName : 'mobile_auto_',
 
-	pageCenterClass : '.zmb_page_center',
+	pageCenterClass : '',
 
 	// 默认情况下的css开始名称
 	cssStart : '.zmb_',

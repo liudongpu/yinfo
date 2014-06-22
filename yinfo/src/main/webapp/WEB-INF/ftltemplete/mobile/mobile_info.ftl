@@ -3,6 +3,9 @@
 
 <#assign page_obj=b_method.upDataOne("y_info","","","","uid",b_method.upRequestParameter('uid'))>
 
+<@m_zapmacro_app_page_header  e_title=page_obj["name"] />
+
+
 
 <#assign page_listimg=page_obj["list_img"]?split("|")>
 										
@@ -160,3 +163,7 @@
 
 
 <@m_zapmacro_app_page_center_end />
+
+
+<@m_zapmacro_app_page_footer  />
+

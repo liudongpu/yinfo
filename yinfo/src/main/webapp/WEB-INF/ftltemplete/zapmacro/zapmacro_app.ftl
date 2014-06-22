@@ -2,12 +2,11 @@
 <#macro m_zapmacro_app_page_base e_id="" e_title="">
 <div data-role="page" id="${e_id}">
 	
-	<@m_zapmacro_app_page_header e_title />
 	
 	
 	<div class="zmb_page_center">
 	</div>
-	<@m_zapmacro_app_page_footer e_index=e_id />
+	
 </div>
 
 </#macro>
@@ -59,16 +58,7 @@
 
 
 
-<#-- 脚本-轮播图 -->
-<#macro m_zapmacro_app_script_slide e_class_name="" >
-	<script>
-		
-	
-	 zapapp.plug.slidePlay('${e_class_name}');
-	 
-  </script>
 
-</#macro>
 
 
 <#-- 脚本-轮播图 -->

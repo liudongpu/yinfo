@@ -1,5 +1,5 @@
 <#include "../zapmacro/zapmacro_app.ftl" />
-
+<@m_zapmacro_app_page_header  e_title="搜索页"/>
 <@m_zapmacro_app_page_center_start />
 		<form>
     
@@ -10,3 +10,5 @@
 
 
 <@m_zapmacro_app_page_center_end />
+
+<@m_zapmacro_app_page_footer  />

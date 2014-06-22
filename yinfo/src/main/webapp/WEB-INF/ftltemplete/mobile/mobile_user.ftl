@@ -1,7 +1,7 @@
 <#include "../zapmacro/zapmacro_app.ftl" />
 <#include "../macro/macro_mobile.ftl" />
 
-
+<@m_zapmacro_app_page_header  e_title="个人中心"/>
 
 
 
@@ -24,3 +24,6 @@
     
 </ul>
 <@m_zapmacro_app_page_center_end />
+
+
+<@m_zapmacro_app_page_footer  />
