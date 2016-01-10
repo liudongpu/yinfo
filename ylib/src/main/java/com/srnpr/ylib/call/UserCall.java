@@ -12,6 +12,7 @@ import com.srnpr.ylib.model.MResult;
 import com.srnpr.ylib.model.PageRequest;
 import com.srnpr.zapcom.baseclass.BaseClass;
 import com.srnpr.zapcom.basehelper.FormatHelper;
+import com.srnpr.zapcom.basehelper.RegexHelper;
 import com.srnpr.zapcom.basemodel.MDataMap;
 import com.srnpr.zapdata.dbdo.DbUp;
 import com.srnpr.zapweb.helper.WebHelper;
@@ -44,6 +45,12 @@ public class UserCall extends BaseClass {
 				result.error(965901004);
 			}
 			*/
+			if (!RegexHelper.checkRegexField(pRequest.getReqMap().get("reg_name")
+				.toString(), "base=mobile"))
+			{
+				result.error(965901004);
+			}
+			
 		}
 
 		String sPhoneNUmber = "";

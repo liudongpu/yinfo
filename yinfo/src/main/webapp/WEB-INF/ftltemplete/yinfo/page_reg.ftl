@@ -21,8 +21,8 @@
 							<form class="form-horizontal" action="${base_url}yinfo/func-reg" method="post">
 								<div class="b_h40"></div>
 								<div class="control-group">
-									<span class="c_weight">用户名称：</span> <input type="text" id="reg_name" name="reg_name" /> <span
-										class="help-inline">推荐使用您的常用邮箱或者手机号码</span>
+									<span class="c_weight">手机号码：</span> <input type="text" id="reg_name" name="reg_name" /> <span
+										class="help-inline">推荐使用您的常用手机号码</span>
 								</div>
 								<div class="b_h10"></div>
 								<div class="control-group">

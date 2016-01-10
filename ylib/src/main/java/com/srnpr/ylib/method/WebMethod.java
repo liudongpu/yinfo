@@ -511,5 +511,20 @@ public class WebMethod extends RootMethod {
 		return DbUp.upTable("y_info").query("", sOrder, sWhere, mDataMap, 0, 6);
 
 	}
+	
+	
+	/**
+	 * 检查是否登录
+	 * 
+	 * @param sInput
+	 * @return
+	 */
+	public String checkLogin(String sInput) {
+		if (UserFactory.INSTANCE.checkUserLogin()) {
+			return sInput;
+		} else {
+			return "manage/noaccess";
+		}
+	}
 
 }
