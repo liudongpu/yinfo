@@ -130,7 +130,7 @@
 								</div>
 								<div class="c_item hide" id="yxl_telephone">
 									
-									<a class="btn btn-large btn-warning"  >联系电话：400-005-5050</a>
+									<a class="btn btn-large btn-warning"  >联系电话：<#if (page_obj["flag_show_link"]=="32720002"&&page_obj["link_telephone"]!="")> ${page_obj["link_telephone"]}<#else>400-005-5050</#if></a>
 								</div>
 								<div class="clearfix"></div>
 								<div class="b_h20"></div>
