@@ -347,6 +347,7 @@ zen
 				callhome : function() {
 					var sUserCookie = zen.f.cookie("yinxl_user_cookieid");
 					if (sUserCookie) {
+						/*
 						var aText = '您希望预约参观：'
 								+ $('.yold_info_right .c_top .c_left ').text();
 						$('#yinfo_query_for .c_info').html(aText);
@@ -360,6 +361,10 @@ zen
 						$('#yinfo_query_for').on('shown', function() {
 							$('#yinfo_query_for_phone').focus();
 						});
+						*/
+						
+						$('#yxl_telephone').show();
+						zen.yinfo.callpost(sUserCookie);
 					} else {
 						zen.yinfo.model("提示消息", "请先登录后再执行该操作，谢谢！");
 					}
@@ -372,12 +377,12 @@ zen
 						info_uid : $('#yold_info_home_uid').val(),
 						info_title : $('.yold_info_right .c_top .c_left ')
 								.text(),
-						phone : $('#yinfo_query_for_phone').val()
+						phone : ''
 					}, zen.yinfo.callsuccess);
 				},
 				callsuccess : function() {
-					$('#yinfo_query_for').modal('hide');
-					zen.yinfo.model("提示消息", "操作成功，稍后会有工作人员与您联系，谢谢！");
+					//$('#yinfo_query_for').modal('hide');
+					//zen.yinfo.model("提示消息", "操作成功，稍后会有工作人员与您联系，谢谢！");
 				},
 
 				queryskip : function() {

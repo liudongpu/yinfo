@@ -128,8 +128,9 @@
 								<div class="c_item">
 									<span>机构地址：</span>${page_obj["link_address"]}<a class="c_link" href="#yinfo_home_t7">【查看地图】</a>
 								</div>
-								<div class="c_item">
-									<span>联系电话：</span>400-005-5050
+								<div class="c_item hide" id="yxl_telephone">
+									
+									<a class="btn btn-large btn-warning"  >联系电话：400-005-5050</a>
 								</div>
 								<div class="clearfix"></div>
 								<div class="b_h20"></div>
