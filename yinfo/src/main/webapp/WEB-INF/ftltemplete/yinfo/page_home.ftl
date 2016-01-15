@@ -242,7 +242,6 @@
 					<div class="c_title">联系方式</div>
 					<div>联系地址：${page_obj["link_address"]}
 					<br/>邮编：${page_obj["link_zipcode"]}
-					<br/>固定电话：<#if (page_obj["flag_show_link"]=="32720002"&&page_obj["link_telephone"]!="")> ${page_obj["link_telephone"]}<#else>400-005-5050</#if>
 					</div>
 					<div>${page_obj["link_travel"]}</div>
 				</div>
