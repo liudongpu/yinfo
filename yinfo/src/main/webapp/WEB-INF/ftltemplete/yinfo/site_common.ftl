@@ -8,7 +8,7 @@
 
 </head>
 <body class="yinfo_body">
-
+	<#--
 	<div class="yinfo_topbanner">
 		<#assign site_common_header_adv=pageexec.upDataOne("y_adv","","-sortid","","position_cid","32620003")>
 		<a href="${site_common_header_adv["link_url"]}" target="_blank">
@@ -17,7 +17,9 @@
 		</div>
 		</a>
 	</div>
-
+	-->
+	
+	
 	<div class="yinfo_header y_center">
 		<div class="yinfo_header_logo"><a href="${base_url}"></a></div>
 		<div id="yinfo_header_area" class="yinfo_header_area">${b_method.upAreaName()}&nbsp;&nbsp;[切换城市]</div>
@@ -360,9 +362,10 @@ $(document).ready(function(){zen.yinfo.pagination()});
 
 
 
-<!-- WPA Button Begin -->
+<#--
 <script charset="utf-8" defer="true" type="text/javascript" src="http://wpa.b.qq.com/cgi/wpa.php?key=XzkzODA0MzgzMV8xMjI5NjBfNDAwMDA1NTA1MF8"></script>
-<!-- WPA Button End -->
+
+-->
 </body>
 </html>
 </#macro>
