@@ -24,7 +24,7 @@ uaredirect("http://siteapp.baidu.com/site/www.yinxl.com","http://www.yinxl.com")
 						<div class="carousel-inner">
 						
 							<#list page_main_listadv as el>
-							
+							<#if el["link_url"]!="">
 							<div class="item <#if el_index==0>active</#if>">
 								<a href="${el["link_url"]}">
 									<@m_site_common_image_lazyload src=el["file_url"] />
@@ -35,6 +35,7 @@ uaredirect("http://siteapp.baidu.com/site/www.yinxl.com","http://www.yinxl.com")
 									</p>
 								</div>
 							</div>
+							</#if>
 							</#list>
 						
 							
