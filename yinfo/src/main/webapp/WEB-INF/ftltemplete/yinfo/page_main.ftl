@@ -18,7 +18,9 @@ uaredirect("http://siteapp.baidu.com/site/www.yinxl.com","http://www.yinxl.com")
 					
 						<ol class="carousel-indicators">
 							<#list page_main_listadv as el>
-							<li data-target="#myCarousel" data-slide-to="${el_index}" class="<#if el_index==0>active</#if>"></li>
+								<#if el["link_url"]!="">
+									<li data-target="#myCarousel" data-slide-to="${el_index}" class="<#if el_index==0>active</#if>"></li>
+								</#if>
 							</#list>
 						</ol>
 						<div class="carousel-inner">
